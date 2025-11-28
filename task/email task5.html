@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Mode Email</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+
+        .email-container {
+            max-width: 600px;
+            margin: 30px auto;
+            background-color: #1e1e1e;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .header {
+            padding: 40px 20px;
+            background-color: #292929;
+            text-align: center;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 28px;
+            color: #ffffff;
+        }
+
+        .content {
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        .content h2 {
+            color: #ff6584;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .content p {
+            font-size: 16px;
+            line-height: 1.5;
+            color: #c0c0c0;
+            margin-bottom: 20px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 25px;
+            background: #4a90e2;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .button:hover {
+            background: #6c63ff;
+            transform: translateY(-3px);
+        }
+
+        .divider {
+            height: 1px;
+            background: #333333;
+            margin: 30px 0;
+            border: none;
+        }
+
+        .footer {
+            background: #292929;
+            color: #999999;
+            text-align: center;
+            padding: 20px;
+            font-size: 12px;
+        }
+
+        @media screen and (max-width: 600px) {
+            .header h1 {
+                font-size: 22px;
+            }
+
+            .content h2 {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="email-container">
+
+        <div class="header">
+            <h1>Level Up Your Skills</h1>
+        </div>
+
+
+        <div class="content">
+            <h2>Exclusive Tips & Tutorials</h2>
+            <p>Unlock your potential with our hand-picked guides, tutorials, and productivity hacks. Whether you’re a
+                beginner or a pro, there’s something for everyone.</p>
+
+            <a href="#" class="button">Start Learning</a>
+
+            <hr class="divider">
+
+            <h2>What’s Inside?</h2>
+            <p>• Step-by-step tutorials on trending topics<br>
+                • Expert insights and industry tips<br>
+                • Tools & resources to boost your workflow</p>
+
+            <a href="#" class="button" style="background:#ff6584; margin-top:10px;">Join Now</a>
+        </div>
+
+
+        <div class="footer">
+            &copy; 2025 Your Learning Platform. All rights reserved.<br>
+            <a href="#" style="color:#999999; text-decoration: underline;">Unsubscribe</a>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel Tackle</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #fff;
+    }
+
+    /* HEADER */
+    header {
+      background-color: #9b4cfb;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      color: white;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    .logo span {
+      font-size: 20px;
+      font-weight: 400;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav ul li {
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+    .social {
+      display: flex;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    .social input {
+      border-radius: 25px;
+      border: none;
+      padding: 8px 14px;
+      margin-right: 10px;
+      outline: none;
+    }
+
+    .icon a img {
+      width: 22px;
+      margin-left: 10px;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: linear-gradient(to right, #f9c9e0 50%, #f7a5c9 50%);
+      padding: 60px 80px;
+      flex-wrap: wrap;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .text-content {
+      flex: 1;
+      color: #fff;
+      min-width: 280px;
+      z-index: 2;
+    }
+
+    .text-content h1 {
+      font-size: 50px;
+      color: white;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .text-content p {
+      color: #f0e4f8;
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 25px;
+    }
+
+    .btn {
+      background-color: #7a28ff;
+      color: white;
+      padding: 10px 25px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background-color: orange;
+    }
+
+    .image {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    /* Stack images for CSS-only slideshow */
+    .image img {
+      position: absolute;
+      width: 90%;
+      max-width: 400px;
+      border-radius: 30px;
+      opacity: 0;
+      animation: slideShow 40s infinite;
+    }
+
+    .image img:nth-child(1) {
+      animation-delay: 0s;
+    }
+
+    .image img:nth-child(2) {
+      animation-delay: 10s;
+    }
+
+    .image img:nth-child(3) {
+      animation-delay: 20s;
+    }
+
+    .image img:nth-child(4) {
+      animation-delay: 30s;
+    }
+
+    @keyframes slideShow {
+      0% {
+        opacity: 0;
+      }
+
+      5% {
+        opacity: 1;
+      }
+
+      25% {
+        opacity: 1;
+      }
+
+      30% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 0;
+      }
+    }
+
+    /* RESPONSIVE DESIGN */
+    @media (max-width: 992px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+      }
+
+      nav ul {
+        flex-direction: column;
+        margin: 10px 0;
+      }
+
+      nav ul li {
+        margin: 10px 0;
+      }
+
+      .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 20px;
+        background: linear-gradient(to bottom, #f9c9e0 50%, #f7a5c9 50%);
+      }
+
+      .text-content h1 {
+        font-size: 36px;
+      }
+
+      .text-content p {
+        font-size: 0.95rem;
+      }
+
+      .image img {
+        position: static;
+        margin-top: 20px;
+        width: 80%;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .logo {
+        font-size: 24px;
+      }
+
+      header {
+        padding: 15px;
+      }
+
+      .hero {
+        padding: 30px 15px;
+      }
+
+      .text-content h1 {
+        font-size: 28px;
+      }
+
+      .btn {
+        padding: 8px 18px;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo">travel<br><span>tackle</span></div>
+
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="social">
+      <input type="text" placeholder="Search">
+      <div class="icon">
+        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="instagram"></a>
+        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="twitter"></a>
+        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384065.png" alt="youtube"></a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="text-content">
+      <h1>IT’S TIME<br>FOR THAT<br>EUROTRIP!</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,<br>
+        sed diam nonummy nibh euismod tincidunt ut laoreet
+        dolore.</p>
+      <a href="#" class="btn">See deals</a>
+    </div>
+
+    <div class="image">
+      <img
+        src="https://img.freepik.com/premium-photo/young-woman-with-travel-bag-background_488220-41568.jpg?semt=ais_hybrid&w=740&q=80"
+        alt="image 1">
+      <img
+        src="https://img.freepik.com/premium-photo/woman-traveling-summer-holiday_488220-38055.jpg?semt=ais_hybrid&w=740&q=80"
+        alt="image 2">
+      <img
+        src="https://img.freepik.com/premium-photo/woman-hat-with-luggage-standing-airport_488220-31127.jpg?semt=ais_hybrid&w=740&q=80"
+        alt="image 3">
+      <img
+        src="https://img.freepik.com/premium-photo/girl-suitcase-sitting-bench_488220-32520.jpg?semt=ais_hybrid&w=740&q=80"
+        alt="image 4">
+    </div>
+  </section>
+</body>
+
+</html>

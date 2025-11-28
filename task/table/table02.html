@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Table</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #dbe7ff;
+            padding: 30px;
+        }
+
+
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.25);
+        }
+
+
+        td,
+        th {
+            border: 1px solid #cfcfcf;
+            padding: 14px;
+            text-align: center;
+            font-size: 17px;
+            transition: 0.3s ease;
+        }
+
+
+        tr:first-child td {
+            background: linear-gradient(135deg, #4169e1, #6a92ff);
+            color: white;
+            font-weight: bold;
+            border-color: transparent;
+        }
+
+
+
+        td[rowspan="6"] {
+            background: #e9edff;
+            color: #002c8a;
+            font-weight: bold;
+            border-color: #c6d2ff;
+        }
+
+
+        td[rowspan="2"] {
+            background: #ffe8e8;
+            color: #9e0000;
+            font-weight: bold;
+            border-color: #ffbebe;
+        }
+
+
+        td:hover {
+            background: #f3f6ff;
+            transform: scale(1.04);
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <table>
+        <tr>
+            <td rowspan="2">A</td>
+            <td rowspan="2">B</td>
+            <td rowspan="2">C</td>
+            <td>D</td>
+            <td>E</td>
+        </tr>
+
+        <tr>
+            <td>F</td>
+            <td>G</td>
+            <td>H</td>
+            <td>I</td>
+        </tr>
+
+        <tr>
+            <td rowspan="6">1234</td>
+            <td rowspan="6">abcd</td>
+            <td rowspan="6">12ab</td>
+            <td>1</td>
+            <td>A</td>
+            <td>1</td>
+            <td>x</td>
+        </tr>
+
+        <tr>
+            <td>2</td>
+            <td>B</td>
+            <td>2</td>
+            <td>Y</td>
+        </tr>
+
+        <tr>
+            <td>3</td>
+            <td>C</td>
+            <td>3</td>
+            <td>Z</td>
+        </tr>
+
+        <tr>
+            <td>.</td>
+            <td>.</td>
+            <td>.</td>
+            <td>.</td>
+        </tr>
+
+        <tr>
+            <td>.</td>
+            <td>.</td>
+            <td>.</td>
+            <td>.</td>
+        </tr>
+
+        <tr>
+            <td>20</td>
+            <td>T</td>
+            <td>20</td>
+            <td>T</td>
+        </tr>
+
+        <tr>
+            <td rowspan="6">4567</td>
+            <td rowspan="6">efgh</td>
+            <td rowspan="6">12ef</td>
+            <td>1</td>
+            <td>A</td>
+            <td>1</td>
+            <td>x</td>
+        </tr>
+
+        <tr>
+            <td>2</td>
+            <td>B</td>
+            <td>2</td>
+            <td>Y</td>
+        </tr>
+
+        <tr>
+            <td>3</td>
+            <td>C</td>
+            <td>3</td>
+            <td>Z</td>
+        </tr>
+
+        <tr>
+            <td>.</td>
+            <td>.</td>
+            <td>.</td>
+            <td>.</td>
+        </tr>
+
+        <tr>
+            <td>.</td>
+            <td>.</td>
+            <td>.</td>
+            <td>.</td>
+        </tr>
+
+        <tr>
+            <td>20</td>
+            <td>T</td>
+            <td>20</td>
+            <td>T</td>
+        </tr>
+
+    </table>
+
+</body>
+
+</html>

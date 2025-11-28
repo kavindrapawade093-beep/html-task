@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff;
+            text-align: center;
+            margin: 300px;
+            padding: 0;
+            border: 2px solid blue;
+        }
+
+        h2 {
+            font-size: 26px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .form-box {
+            width: 420px;
+            margin: 20px auto;
+            border: 1px solid #000;
+            padding: 20px 25px;
+            text-align: left;
+        }
+
+        p {
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .form-group {
+            margin-bottom: 10px;
+        }
+
+        label {
+            display: inline-block;
+            width: 120px;
+            font-size: 14px;
+        }
+
+        label::first-letter {
+            font-weight: bold;
+        }
+
+
+        input[type="text"],
+        input[type="email"] {
+            width: 250px;
+            padding: 4px;
+            border: 1px solid #000;
+            font-size: 13px;
+            border-radius: 2px;
+        }
+
+
+        input.small,
+        input.big {
+            width: 250px;
+        }
+
+        .note {
+            font-size: 12px;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .btn-container {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        button {
+            background-color: #f4f4f4;
+            border: 1px solid #000;
+            padding: 4px 12px;
+            font-size: 13px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Contact Details</h2>
+
+    <div class="form-box">
+        <p>Please enter your personal details:</p>
+
+        <form>
+            <div class="form-group">
+                <label for="fname">First name:*</label>
+                <input type="text" id="fname" name="fname" class="small" required>
+            </div>
+
+            <div class="form-group">
+                <label for="lname">Last name:*</label>
+                <input type="text" id="lname" name="lname" class="small" required>
+            </div>
+
+            <div class="form-group">
+                <label for="street">Street address:</label>
+                <input type="text" id="street" name="street" class="big">
+            </div>
+
+            <div class="form-group">
+                <label for="town">Town/city:</label>
+                <input type="text" id="town" name="town" class="small">
+            </div>
+
+            <div class="form-group">
+                <label for="zip">Postcode/zip:</label>
+                <input type="text" id="zip" name="zip" class="small">
+            </div>
+
+            <div class="form-group">
+                <label for="tel">Telephone:</label>
+                <input type="text" id="tel" name="tel" class="small">
+            </div>
+
+            <div class="form-group">
+                <label for="mobile">Mobile:</label>
+                <input type="text" id="mobile" name="mobile" class="small">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email address:*</label>
+                <input type="email" id="email" name="email" class="big" required>
+            </div>
+
+            <p class="note">Fields marked * are required.</p>
+
+            <div class="btn-container">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>

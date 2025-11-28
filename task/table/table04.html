@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<style>
+    body {
+        background-color: aliceblue;
+        font-family: Arial, sans-serif;
+    }
+
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        background: white;
+        border: 2px solid black;
+
+    }
+
+    h1,
+    p {
+        text-align: center;
+        background-color: #d8baff;
+    }
+
+
+    th {
+        background: #003366;
+        color: white;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid black;
+    }
+
+
+
+    /* TIME COLUMN LEFT SIDE */
+    tr th:first-child {
+        background: lightblue;
+        color: white;
+        width: 120px;
+    }
+
+    /* NORMAL CELLS */
+    td {
+        padding: 10px;
+        font-size: 14px;
+        border: 1px solid black;
+    }
+
+    /* SIMPLE ALTERNATE ROW COLORS */
+    tr:nth-child(even) {
+        background: #f2f2f2;
+    }
+
+    tr:nth-child(odd) {
+        background: #ffffff;
+    }
+
+    /* CENTER ALIGN */
+    td,
+    th {
+        text-align: center;
+    }
+
+    /* SPECIAL ROW COLORS (Basic Colors) */
+    tr:nth-child(2) {
+        background-color: pink;
+        /* 5:00 row */
+    }
+
+    tr:nth-child(3) {
+        background-color: #d8baff;
+        /* 6:00 row */
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+        table {
+            font-size: 13px;
+        }
+
+        td,
+        th {
+            padding: 5px;
+        }
+    }
+</style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>
+            Table <span>Responsive</span>
+        </h1>
+        <P>Created with love by <strong>PABLO GARCIA FERNANDEZ</strong></P>
+    </div>
+    <table style="width: 100%;">
+        <tr>
+            <th>Sites</th>
+            <th>Views</th>
+            <th>Clicks</th>
+            <th>Average</th>
+        </tr>
+
+        <tr>
+            <th id="main"><a href="https://www.google.com">Google</a></th>
+            <td>9518</td>
+            <td>6369</td>
+            <td>01:32:50</td>
+        </tr>
+
+        <tr>
+            <th id="main"><a href="https://x.com">Twitter</a></th>
+            <td>957326</td>
+            <td>10437</td>
+            <td>00:51:52</td>
+        </tr>
+
+        <tr>
+            <th id="main"><a href="https://www.amazon.in">Amazon</a></th>
+            <td>4162</td>
+            <td>5384</td>
+            <td>00:24:50</td>
+        </tr>
+
+        <tr>
+            <th id="main"><a href="https://www.linkedin.com">linkedin</a></th>
+            <td>3654</td>
+            <td>2961</td>
+            <td>00:12:50</td>
+        </tr>
+
+        <tr>
+            <th id="main"><a href="https://codepen.io">Codepen</a></th>
+            <td>2022</td>
+            <td>4135</td>
+            <td>00:46:50</td>
+        </tr>
+
+        <tr>
+            <th id="main"><a href="https://github.com">Github</a></th>
+            <td>4623</td>
+            <td>3486</td>
+            <td>00:32:50</td>
+        </tr>
+    </table>
+
+</body>
+
+</html>

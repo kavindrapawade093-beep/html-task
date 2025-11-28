@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Style Gallery Page</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: white;
+            color: #222;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            text-align: center;
+            padding: 30px 10px;
+        }
+
+        header h1 {
+            color: #d60000;
+            font-size: 2rem;
+            margin-bottom: 5px;
+        }
+
+        header p {
+            font-size: 1rem;
+            color: #444;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 15px;
+            width: 90%;
+            max-width: 600px;
+            margin: 20px auto;
+        }
+
+        .gallery img {
+            width: 100%;
+            border-radius: 10px;
+            object-fit: cover;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .subscribe {
+            background-color: #f9f9f9;
+            text-align: center;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 500px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .subscribe h2 {
+            color: #d60000;
+            margin-bottom: 10px;
+        }
+
+        .subscribe p {
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .subscribe button {
+            background-color: #d60000;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+
+        .subscribe button:hover {
+            background-color: #b80000;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.85rem;
+            color: #555;
+        }
+
+        footer .social {
+            margin-top: 8px;
+        }
+
+        footer a {
+            text-decoration: none;
+            color: #d60000;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Hollywood Picks</h1>
+        <p>Nothing but hits from you</p>
+    </header>
+
+    <main>
+        <div class="gallery">
+            <img src="https://hayotfilms.com/wp-content/uploads/2024/08/Rocky-Aur-Rani-Kii-Prem-Kahani-Bollywood-Movie.jpg.webp"
+                alt="a">
+            <img src="https://filmfare.wwmindia.com/content/2025/may/must-watch-bollywood-movie-super-30.jpg" alt="">
+            <img src=" https://www.hindustantimes.com/ht-img/img/2023/07/26/900x1600/gadar_2_upcoming_1690363465208_1690363472660.jpg"
+                alt="">
+            <img src="https://images.news18.com/ibnlive/uploads/2025/08/Adipurush-1-2025-08-82b39e8f82bef48f566854b30c756bb9.jpg"
+                alt="">
+            <img src="https://i.pinimg.com/736x/49/67/98/496798451707d17f7d220d12157b1e59.jpg" alt="">
+            <img src="https://images.indianexpress.com/2023/01/Collage-Maker-03-Jan-2023-02.00-PM.jpg?w=350" alt="">
+            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/0/0c/Tamasha_%28film_poster%29.jpg/250px-Tamasha_%28film_poster%29.jpg"
+                alt="">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRR9gHxWXNMUr3lMJr4W8rWpVh6vwyjriJ6bQ&s"
+                alt="">
+            <img src="https://akm-img-a-in.tosshub.com/indiatoday/images/photogallery/201405/queen_thumb_052714051527.jpg?VersionId=YGEHFU4degsHQTZ915xkgbIFj3525TNt&size=686:*"
+                alt="">
+            <img src="https://www.whoa.in/download/shaandaar-bollywood-movies-hd-poster" alt="">
+            <img src="https://i.pinimg.com/originals/b4/26/5b/b4265ba7720dc372da6bc847a6d2e31d.png" alt="">
+            <img src="https://qqcdnpictest.mxplay.com/pic/cc1f9610b1cc638cf9b60f305ee1b4d6/en/2x3/312x468/test_pic1759756606210_badged_1761714017652.webp"
+                alt="">
+            <img src="https://images.lifestyleasia.com/wp-content/uploads/sites/7/2021/11/23171804/243790350_4438147812927955_1754826358579203828_n.webp_.jpg"
+                alt="">
+            <img src="https://assets.gadgets360cdn.com/pricee/assets/product/202412/PARAM_SUNDARI_p1_1735039425.jpg"
+                alt="">
+            <img src="https://qqcdnpictest.mxplay.com/pic/8f9eb2b9dc634c8efe15be770eebfd1e/en/2x3/312x468/test_pic1736411119303_badged_1760590827844.webp"
+                alt="">
+
+        </div>
+
+        <section class="subscribe">
+            <h2>Stay Updated</h2>
+            <p>Sign up for more exclusive updates and movie recommendations.</p>
+            <button>Subscribe</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Hollywood Media | All rights reserved</p>
+        <div class="social">
+            <a href="#">Facebook</a> |
+            <a href="#">Instagram</a> |
+            <a href="#">YouTube</a>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>

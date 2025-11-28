@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Infographic Email</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+        }
+
+        .email-container {
+            max-width: 700px;
+            margin: 30px auto;
+            background: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        }
+
+
+        .header {
+            background: linear-gradient(135deg, #6c63ff, #ff6584);
+            color: #fff;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 32px;
+        }
+
+        .header p {
+            margin-top: 10px;
+            font-size: 16px;
+        }
+
+
+        .circular-stats {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 30px 20px;
+            text-align: center;
+            gap: 20px;
+        }
+
+        .circle {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            background: conic-gradient(#4a90e2 0% 75%, #e0e0e0 75% 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            font-weight: bold;
+            color: #4a90e2;
+            position: relative;
+        }
+
+        .circle span {
+            position: absolute;
+            font-size: 14px;
+            top: 100%;
+            margin-top: 8px;
+            width: 100%;
+            left: 0;
+            text-align: center;
+            color: #555;
+        }
+
+
+        .highlights {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 30px 20px;
+            gap: 20px;
+        }
+
+        .highlight {
+            background: #f9f9f9;
+            width: 30%;
+            min-width: 180px;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .highlight i {
+            font-size: 36px;
+            color: #ff6584;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .highlight h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .highlight p {
+            font-size: 14px;
+            color: #555;
+        }
+
+
+        .bar-chart {
+            padding: 20px;
+        }
+
+        .bar-container {
+            margin: 15px 0;
+        }
+
+        .bar-label {
+            font-size: 14px;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        .bar {
+            background: #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 22px;
+        }
+
+        .bar-fill {
+            height: 100%;
+            border-radius: 10px;
+            text-align: right;
+            padding-right: 10px;
+            line-height: 22px;
+            font-size: 12px;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .bar-fill.orange {
+            background: #ff9f43;
+        }
+
+        .bar-fill.blue {
+            background: #4a90e2;
+        }
+
+        .bar-fill.green {
+            background: #2ed573;
+        }
+
+
+        .cta {
+            background: linear-gradient(135deg, #ff6584, #6c63ff);
+            padding: 40px 20px;
+            text-align: center;
+            color: #fff;
+        }
+
+        .cta h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .cta a {
+            display: inline-block;
+            padding: 15px 30px;
+            background: #fff;
+            color: #ff6584;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: transform 0.3s;
+        }
+
+        .cta a:hover {
+            transform: translateY(-3px);
+            background: #ffe6f0;
+        }
+
+
+        .footer {
+            background: #f1f1f1;
+            color: #999;
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 12px;
+        }
+
+        .footer a {
+            color: #999;
+            text-decoration: underline;
+        }
+
+        @media screen and (max-width: 700px) {
+
+            .circular-stats,
+            .highlights {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .highlight,
+            .circle {
+                width: 80%;
+            }
+
+            .header h1 {
+                font-size: 26px;
+            }
+
+            .cta h2 {
+                font-size: 20px;
+            }
+        }
+    </style>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="email-container">
+
+        <div class="header">
+            <h1>Team Performance Overview</h1>
+            <p>Visualize your metrics at a glance</p>
+        </div>
+
+
+        <div class="circular-stats">
+            <div class="circle">75%<span>Project Completion</span></div>
+            <div class="circle">90%<span>Customer Satisfaction</span></div>
+            <div class="circle">60%<span>New Leads</span></div>
+        </div>
+
+
+        <div class="highlights">
+            <div class="highlight">
+                <i class="fas fa-trophy"></i>
+                <h3>Top Performer</h3>
+                <p>Recognizing the highest achieving team member this month.</p>
+            </div>
+            <div class="highlight">
+                <i class="fas fa-users"></i>
+                <h3>Team Growth</h3>
+                <p>Added 10 new members to enhance productivity and collaboration.</p>
+            </div>
+            <div class="highlight">
+                <i class="fas fa-chart-line"></i>
+                <h3>Revenue Growth</h3>
+                <p>Overall revenue increased by 20% compared to last month.</p>
+            </div>
+        </div>
+
+
+        <div class="bar-chart">
+            <h2 style="text-align:center; color:#ff6584;">Monthly Metrics</h2>
+            <div class="bar-container">
+                <div class="bar-label">Website Visits</div>
+                <div class="bar">
+                    <div class="bar-fill blue" style="width:85%;">85%</div>
+                </div>
+            </div>
+            <div class="bar-container">
+                <div class="bar-label">Sign-ups</div>
+                <div class="bar">
+                    <div class="bar-fill orange" style="width:70%;">70%</div>
+                </div>
+            </div>
+            <div class="bar-container">
+                <div class="bar-label">Sales</div>
+                <div class="bar">
+                    <div class="bar-fill green" style="width:60%;">60%</div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="cta">
+            <h2>Get the Full Insights</h2>
+            <a href="#">Download Report</a>
+        </div>
+
+
+        <div class="footer">
+            &copy; 2025 Your Company. All rights reserved.<br>
+            <a href="#">Unsubscribe</a> | <a href="#">View Online</a>
+        </div>
+    </div>
+</body>
+
+</html>

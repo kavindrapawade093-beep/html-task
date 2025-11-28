@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: lightgray;
+            border: 2px solid black;
+            margin: 0 30px;
+        }
+
+        header {
+            background-color: white;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            padding: 15px 60px;
+            color: black;
+            border: 1px solid black;
+            margin: 0 300px;
+            margin-bottom: 10px;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+
+        }
+
+        nav ul li {
+            margin: 0 20px;
+
+
+        }
+
+        nav ul li a {
+            color: black;
+            text-decoration: none;
+            font-size: small;
+
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .image {
+            display: flex;
+            align-items: center;
+            gap: 1px;
+        }
+
+
+        .main {
+            padding: 40px 30px;
+            margin: 0 300px;
+            background-color: white;
+        }
+
+        .main h3 {
+            color: gray;
+            text-transform: uppercase;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .main h2 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #222;
+        }
+
+        .container {
+            margin: 0 300px;
+
+            position: relative;
+            height: 200px;
+            background-color: #7E57C2;
+
+        }
+
+        .top img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            object-fit: cover;
+
+        }
+
+        .right {
+            position: absolute;
+            top: 0;
+            right: 0;
+            object-fit: cover;
+
+        }
+
+        .left-bottom {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            object-fit: cover;
+
+        }
+
+        .right-bottom {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            object-fit: cover;
+
+        }
+
+        .center {
+            display: block;
+            position: absolute;
+            top: 70px;
+            left: 120px;
+            object-fit: cover;
+
+        }
+
+        .content {
+            margin: 0 300px;
+
+            object-fit: cover;
+            font-size: 12px;
+            text-align: left;
+            padding: 20px;
+            background-color: white;
+        }
+
+        .btn {
+            color: blue;
+            background-color: white;
+            border: 1px solid blue;
+
+        }
+
+        .btn:hover {
+            background-color: #7E57C2;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="image">
+            <img src="https://cdn-icons-png.flaticon.com/512/14649/14649068.png" alt="symbol slidesgo" width="30px"
+                height="30px">
+            <div class="logo"><span>SLIDESGO</span>
+            </div>
+
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Education</a></li>
+                <li><a href="#">Business</a></li>
+
+            </ul>
+        </nav>
+    </header>
+
+
+    <div class="main">
+        <h3>Exclusive present</h3>
+        <h2>A little something special</h2>
+        <p>The best gestures are those that come as a surprise. It doesn’t have to be a special day on the calendar
+            because
+            <strong>every day is wonderful with you in our community.</strong>
+        </p>
+        <p>Thank you so much for being a part of Slidesgo, we wouldn’t be the same without you. Enjoy your Premium
+            slides pack!</p>
+        <input type="button" name="button" value="Download here">
+    </div>
+
+    <div class="container">
+
+        <div class="top">
+            <img src="image/0-aesthetic-slideshow___media_library_original_1600_900.jpg" alt="first image" width="110px"
+                height="60px">
+        </div>
+        <div class="right">
+            <img src="https://media.slidesgo.com/storage/53637353/premium-preseleccionada-super-minimal-marketing-basic-template1715603967.jpg"
+                alt="first image" width="110px" height="60px">
+        </div>
+
+        <div class="left-bottom">
+            <img src="https://media.slidesgo.com/storage/53808587/corporate-interior-design-workshop1715769047.jpg"
+                alt="first image" width="110px" height="60px">
+        </div>
+        <div class="right-bottom">
+            <img src="https://media.slidesgo.com/storage/48004746/responsive-images/0-formal-geometric-slides___media_library_original_655_368.jpg"
+                alt="first image" width="110px" height="60px">
+        </div>
+        <div class="center">
+            <img src="https://media.slidesgo.com/storage/84007552/colorful-theme1750860031.jpg" alt="first image"
+                width="110px" height="60px">
+
+        </div>
+
+    </div>
+    <div class="content">
+        <h3>Create presentations in minutes with the help of AI</h3>
+        <p>
+            With the AI presentation maker, you're just a few clicks away from crafting stunning presentations that
+            your audience will love.
+            <br><br>
+            Let AI create the slides for you. Then edit them, all in one place. No other software needed.
+        </p>
+
+        <button class="btn">Start creating with AI</button>
+    </div>
+
+    </div>
+
+
+
+
+
+
+</body>
+
+</html>

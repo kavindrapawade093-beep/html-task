@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infographic Email</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            color: #333;
+        }
+
+        .email-container {
+            max-width: 600px;
+            margin: auto;
+            background: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            background: #4a90e2;
+            color: #fff;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .content {
+            padding: 30px 20px;
+        }
+
+        .section-title {
+            font-size: 20px;
+            margin-bottom: 15px;
+            text-align: center;
+            color: #4a90e2;
+        }
+
+        .stat-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .stat {
+            text-align: center;
+            margin: 15px;
+        }
+
+        .stat-value {
+            font-size: 32px;
+            font-weight: bold;
+            color: #ff6584;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: #555;
+        }
+
+
+        .bar-container {
+            background: #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+
+        .bar {
+            height: 20px;
+            border-radius: 8px;
+            background: #4a90e2;
+            text-align: right;
+            padding-right: 10px;
+            color: #fff;
+            line-height: 20px;
+            font-size: 12px;
+        }
+
+        .button {
+            display: block;
+            width: fit-content;
+            margin: 20px auto;
+            padding: 12px 25px;
+            background: #ff6584;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        @media screen and (max-width: 600px) {
+            .stat-container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="email-container">
+
+        <div class="header">
+            <h1>Monthly Performance Report</h1>
+        </div>
+
+
+        <div class="content">
+
+            <div class="section-title">Key Metrics</div>
+            <div class="stat-container">
+                <div class="stat">
+                    <div class="stat-value">1,250</div>
+                    <div class="stat-label">New Users</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">3,870</div>
+                    <div class="stat-label">Orders</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">92%</div>
+                    <div class="stat-label">Satisfaction</div>
+                </div>
+            </div>
+
+
+            <div class="section-title">Sales by Region</div>
+            <div>
+                <div>North America</div>
+                <div class="bar-container">
+                    <div class="bar" style="width: 80%;">80%</div>
+                </div>
+
+                <div>Europe</div>
+                <div class="bar-container">
+                    <div class="bar" style="width: 60%;">60%</div>
+                </div>
+
+                <div>Asia</div>
+                <div class="bar-container">
+                    <div class="bar" style="width: 90%;">90%</div>
+                </div>
+            </div>
+
+            <a href="#" class="button">View Full Report</a>
+        </div>
+    </div>
+</body>
+
+</html>

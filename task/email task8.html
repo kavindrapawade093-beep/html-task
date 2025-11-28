@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Grid Email</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            color: #333;
+        }
+
+        .email-container {
+            max-width: 700px;
+            margin: 30px auto;
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+
+        .header {
+            background: #4a90e2;
+            color: #fff;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 32px;
+        }
+
+        .header p {
+            margin-top: 10px;
+            font-size: 16px;
+        }
+
+
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 30px 20px;
+            gap: 20px;
+        }
+
+        .product {
+            width: 30%;
+            min-width: 180px;
+            background: #f9f9f9;
+            border-radius: 12px;
+            overflow: hidden;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .product img {
+            width: 100%;
+            display: block;
+        }
+
+        .product h3 {
+            font-size: 18px;
+            margin: 10px 0;
+            color: #4a90e2;
+        }
+
+        .product p {
+            font-size: 16px;
+            margin: 5px 0;
+            color: #555;
+        }
+
+        .product a {
+            display: inline-block;
+            margin: 10px 0 20px;
+            padding: 10px 20px;
+            background: #ff6584;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: transform 0.3s;
+        }
+
+        .product a:hover {
+            transform: translateY(-3px);
+        }
+
+
+        .cta {
+            background: #4a90e2;
+            text-align: center;
+            padding: 40px 20px;
+            color: #fff;
+        }
+
+        .cta a {
+            display: inline-block;
+            padding: 15px 30px;
+            background: #ff6584;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: transform 0.3s;
+        }
+
+        .cta a:hover {
+            transform: translateY(-3px);
+        }
+
+
+        .footer {
+            background: #f1f1f1;
+            color: #999;
+            text-align: center;
+            padding: 20px;
+            font-size: 12px;
+        }
+
+        .footer a {
+            color: #999;
+            text-decoration: underline;
+        }
+
+        @media screen and (max-width:700px) {
+            .products {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .product {
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="email-container">
+        <div class="header">
+            <h1>Featured Products</h1>
+            <p>Check out our latest arrivals</p>
+        </div>
+
+
+        <div class="products">
+            <div class="product">
+                <img src="https://www.titan.co.in/dw/image/v2/BKDD_PRD/on/demandware.static/-/Sites-titan-master-catalog/default/dwda6ca9ea/images/Titan/Catalog/90196AM01_1.jpg?sw=600&sh=600 "
+                    alt="Product 1">
+                <h3>Smart Watch</h3>
+                <p>$199.99</p>
+                <a href="#">Buy Now</a>
+            </div>
+            <div class="product">
+                <img src="https://www.skullcandy.eu/cdn/shop/files/push_active_buy_box_black_orange_1_2cee3da5-d753-4e45-92b5-fec8d28c072f.png?v=1752271705"
+                    alt="Product 2">
+                <h3>Wireless Earbuds</h3>
+                <p>$89.99</p>
+                <a href="#">Buy Now</a>
+            </div>
+            <div class="product">
+                <img src="https://www.sbsmobile.com/cdn/shop/files/GLBEATSMARTHRA_PAN_1.jpg?v=1742378002&width=2048"
+                    alt="Product 3">
+                <h3>Fitness Tracker</h3>
+                <p>$129.99</p>
+                <a href="#">Buy Now</a>
+            </div>
+        </div>
+
+        <div class="cta">
+            <h2>Shop More Products</h2>
+            <a href="#">Visit Store</a>
+        </div>
+
+        <div class="footer">
+            &copy; 2025 Your Store | <a href="#">Unsubscribe</a>
+        </div>
+    </div>
+</body>
+
+</html>

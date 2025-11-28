@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adhikari College</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        /* HEADER */
+        header {
+            background: #003366;
+            padding: 15px 0;
+        }
+
+        nav {
+            width: 85%;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: yellow;
+            font-size: 28px;
+            font-weight: 900;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            font-size: 18px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: yellow;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            height: 90vh;
+            background: url(https://www.campusoption.com/images/colleges/gallery/30_12_16_063052_eng_hostel.jpg);
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            color: white;
+            text-shadow: 2px 2px 6px #000;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 22px;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            background: yellow;
+            padding: 12px 30px;
+            border-radius: 5px;
+            color: black;
+            cursor: pointer;
+            font-weight: bold;
+            margin: auto;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #ffeb3b;
+        }
+
+        /* ABOUT SECTION */
+        .about {
+            padding: 60px 20px;
+            background: #fff;
+            text-align: center;
+        }
+
+        .about h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        /* COURSES */
+        .courses {
+            padding: 60px 20px;
+            background: #f5f5f5;
+            text-align: center;
+        }
+
+        .courses h2 {
+            font-size: 36px;
+            margin-bottom: 40px;
+        }
+
+        .course-box {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            width: 280px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px #ccc;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-7px);
+        }
+
+        /* FACILITIES */
+        .facilities {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .facility-box {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+        }
+
+        .facility-card {
+            width: 300px;
+            padding: 15px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px #ccc;
+            transition: 0.3s;
+        }
+
+        .facility-card:hover {
+            transform: translateY(-7px);
+        }
+
+        .facility-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        /* CONTACT */
+        .contact {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        form {
+            width: 350px;
+            margin: auto;
+            padding: 30px;
+            border: 2px solid #003366;
+            border-radius: 10px;
+            background: #f9f9f9;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 12px 0;
+            border-radius: 5px;
+            border: 1px solid #999;
+        }
+
+        button {
+            background: #003366;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            width: 100%;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background: #002244;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #003366;
+            color: white;
+            text-align: center;
+            padding: 18px;
+            margin-top: 30px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .btn {
+                width: 50%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            form {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+
+            <h2 class-="logo">Adhikari<br> College</h2>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#Courses">Courses</a></li>
+                <li><a href="#home">Facilities</a></li>
+                <li><a href="#Contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <h1>Welcome to Adhikari College</h1>
+        <p> Quality Education for Better Future</p>
+        <a href="#contact" class="btn">Apply Now</a>
+    </section>
+
+    <section id="about" class="about">
+        <h2>About us</h2>
+        <p>Adhikari College is committed to providing top-quality education and
+            helping students achieve academic excellence. With modern classrooms,
+            experienced faculty, and industry-focused programs, we prepare students
+            for successful careers.</p>
+    </section>
+
+    <section id="courses" class="courses">
+        <h2>Our Courses</h2>
+        <div class="course-box">
+            <div class="card">
+                <h3>Bachelor of Computer Science</h3>
+                <p>earn programming, databases, and modern technologies.</p>
+            </div>
+            <div class="card">
+                <h3>Bachelor of Commerce</h3>
+                <p>Build knowledge in finance, accounting, and economics.</p>
+            </div>
+
+            <div class="card">
+                <h3>Bachelor of Arts</h3>
+                <p>Grow in literature, social sciences, and humanities.</p>
+            </div>
+        </div>
+    </section>
+    <section id="facilities" class="facilities">
+        <h2>Our Facilities</h2>
+
+        <div class="facility-box">
+
+            <div class="facility-card">
+                <img src="https://static.vecteezy.com/system/resources/thumbnails/049/485/725/small/modern-library-interior-with-white-bookshelves-and-a-circular-platform-photo.jpg"
+                    alt="">
+                <h3>Modern Library</h3>
+            </div>
+
+            <div class="facility-card">
+                <img src=" https://ln-college.com/w/assets/images/facilities/ict.jpg" alt="">
+                <h3>Computer Labs</h3>
+            </div>
+
+            <div class="facility-card">
+                <img src="https://cdn.pixabay.com/photo/2015/03/11/12/30/sports-ground-668615_1280.jpg" alt="">
+                <h3>Sports Ground</h3>
+            </div>
+
+        </div>
+    </section>
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+
+        <form>
+            <input type="text" placeholder="Full Name" required>
+            <input type="email" placeholder="Email Address" required>
+            <input type="tel" placeholder="Phone Number" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+    <footer>
+        <p>© 2025 ABC College | Designed by Your Name</p>
+    </footer>
+
+
+</body>
+
+</html>

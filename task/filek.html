@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 5px;
+        }
+
+        body {
+            height: 100%;
+            margin: 0;
+            font-family: sans-serif;
+            background: var();
+            color: #111827;
+
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 20px;
+            color: white;
+            background: linear-gradient(90deg, rgba(37, 7, 43, 0.98), rgba(33, 11, 50, 0.95));
+        }
+
+        .main img {
+            width: 50px;
+            height: 50px;
+            margin-right: 20px;
+            color: white;
+            margin-left: 60px;
+        }
+
+        .logo {
+            font-weight: 700;
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            margin-left: -50px;
+        }
+
+        .logo span {
+            font-weight: 800;
+            opacity: 1
+        }
+
+        .nav {
+            margin-left: auto;
+            display: flex;
+            gap: 18px
+        }
+
+        .nav a {
+            color: white;
+            text-decoration: underline;
+            padding: 8px 10px;
+            border-radius: 8px
+        }
+
+        .social {
+            display: flex;
+            align-items: center;
+        }
+
+        .social input {
+            border-radius: 25px;
+            border: none;
+            padding: 8px 14px;
+            margin-right: 15px;
+            outline: none;
+        }
+
+        .icon a img {
+            width: 22px;
+            margin-left: 10px;
+
+
+        }
+
+        .hero {
+            padding: 64px 20px;
+            display: flex;
+            justify-content: center;
+            background: linear-gradient(90deg, rgba(243, 117, 7, 0.9), rgba(249, 169, 20, 0.9));
+        }
+
+        .hero-inner {
+            max-width: var(--max-width);
+            text-align: center
+        }
+
+        .hero h1 {
+            font-size: 2rem;
+            margin: 0 0 10px
+        }
+
+        .hero p {
+            color: var(--muted);
+            margin: 0 0 16px
+        }
+
+        .image {
+            grid-column-start: 1;
+            grid-column-end: 2;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            padding: 0%;
+
+        }
+
+        .container div {
+            background-color: #f1f1f1;
+            text-align: start;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 15px;
+
+            margin: 20px auto;
+            background: linear-gradient(90deg, rgba(37, 7, 43, 0.98), rgba(33, 11, 50, 0.95));
+
+        }
+
+        .gallery img {
+            width: 100%;
+            border-radius: 10px;
+            object-fit: cover;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="main">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsVP7Coo-UA3QWFaeP77aUCWXvylr9txWaaw&s"
+                width="50px" height="50px">
+        </div>
+        <img src="" https://pure-css.github.io/"" class="logo">PRO<span>KABADDI</span></img>
+
+        <nav class="nav">
+            <a href="https://pure-css.github.io/start/" title="HOME">HOME</a>
+            <a href="https://pure-css.github.io/start/" title="VOTE">VOTE</a>
+            <a href="https://pure-css.github.io/start/" title="FAQS">FAQS</a>
+            <a href="https://github.com/pure-css/pure/releases/" title="T&C">T&C</a>
+        </nav>
+        <div class="social">
+            <input type="text" placeholder="Search">
+        </div>
+        <div class="icon">
+            <a href="https://www.instagram.com"> <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png"
+                    alt="instagram"></a>
+            <a href="https://www.youtube.com"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png"
+                    alt="Youtube"></a>
+            <a href="https://www.hotstar.com"><img
+                    src="https://pnghdpro.com/wp-content/themes/pnghdpro/download/social-media-and-brands/jiohotstar-logo-hd.png"
+                    alt="Jiohotstar"></a>
+
+            <a href="https://www.facebook.com"><img src="https://cdn-icons-png.flaticon.com/512/145/145802.png "
+                    alt="facebook"></a>
+
+            <a href="https://www.jiocinema.com"><img
+                    src=" https://upload.wikimedia.org/wikipedia/commons/1/14/Jiocinema.png" alt="Jiocinema"></a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-inner">
+            <h1>Pro Kabaddi Auction Seasion 13</h1>
+            <p>Your Voice Could Be Your Team's Choice </p>
+
+        </div>
+    </section>
+
+    <div class="gallery">
+        <img src="https://www.prokabaddi.com/static-assets/waf-images/4c/80/65/4-3/CeWEWZn7hD.png?v=2.38&w=1024"
+            alt="a">
+        <img src="https://www.prokabaddi.com/static-assets/waf-images/05/ac/81/1-1/72zONHwRQk.png?v=2.38&w=1024" alt="">
+        <img src=" https://mir-s3-cdn-cf.behance.net/projects/404/aadf39165102919.Y3JvcCwxMjA2LDk0NCw2Miww.jpg" alt="">
+        <img src="https://www.prokabaddi.com/static-assets/waf-images/5a/49/81/1-1/nbDktODqt0.png?v=2.38&w=1024" alt="">
+        <img src="https://bsmedia.business-standard.com/_media/bs/img/article/2024-03/01/full/1709290502-615.jpg"
+            alt="">
+        <img src="https://www.prokabaddi.com/static-assets/images/cssimages/s12-winners-updated-banner-mweb.png?v=7.1"
+            alt="">
+        <img src="https://api-timescontent.timesofindia.com/api/v1/image-path/view/jpg/492215" alt="">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8QaRvVNOPT6K3WI39R8cP-NscSE1IkbLkQA&s" alt="">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTur3Q1P3LhwOlqrKjGn4PRQ7s7pGjHtqZdfA&s" alt="">
+        <img src="https://www.prokabaddi.com/static-assets/waf-images/bb/64/56/16-9/CNgnvwiOlQ.png?v=2.38&w=600" alt="">
+        <img src="https://images.mykhel.com/img/2025/09/pro-kabaddi-league-1757593832784-600x340.jpg" alt="">
+        <img src="https://www.prokabaddi.com/static-assets/waf-images/e9/c5/d8/4-3/hZ8gUhh3mv.png?v=2.38&w=1024" alt="">
+        <img src="https://www.shutterstock.com/shutterstock/photos/2390368263/display_1500/stock-vector-pro-kabaddi-league-pkl-season-vector-logo-with-trophy-on-abstract-background-2390368263.jpg"
+            alt="">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqTZ_r9Kw0tOWBOId4QRHS4r1rp5bgdPO2rA&s" alt="">
+        <img src="https://api-timescontent.timesofindia.com/api/v1/image-path/view/jpg/492163" alt="">
+
+    </div>
+
+
+
+</body>
+
+</html>

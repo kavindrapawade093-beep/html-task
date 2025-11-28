@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video/GIF Focused Email</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .email-container {
+            max-width: 600px;
+            margin: 30px auto;
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            background: #ff6584;
+            color: #fff;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .content {
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        .content p {
+            color: #555;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .video-thumbnail {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .video-thumbnail img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 12px;
+            display: block;
+        }
+
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 70px;
+            height: 70px;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .play-button::before {
+            content: '';
+            display: block;
+            width: 0;
+            height: 0;
+            border-left: 20px solid #fff;
+            border-top: 12px solid transparent;
+            border-bottom: 12px solid transparent;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 25px;
+            margin-top: 20px;
+            background: #4a90e2;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        @media screen and (max-width: 600px) {
+            .header h1 {
+                font-size: 20px;
+            }
+
+            .play-button {
+                width: 50px;
+                height: 50px;
+            }
+
+            .play-button::before {
+                border-left: 15px solid #fff;
+                border-top: 9px solid transparent;
+                border-bottom: 9px solid transparent;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="email-container">
+
+        <div class="header">
+            <h1>Watch Our Latest Video!</h1>
+        </div>
+
+
+        <div class="content">
+            <p>Check out our latest tutorial and learn how to boost your productivity in just a few minutes!</p>
+
+
+            <a href="https://www.vecteezy.com/video/7883993-animal-greylag-goose-in-green-lake" class="video-thumbnail"
+                target="_blank">
+                <img src="https://media.istockphoto.com/id/500342543/photo/female-mallard-duck-and-ducklings.jpg?s=612x612&w=0&k=20&c=s3YUtiEsjS5OLlLSgCwyTP_-0rGLINrkq2xAM9olvNY="
+                    alt="Video Thumbnail">
+                <div class="play-button"></div>
+            </a>
+
+            <a href="https://www.vecteezy.com/video/7883993-animal-greylag-goose-in-green-lake" class="button"
+                target="_blank">Watch Video</a>
+        </div>
+    </div>
+</body>
+
+</html>

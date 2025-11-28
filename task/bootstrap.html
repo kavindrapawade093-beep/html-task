@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delicious Bites</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            scroll-behavior: smooth;
+
+        }
+
+
+        section {
+            padding: 80px 0;
+        }
+
+        .hero {
+            /*background: gradient + image */
+            background:
+                linear-gradient(rgba(255, 126, 95, 0.6), rgba(254, 180, 123, 0.6)),
+                url('https://api.barbequenation.com/sites/default/files/2020-04/Zoom-Wallpaper-1-min.jpg') no-repeat center center;
+            background-size: cover;
+            color: white;
+            text-align: center;
+            padding: 150px 20px;
+            background-size: cover;
+            animation: gradientAnimation 15s ease infinite;
+        }
+
+        /*  animation */
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+
+
+        .hero {
+            background-size: cover;
+            color: white;
+            text-align: center;
+            padding: 150px 20px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: bold;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+        }
+
+        /* Starters*/
+        #starters {
+            background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),
+                url('https://www.recipetineats.com/tachyon/2021/08/Garden-Salad_47-SQ.jpg') no-repeat center center;
+            background-size: cover;
+            padding: 40px 20px;
+            border-radius: 10px;
+        }
+
+        /* Main Course */
+        #main {
+            background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),
+                url('https://images.unsplash.com/photo-1627308595229-7830a5c91f9f?auto=format&fit=crop&w=1600&q=80') no-repeat center center;
+            background-size: cover;
+            padding: 40px 20px;
+            border-radius: 10px;
+        }
+
+        /* Desserts  */
+        #desserts {
+            background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),
+                url('https://t3.ftcdn.net/jpg/10/28/36/40/360_F_1028364039_8so5kCnQ2FDvakMmmSBp0AKcMQ1b28TC.jpg') no-repeat center center;
+            background-size: cover;
+            padding: 40px 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#"> BARBEQUE NATION</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#reservation">Reservation</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>WELCOME TO BARBEQUE NATION</h1>
+            <p>RELISH OUR 70+ DELICACIES WITH UNLIMITED CELEBRATIONS</p>
+            <a href="#menu" class="btn btn-primary btn-lg mt-3">View Menu</a>
+        </div>
+    </section>
+
+    <!--   Section -->
+    <section id="menu">
+        <div class="container">
+            <h2 class="text-center mb-4 text-dark bg-danger "><i> OUR MENU</i></h2>
+
+            <!-- Menu -->
+            <ul class="nav nav-tabs justify-content-center mb-4 " id="menuTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#starters"
+                        type="button">Starters</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#main" type="button">Main
+                        Course</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#desserts"
+                        type="button">Desserts</button>
+                </li>
+            </ul>
+
+
+            <div class="tab-content">
+                <!-- Starters -->
+                <div class="tab-pane fade show active" id="starters">
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <div class="card">
+                                <img src="https://www.kuchpakrahahai.in/wp-content/uploads/2021/09/Crispy-Corn-Barbeque-Style.jpg"
+                                    class="card-img-top" alt="Crispy Corn">
+                                <div class="card-body">
+                                    <h5 class="card-title">Crispy Corn (Air Fryer + Stovetop)</h5>
+                                    <p class="card-text">$5.99</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="card">
+                                <img src="https://www.closetcooking.com/wp-content/uploads/2020/08/Peri-Peri-Grilled-Chicken-Skewers-1200-5371.jpg"
+                                    class="card-img-top" alt="Salad" height="520px">
+                                <div class="card-body">
+                                    <h5 class="card-title">Chiken Peri Peri</h5>
+                                    <p class="card-text">$9.99</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 ">
+                            <div class="card">
+                                <img src="https://shreedevimelange.com/wp-content/uploads/2023/11/Paneer-Angara-Tikka.webp "
+                                    class="card-img-top" alt="Angara Paneer Tikka" height="520px">
+                                <div class="card-body">
+                                    <h5 class="card-title">Angara Paneer Tikka</h5>
+                                    <p class="card-text">$4.99</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main  course-->
+                <div class="tab-pane fade" id="main">
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <div class="card">
+                                <img src="https://www.umami.recipes/api/image/recipes/Tc3VqCkMqD1ZhFgkNVw3/images/8N59Tyuz6qBUlgmL3HF0DX?w=3840&q=75"
+                                    class="card-img-top" alt="Dal Makhani">
+                                <div class=" card-body">
+                                    <h5 class="card-title">Dal Makhani</h5>
+                                    <p class="card-text">$12.99</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="card">
+                                <img src="https://www.indianhealthyrecipes.com/wp-content/uploads/2024/06/baked-fish-oven-grilled-fish.jpg"
+                                    class="card-img-top" alt=" Kerala Fish Curry">
+                                <div class="card-body">
+                                    <h5 class="card-title">Kerala Fish Curry</h5>
+                                    <p class="card-text">$19.99</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="card">
+                                <img src=" https://allthehealthythings.com/wp-content/uploads/2024/09/crispy-honey-garlic-chicken-9.jpg"
+                                    class="card-img-top" alt="Dal Makhani" height="420px">
+                                <div class="card-body">
+                                    <h5 class="card-title">Honey Garlic Chicken</h5>
+                                    <p class="card-text">$16.99</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ice -->
+                <div class="tab-pane fade" id="desserts">
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <div class="card">
+                                <img src="https://carveyourcraving.com/wp-content/uploads/2021/06/chocolate-icecream-in-an-icecream-maker-500x500.jpg"
+                                    class="card-img-top" alt="Cake">
+                                <div class="card-body">
+                                    <h5 class="card-title">Chocolate Cake</h5>
+                                    <p class="card-text">$6.99</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <img src="https://www.theroastedroot.net/wp-content/uploads/2023/06/dairy-free-vanilla-ice-cream-8-500x500.jpg "
+                                    class="card-img-top" alt="Ice Cream">
+                                <div class="card-body">
+                                    <h5 class="card-title">Vanilla Ice Cream</h5>
+                                    <p class="card-text">$4.99</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- table order -->
+    <section id="reservation" class="bg-light">
+        <div class="container text-white">
+            <h2 class="text-center mb-4 text-warning">Book a Table</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label">Full Name</label>
+                            <input type="text" class="form-control" placeholder="John Doe" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-control" placeholder="john@example.com" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Date</label>
+                            <input type="date" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Time</label>
+                            <input type="time" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Number of People</label>
+                            <input type="number" class="form-control" min="1" max="20" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Reserve Now</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="bg-dark text-white text-center py-4">
+        <p>&copy; 2025 Delicious Bites | <a href="#" class="text-white">Instagram</a> | <a href="#"
+                class="text-white">Facebook</a></p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Menu section  
+        const menuBackgrounds = [
+            "https://images.picxy.com/cache/2020/7/11/5060b02a4e5ea6f76550fb4a18f1ec02.jpg",
+            "https://media.istockphoto.com/id/1214416414/photo/barbecued-salmon-fried-potatoes-and-vegetables-on-wooden-background.jpg?s=612x612&w=0&k=20&c=Y8RYbZFcvec-FXMMuoU-qkprC3TUFNiw3Ysoe8Drn6g=",
+            "https://media.istockphoto.com/id/1403973419/photo/table-top-of-food-spread-on-table.jpg?s=612x612&w=0&k=20&c=2cROUMurZUtuvqF-bp8lViZ0wDXBNkZBcIjQj2QQlec=",
+            "https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=1600&q=80"
+        ];
+
+        const menuSection = document.getElementById("menu");
+        let menuIndex = 0;
+
+        setInterval(() => {
+            menuIndex = (menuIndex + 1) % menuBackgrounds.length;
+            menuSection.style.background = `linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('${menuBackgrounds[menuIndex]}') no-repeat center center`;
+            menuSection.style.backgroundSize = "cover";
+        }, 1000);
+
+        // Reservation section  
+        const reservationImages = [
+            'https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=1600&q=80',
+            'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1600&q=80',
+            'https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=1600&q=80'
+        ];
+
+        const reservationSection = document.getElementById('reservation');
+        let reservationIndex = 0;
+
+        setInterval(() => {
+            reservationIndex = (reservationIndex + 1) % reservationImages.length;
+            reservationSection.style.background = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('${reservationImages[reservationIndex]}') no-repeat center center`;
+            reservationSection.style.backgroundSize = 'cover';
+        }, 1000);
+    </script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMDb Style Page</title>
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: black;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            background-color: black;
+            text-align: center;
+            padding: 20px;
+        }
+
+        header h1 {
+            color: #f5c518;
+            font-size: 2rem;
+        }
+
+        main {
+            width: 100%;
+            max-width: 600px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .card {
+            background-color: #111;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            width: 90%;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+        }
+
+        .card h2 {
+            color: #f5c518;
+            margin-bottom: 15px;
+        }
+
+        .images {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+        }
+
+        .images img {
+            border-radius: 10px;
+            width: 100px;
+            height: 140px;
+            object-fit: cover;
+        }
+
+        .card p {
+            font-size: 0.9rem;
+            color: #ccc;
+            margin: 10px 0;
+        }
+
+        button {
+            background-color: #f5c518;
+            border: none;
+            color: black;
+            padding: 8px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #e5b50f;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #888;
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>IMDb</h1>
+    </header>
+
+    <main>
+        <section class="card">
+            <h2>Trending Stars</h2>
+            <div class="images">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmZXOcMlnPtkeQkXLak83AxVTB8bjxdMAa1w&s"
+                    alt="">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_MsuWmTRS3lzpEb_wfma19b6GLDmwaisXgg&s"
+                    alt="">
+            </div>
+            <p>The image lists several records from the Pro Kabaddi League (PKL), highlighting top players and teams
+                based on
+                various achievements.
+            </p>
+            <button> <a
+                    href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fsportscafe.in%2Fblogs%2Fpro-kabaddileague%2Fbest-pro-kabaddi-tacklers-in-pkl-history&psig=AOvVaw2UiGOBclEizBsRzzMryTjL&ust=1762583130161000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCID6nLe035ADFQAAAAAdAAAAABAK">See
+                    the full list</a></button>
+        </section>
+
+        <section class="card">
+            <h2>Not-So-Scary Halloween Picks</h2>
+            <div class="images">
+                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/d/d4/Stranger_Things_season_3.png/250px-Stranger_Things_season_3.png"
+                    alt="">
+                <img src="https://www.westchesterfamily.com/wp-content/uploads/2022/10/no-so-scary-halloween-movies-hocus-pocus.jpg"
+                    alt="">
+                <img src=" https://hips.hearstapps.com/hmg-prod/images/mv5bnzm1odi4y2utmgyxms00otuxlwe4nzitnjgxmtm2nzrjzthkxkeyxkfqcgdeqxvymta1otcyndq4-v1-647e3b0608d78.jpg?crop=0.9875555555555555xw:1xh;center,top"
+                    alt="">
+            </div>
+            <p>Get ready for cozy chills with these fun Halloween movies to watch.</p>
+            <button>See the list</button>
+        </section>
+
+        <section class="card">
+            <h2>Hot Takes From NYFF 2025</h2>
+            <div class="images">
+                <img src="https://m.media-amazon.com/images/M/MV5BMWRlNDM1NjktZDkyYi00Zjk0LWE5MTQtNWEyNzMwODY1Njc5XkEyXkFqcGc@._V1_.jpg"
+                    alt="">
+                <img src="https://t2conline.com/wp-content/uploads/2025/10/Jum-Jarmusch-scaled.jpg" alt="">
+            </div>
+            <p>Festival highlights and reviews from the New York Film Festival 2025.</p>
+            <button>See the list</button>
+        </section>
+
+        <section class="card">
+            <h2>Popular on IMDb</h2>
+            <div class="images">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9q-g7t9bPDEPiolwlQgQT6ccI1HMGDZxjrA&s"
+                    alt="">
+                <img src="https://preview.redd.it/top-20-ranked-films-on-imdb-v0-988rdxt0snpc1.jpeg?auto=webp&s=f7c5eab4a7ad69301d4aa51cf10f464a614ed561"
+                    alt="">
+                <img src="https://cdn.gulte.com/wp-content/uploads/2022/12/IMDB-2022.jpeg" alt="">
+                <img src="https://bollyspice.com/wp-content/uploads/2025/07/IMG_8888-scaled.jpeg" alt="">
+            </div>
+            <button>Browse trailers</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 IMDb | All rights reserved</p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 1 Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url("https://images.unsplash.com/photo-1503264116251-35a269479413") no-repeat center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        form {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 25px 35px;
+            width: 380px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.3);
+        }
+
+        h3 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #fff;
+            font-size: 22px;
+        }
+
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: inline-block;
+            width: 80px;
+            color: #fff;
+            font-weight: bold;
+        }
+
+
+        input[type="text"],
+        select,
+        textarea {
+            width: 65%;
+            padding: 7px;
+            border: none;
+            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.7);
+            outline: none;
+        }
+
+        textarea {
+            width: 90%;
+            height: 70px;
+            resize: none;
+        }
+
+        .button-group {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        button {
+            width: 90px;
+            padding: 7px;
+            margin: 5px;
+            border: none;
+            border-radius: 6px;
+            background: #ffffff;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #ffde59;
+            color: black;
+            box-shadow: 0 0 10px #ffde59;
+        }
+
+        .two-fields {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .two-fields div {
+            flex: 1;
+        }
+
+        .two-fields div:first-child {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form>
+        <h3>Task 1</h3>
+
+        <div class="two-fields">
+            <div class="form-group">
+                <label for="field1">Field 1</label>
+                <input type="text" id="field1" name="field1">
+            </div>
+
+            <div class="form-group">
+                <label for="field2">Field 2</label>
+                <input type="text" id="field2" name="field2">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="field3">Field 3</label>
+            <select id="field3" name="field3">
+                <option value="">Combo1</option>
+                <option>Combo2</option>
+                <option>Combo3</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="field4">Field 4</label>
+            <input type="text" id="field4" name="field4" placeholder="Text 3">
+        </div>
+
+        <div class="form-group">
+            <label for="field5">Field 5</label>
+            <input type="text" id="field5" name="field5" placeholder="Text 4">
+        </div>
+
+        <div class="form-group">
+            <label for="field6">Field 6</label><br>
+            <textarea id="field6" name="field6" placeholder="Text Area"></textarea>
+        </div>
+
+        <div class="button-group">
+            <button type="submit">OK</button>
+            <button type="reset">CANCEL</button>
+        </div>
+    </form>
+
+</body>
+
+</html>

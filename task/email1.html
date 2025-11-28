@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <style>
+      * {
+         margin: 0;
+         padding: 0;
+         box-sizing: border-box;
+         font-family: "poppins", sans-serif;
+      }
+
+      body {
+         background-color: black;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         min-height: 100vh;
+
+      }
+
+      .banner {
+         width: 400px;
+         color: white;
+         text-align: center;
+         border-radius: 10px;
+         overflow: hidden;
+         background-color: #111;
+         box-shadow: 0 4px 15px rbga(0, 0, 0, 0.5);
+
+      }
+
+      .banner-content {
+         padding: 30px 20px 10px;
+      }
+
+      .banner h2 {
+         font-size: 18px;
+         color: #ff7b00;
+
+
+      }
+
+      .banner h1 {
+         font-size: 42px;
+         font-weight: 800;
+         margin: 10px 0;
+      }
+
+      .banner h1 span {
+         color: #ff7b00;
+         font-family: "Brush Script MT", cursive;
+         font-size: 36px;
+         font-weight: normal;
+      }
+
+      .banner p {
+         font-size: 16px;
+         margin: 10px 0 20px;
+      }
+
+      .banner p span {
+         color: #ff7b00;
+         font-weight: 600;
+      }
+
+      .btn {
+         display: inline-block;
+         padding: 10px 25px;
+         background-color: white;
+         color: #000;
+         border-radius: 25px;
+         font-weight: 600;
+         text-decoration: none;
+         transition: 0.3s;
+      }
+
+      .btn:hover {
+         background-color: orange;
+         color: white;
+      }
+
+      .banner img {
+         width: 100%;
+         height: auto;
+         display: block;
+      }
+
+      .container {
+         background-color: white;
+         max-width: 600px;
+         margin: 30px auto;
+         border-radius: 10px;
+         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+         padding: 30px 20px;
+         text-align: center;
+      }
+
+      h2 {
+         color: #222;
+         font-size: 18px;
+      }
+
+      p {
+         color: #555;
+         font-size: 15px;
+         line-height: 1.6;
+      }
+
+      .highlight {
+         font-weight: bold;
+         color: #000;
+      }
+
+      .apply-btn {
+         background-color: black;
+         color: white;
+         border: none;
+         border-radius: 25px;
+         padding: 12px 30px;
+         font-size: 15px;
+         cursor: pointer;
+         margin: 20px 0;
+      }
+
+      .features {
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: center;
+         gap: 10px;
+         margin-top: 20px;
+      }
+
+      .feature-box {
+         background-color: #fafafa;
+         border-radius: 10px;
+         width: 45%;
+         padding: 15px;
+         box-sizing: border-box;
+      }
+
+      .feature-box img {
+         width: 35px;
+         height: 35px;
+         margin-bottom: 8px;
+      }
+
+      .feature-title {
+         font-weight: bold;
+         font-size: 14px;
+         color: #333;
+      }
+
+      .note {
+         margin-top: 25px;
+         font-size: 14px;
+         color: #444;
+      }
+
+      @media (max-width: 500px) {
+         .feature-box {
+            width: 100%;
+         }
+      }
+
+      footer {
+         background-color: #111;
+         color: #fff;
+         text-align: center;
+         padding: 25px 15px;
+         font-size: 14px;
+      }
+
+      footer .social-icons {
+         margin: 10px 0;
+      }
+
+      footer .social-icons a {
+         color: #fff;
+         margin: 0 10px;
+         text-decoration: none;
+         font-weight: bold;
+         transition: color 0.3s ease;
+      }
+
+      footer .social-icons a:hover {
+         color: #00aaff;
+      }
+
+      footer .links {
+         margin-top: 10px;
+      }
+
+      footer .links a {
+         color: #fff;
+         text-decoration: none;
+         margin: 0 8px;
+         transition: color 0.3s ease;
+      }
+
+      footer .links a:hover {
+         color: #00aaff;
+      }
+
+      footer .tagline {
+         margin-top: 15px;
+         font-weight: 500;
+         font-size: 16px;
+         color: #ddd;
+      }
+
+      footer .crafted {
+         margin-top: 8px;
+         font-size: 13px;
+         color: #aaa;
+      }
+
+      footer .crafted span {
+         color: #ff4b5c;
+      }
+   </style>
+</head>
+
+<body>
+   <div class="banner">
+      <div class="banner-content">
+         <h2><span>Up to</span></h2>
+         <h1>₹5,00,000 <span>loan ready</span></h1>
+         <p>For all your <span>Festive</span> needs</p>
+         <button> <a href="https://v5.freo.money/">Get it Now</a></button>
+      </div>
+      <img
+         src="https://img.freepik.com/premium-photo/couple-with-diya-hand-diwali-images-diwali-couple-images-diwali-wishes-diwali-background-images_1002350-1936.jpg"
+         alt="diwaliimage">
+
+      <div class="container">
+         <h2>Hi there,</h2>
+         <p>Festive season is almost here - with gifts, shopping, travel, and last-minute expenses.</p>
+         <p class="highlight">Unlock up to ₹5,00,000 Freo Credit and keep it ready when you need it.</p>
+
+         <button class="apply-btn">Instant Apply</button>
+
+         <h3>Here’s what you get:</h3>
+         <div class="features">
+            <div class="feature-box">
+               <img src="https://img.icons8.com/fluency/48/money.png" alt="credit">
+               <div class="feature-title">Credit limit up to ₹5,00,000</div>
+            </div>
+            <div class="feature-box">
+               <img src="https://img.icons8.com/fluency/48/flash-on.png" alt="quick">
+               <div class="feature-title">Quick disbursal, no waiting</div>
+            </div>
+            <div class="feature-box">
+               <img src="https://img.icons8.com/fluency/48/document.png" alt="paperwork">
+               <div class="feature-title">Minimal paperwork</div>
+            </div>
+            <div class="feature-box">
+               <img src="https://img.icons8.com/fluency/48/checkmark.png" alt="no interest">
+               <div class="feature-title">No interest on unused balance</div>
+            </div>
+         </div>
+
+         <p class="note">
+            Need ₹3,000 for a purchase? Withdraw just ₹3,000 → Pay interest only on ₹3,000.<br><br>
+            Celebrate with your loved ones. Leave the money stress to us.
+         </p>
+         <button class="apply-btn">Unlock $5L</button>
+
+         <footer>
+            <p><em>*Terms & Conditions apply</em></p>
+
+            <div class="social-icons">
+               <a href="#">Fb</a> |
+               <a href="#">Inst</a> |
+               <a href="#">X</a> |
+               <a href="#">In</a>
+            </div>
+
+            <p>All rights reserved © Freo, India</p>
+
+            <div class="links">
+               <a href="#">Privacy Policy</a> |
+               <a href="#">Terms and Conditions</a>
+            </div>
+
+            <div class="tagline">
+               Your Money, Your Moves
+            </div>
+
+            <div class="crafted">
+               Crafted with <span>♥</span> in Bangalore, India.
+            </div>
+         </footer>
+      </div>
+
+   </div>
+
+</body>
+
+</html>
