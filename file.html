@@ -4,21 +4,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Avon Cycle</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .container {
+            display: flex;
+        }
+
+        .navbar ul {
+            display: flex;
+
+
+        }
+
+        .nnavbar ul li a {
+            justify-content: space-between;
+            padding: 60px;
+        }
+    </style>
 </head>
 
 <body>
-    <input type="text" id="name" placeholder="Type something...">
-    <p id="result"></p>
-
-    <script>
-        document.getElementById("name").addEventListener("input", function () {
-            document.getElementById("result").innerText = "You typed: " + this.value;
-        });
-    </script>
-
-
-
+    <div class="container">
+        <div class="navbar">
+            <ul>
+                <li><a heef="#">Contact</a></li>
+                <li><a heef="#">Dealer Locator</a></li>
+            </ul>
+        </div>
+    </div>
 </body>
 
 </html>
