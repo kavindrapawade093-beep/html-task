@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avon Cycle</title>
+    <link rel="icon" type="image/png" href="https://upload.wikimedia.org/wikipedia/commons/b/b6/Avon_cycles_logo.png">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            padding: 0;
+            margin: 0;
+            font-family: "IBM Plex Sans", sans-serif;
+        }
+
+        .top {
+            background: #FFC100;
+            padding: 1px;
+        }
+
+        .top ul {
+            list-style-type: none;
+            display: flex;
+            gap: 30px;
+            justify-content: end;
+            margin-right: 300px;
+        }
+
+        .top a {
+            text-decoration: none;
+            color: black;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .top img.icon {
+            width: 18px;
+            height: 18px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: center;
+            background-image: url(" https://avoncycles.com/data/banner/banner/2025/new-ban01.jpg");
+            background-size: cover;
+            background-position: center;
+            height: 800px;
+
+
+        }
+
+        .image {
+            padding-right: 150px;
+
+        }
+
+        .nav ul {
+            list-style-type: none;
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            padding-top: 26px;
+        }
+
+        .nav a {
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 20px;
+            color: white;
+        }
+
+        .main {
+            position: relative;
+            padding: 15px;
+            background-color: azure;
+            height: 300px;
+
+        }
+
+        .banner {
+            text-align: center;
+            padding: 30px;
+            background: white;
+            position: absolute;
+            top: 90px;
+            left: 300px;
+            font-weight: 500;
+            text-transform: capitalize;
+            border-radius: 25px;
+
+        }
+
+
+        .banner h2 {
+            font-size: 28px;
+            margin: 0;
+
+        }
+
+        .banner p {
+            font-size: 18px;
+            margin-top: 8px;
+        }
+
+
+
+        .benefits {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f5f5f5;
+            padding: 50px;
+            margin: 30px;
+            font-family: Arial, Helvetica, sans-serif;
+            right: 100px;
+            gap: 60px;
+            border-radius: 25px;
+            background: #E22A2C;
+
+
+        }
+
+        .benefit-box {
+            text-align: center;
+
+
+        }
+
+        .benefit-box img {
+            width: 45px;
+            height: 45px;
+
+        }
+
+        .benefit-title {
+            font-size: 18px;
+            font-weight: 700;
+
+        }
+
+        .benefit-text {
+            font-size: 15px;
+            color: #444;
+
+        }
+
+        .ride {
+
+            text-align: center;
+            background: #E22A2C;
+
+        }
+
+        .ride-image {
+            margin: 60px 280px;
+        }
+
+        .trending {
+            text-align: center;
+            margin-top: 60px;
+            font-family: Arial, Helvetica, sans-serif;
+
+
+        }
+
+        .trending h1 {
+            font-size: 38px;
+            font-weight: 700;
+        }
+
+        .trending p {
+            margin-top: 4px;
+            font-size: 18px;
+            color: #444;
+        }
+
+        .product-container {
+            display: flex;
+            gap: 25px;
+            margin-top: 35px;
+            overflow-x: auto;
+            overflow-y: hidden;
+            padding: 20px;
+            scroll-behavior: smooth;
+            overflow-x: auto;
+            overflow-y: hidden;
+            scroll-behavior: smooth;
+            cursor: grab;
+            perspective: 900px;
+            margin-left: 150px;
+            margin-right: 150px;
+
+
+        }
+
+        .product-card {
+            min-width: 250px;
+            border: 2px solid #dcdcdc;
+            border-radius: 12px;
+            padding: 15px;
+            background: white;
+            transition: transform .3s ease;
+
+
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 170px;
+            object-fit: contain;
+        }
+
+        .product-card:hover {
+            transform: translateZ(120px) scale(1.05);
+        }
+
+        .price {
+            font-size: 20px;
+            color: green;
+            font-weight: bold;
+        }
+
+        .price .old {
+            font-size: 15px;
+            color: #888;
+            text-decoration: line-through;
+        }
+
+        .buy {
+            margin-top: 10px;
+            width: 100%;
+            background: #d60000;
+            color: white;
+            padding: 8px 0;
+            border: none;
+            border-radius: 6px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="top">
+            <ul>
+                <li><a href="https://avoncycles.com/contact" title="Contact">Contact</a></li>
+                <li>
+                    <a href="https://avoncycles.com/storelocater" title="Dealer Locator">
+                        <img class="icon"
+                            src="https://static.vecteezy.com/system/resources/previews/016/972/050/non_2x/shop-location-icon-free-vector.jpg"
+                            alt="Dealer Locator Icon">
+                        Dealer Locator
+                    </a>
+
+                </li>
+            </ul>
+        </div>
+
+        <header class="header">
+            <div class="image">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSi4ZdTz9BjxpwWuZ5YXmTOorrFTdezuS1VeQ&s"
+                    alt="symbol" height="100px" width="100px">
+            </div>
+
+            <div class="nav">
+                <ul>
+
+
+                    <li><a href="https://avoncycles.com/category/accessories.html" title="Accessories">Accessories</a>
+                    </li>
+                    <li><a href="https://avoncycles.com/category/new-launches.html" title="New Launches">New
+                            Launches</a></li>
+                    <li><a href="https://avoncycles.com/category/bicycle-category.html" title="Bicycle Category">Bicycle
+                            Category</a></li>
+                    <li><a href="https://avoncycles.com/international-business" title="Cycle's by brand">Cycle's by
+                            brand</a></li>
+                    <li><a href="https://avoncycles.com/international-business"
+                            title="International Business">International Business</a></li>
+                </ul>
+            </div>
+        </header>
+        <div class="main">
+            <div class="banner">
+                <h2>Best Offers</h2>
+                <hr>
+                <p>Your ultimate shop Destination</p>
+            </div>
+            <div class="benefits">
+
+                <div class="benefit-box">
+
+                    <img src="https://cdn-icons-png.flaticon.com/512/550/550964.png" aria-label="FREE SHIPPING">
+                    <div class="benefit-title">FREE SHIPPING</div>
+                    <hr>
+                    <div class="benefit-text">On all orders</div>
+                </div>
+
+                <div class="benefit-box">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3595/3595455.png" alt="EMI">
+                    <div class="benefit-title">EMI</div>
+                    <hr>
+                    <div class="benefit-text">Low Cost EMI</div>
+                </div>
+
+                <div class="benefit-box">
+                    <img src="https://cdn-icons-png.flaticon.com/512/942/942748.png" alt="SAFE SHOPPING">
+                    <div class="benefit-title">SAFE SHOPPING</div>
+                    <hr>
+                    <div class="benefit-text">Safe shopping guarantee</div>
+                </div>
+
+                <div class="benefit-box">
+                    <img src="https://cdn-icons-png.flaticon.com/512/5977/5977985.png" alt="ONLINE SUPPORT">
+                    <div class="benefit-title">ONLINE SUPPORT</div>
+                    <hr>
+                    <div class="benefit-text">We support working days</div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="ride">
+            <div class="ride-image">
+                <a href="https://www.youtube.com/embed/vCB2j8I2fu8?si=MDq1Nm7pt7fEkwhx" title="Video link"><img
+                        src="https://pbs.twimg.com/media/GrPLLm2XAAApBcB.jpg:large" alt="avon cycle"> </a>
+            </div>
+        </div>
+        <section class="trending">
+            <h1>Trending Products</h1>
+            <p>Pedal in Style with Our Trending Cycling Products</p>
+
+            <div class="product-container">
+                <div class="product-card">
+                    <h3>CHIKU IBC</h3>
+                    <hr>
+                    <img src="https://avoncycles.com/data/product/2/edgy.jpg" alt="CHIKU IBC">
+                    <p class="colors">Single Color Available</p>
+                    <p class="price">₹4572.00 <span class="old">₹4931.00</span></p>
+                    <button class="buy">BUY NOW</button>
+                </div>
+
+                <div class="product-card">
+                    <h3>ZING 26T</h3>
+                    <hr>
+
+                    <img src=" https://avoncycles.com/public/data/product/18-dec/ZING.jpg" alt="ZING 26T">
+                    <p class="colors">Single Color Available</p>
+                    <p class="price">₹8388.00 <span class="old">₹8999.00</span></p>
+                    <button class="buy">BUY NOW</button>
+                </div>
+
+                <div class="product-card">
+                    <h3>CIRI IBC 26T</h3>
+                    <hr>
+                    <a href="https://avoncycles.com/product/ciri-lady.html"> <img
+                            src="https://avoncycles.com/data/product/1/_/1_55_1.jpg" alt="CIRI IBC 26T"></a>
+                    <p class="colors">2 colors Available</p>
+                    <p class="price">₹7038.00 <Span class="old">₹7569.00</Span></p>
+                    <button class="buy">BUY NOW</button>
+                </div>
+
+                <div class="product-card">
+                    <h3>NORIKA IBC 26T</h3>
+                    <hr>
+                    <a href="https://avoncycles.com/product/norika-lady.html"><img
+                            src="https://avoncycles.com/data/product/18-dec/rabia.jpg" alt="NORIKA IBC 26T"> </a>
+                    <p class="colors">4 Colors Available</p>
+                    <p class="price">₹6975 <span class="old">₹7462</span></p>
+                    <button class="buy">BUY NOW</button>
+
+                </div>
+                <div class="product-card">
+                    <h3>MARSHAL IBC 26T</h3>
+                    <hr>
+                    <a href="https://avoncycles.com/product/marshal-ibc.html"><img
+                            src="https://avoncycles.com/data/product/2/gamer-apx01.jpg" alt="MARSHAL IBC 26T"> </a>
+                    <p class="colors">2 Colors Available</p>
+                    <p class="price">₹7857 <span class="old">₹8444</span></p>
+                    <button class="buy">BUY NOW</button>
+
+                </div>
+                <div class="product-card">
+                    <h3>WAKA WAKA</h3>
+                    <hr>
+                    <a href="https://avoncycles.com/product/waka-waka-26t.html"><img
+                            src="https://rukminim2.flixcart.com/image/480/480/xif0q/cycle/u/y/n/waka-waka-21-speed-26-17-5-avon-cycles-75-21-gear-original-imagx26zga8nhmbf.jpeg?q=90"
+                            alt="WAKA WAKA"> </a>
+                    <p class="colors">3 Colors Available</p>
+                    <p class="price">₹11862 <span class="old">₹12999</span></p>
+                    <button class="buy">BUY NOW</button>
+
+                </div>
+                <div class="product-card">
+                    <h3>HAANI</h3>
+                    <hr>
+                    <a href="https://avoncycles.com/product/haani.html"><img
+                            src="https://avoncycles.com/data/product/2/edgy.jpg" alt="HAANI"> </a>
+                    <p class="colors">4 Colors Available</p>
+                    <p class="price">₹4555 <span class="old">₹5999</span></p>
+                    <button class="buy">BUY NOW</button>
+
+                </div>
+
+                <div class="product-card">
+                    <h3>EXPLORER SHT 26T</h3>
+                    <hr>
+                    <a
+                        href="https://www.flipkart.com/sunflower-explorer-26t-wuth-in-built-carrier-mtb-bike-cycle-boys-city-hardtail-26-t-road-cycle/p/itm70607f4c008e1">
+                        <img src="https://rukminim2.flixcart.com/image/480/480/xif0q/cycle/v/i/9/explorer-26t-wuth-in-built-carrier-mtb-bike-cycle-for-boys-city-original-imagthkgzfbm65dt.jpeg?q=90"
+                            alt="EXPLORER SHT 26T">
+                    </a>
+                    <p class="colors">3 Colors Available</p>
+                    <p class="price">₹10799 <span class="old">₹11999</span></p>
+                    <button class="buy">BUY NOW</button>
+                </div>
+
+                <div class="product-card">
+                    <h3>GAMER APX 29T</h3>
+                    <hr>
+                    <a
+                        href="https://avoncycles.com/product/gamer-apex-ibc-26t.html?srsltid=AfmBOoo1LdwnrUuO4HsaQmQm3aRtpxTd31-7HlWg1jeEYtgp_7P51dJY">
+                        <img src="https://avoncycles.com/data/product/01/gamer-apx.jpg" alt="GAMER APX 29T">
+                    </a>
+                    <p class="colors">4 Colors Available</p>
+                    <p class="price">₹15499 <span class="old">₹16999</span></p>
+                    <button class="buy">BUY NOW</button>
+                </div>
+
+                <div class="product-card">
+                    <h3>GEAR BOLT 26T</h3>
+                    <hr>
+                    <a
+                        href="https://avoncycles.com/product/orb-26t.html?srsltid=AfmBOoqTZzKajbQMOCWtgAgeNqtu3_AadDR2nniBQAKdb4-bmZ8HaU80">
+                        <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUTExQWFhUWGB4bFxgYGBodGhggGBceGRgeGh4hHigjHhslHR0YIjEhJSorLi4uGSAzODMtOCgtLysBCgoKDg0OFxAQFy0dHR0tLSstListKy0tLS0tKy0uKy0tLS0tLS0vKy0tLSs3LS8rLSsrLSstLS4tLS0tLS0tLv/AABEIALABHgMBIgACEQEDEQH/xAAcAAACAgMBAQAAAAAAAAAAAAAABwUGAgQIAwH/xABKEAACAQIDBQQGCAQDBgUFAQABAgMAEQQSIQUGMUFRBxNhcSIygZGhsRQjQlJicsHRgpLh8DOiwggkQ3Oy8RVTVGPTJTQ1g9IW/8QAGAEBAQEBAQAAAAAAAAAAAAAAAAECAwT/xAAlEQEBAAIBAwIHAQAAAAAAAAAAAQIRIQMxQRJRInGBkaGx0VL/2gAMAwEAAhEDEQA/AHjRRRQFFFFAUUUUBRRRQFFFFAUUUUBRRRQFFFFAUUUUBRRRQFFFFAVVt/N7/wDw9IiIu9eViqjNlAsLkk2PUaePhVpqI3jhwcsRjxhiMfH6xguU8Lg3BVtTqCDrQRu62/eFxlkDCKbgYnIuT+A8HHlr4CrTXN3aHulFgnR8JiVkjkGbJnDSRi4sQR6yXIAPG/XiGh2b7/ri1MMxCzRoDcsM0mpBstrkj0b2vqfabQwaK1PphBGZGVSbBjbQnhmAOl/+9q26zsFFFFUFFFFAUUUUBRRRQFFFFAUUUUBRRRQFFFFAUUVGby7V+i4WbEZc5jW4XqeAv4a6+F6CTopHx9qW0HGaNY2I9aMJcjxUXuV95HPka9D2tY9R6cOHj/5gcE+Shsx91T1T3DsopIt2yYr7MUJ8Srj/AFmvTEdqmJPqywj/APQ//wAnD+7VQ6qKRUXa7jkILfR5B9oGNk9zd4feV9lNbcjehNo4YYhEKekUZSbgMtr5W+0uo1/aroT9FFFQFFFFAUUUUFc3+2FLjMIYoZTGwYMQLgSBQboxHAG4PmormmRspbMLCwtpbUHXMb35cOddc1ztvzsyLCbXHeoGhM8c2Q8HSRwXFugOYW55bVYlQOw9nJJiYDjhMmHl9JSAA0oF8puSMsRIIuLnpxuGViOzOaTFriMPIkGHEkcsS/8AFQBEDBbAgE5Ab5jfMbjje8S7m4eV52xKRzrK6sgZLNEEQKFDXvluDoLaMQb3N7IotoOFKrwSYPdGUgkaq1tRwNrXBH760YMkXQm5TgTxKn1T8x5qa+42LMunrLqp6EcPYeB8CawDgsjjg6kfAMP199c+1G1RRRWwUUUUBRRRQFFFFAUUUUBRRRQFFFFAUUUUBWMsYYFWAZSLEEXBB4gjmKyooFRvT2QZmz4GVY7/APClzZR+VwCwHgQfOldvFujicEwGLyxBgxVgwcPltmtYg8xxsdRpXVFa+MwMUoCyxpIoNwHUMARwNiONXY557ONzF2j3iPJ3XdlWZgSZGV75ci2CrqpBY5tdMo4048B2cbMiQJ9Fjkt9qUd4x8SWv8NKqP8A+P28v2YsR6HQZZ9Vt5TKFH5zTZpRDYXdPARnNHgsMrDmIIwfflvUwigCwFgOAFfaKgKKKKAooooCisJZlUXZgo6kgD41HY3baJbKjyE6AKFF/IuVB/hvQSlKjt5wOZMLL3ZYIzqzhV0zAZQWuCNQSOV/G1ee9PadjoX7pMF3DMbL3gaVm/IEshPkzVV8dg9tbQUmYSOi+kEkKqL2NgIYxmvyGce2r27oaPZRtqXFYAGdw0sTtEx+16FspfXVipBvzvVypJ9jG1HTEyw6HvkByk2AeG4Y8Da6FeXIU4+5dvWaw6Jp72OvutUt1VfZ5fsLqx9yg8z+g5+8j4yANGo+zf3Bcv6ivaKIKLKLD++PU+NeURzOzcl9EfNvjYfwmsWDYooorYKKKKAooooCiiigKKKKAorzxEhVSVUuRwUEAn3kD41S9rbF2rjSVfER4OA/YhzPIR+J/R1/Lp4Ggmdu754LCEiadc4+wvpP7QL29tqp83bAjsUwmDmnYe/+VQxqW2P2U7Ph1kV8Q3WZrr/IoCkfmBq54XCxxqEjRUUcFVQoHsFULyHfLbL6pskgfjJU/wCbL8q9/wD/AGe1Y9ZdkSEf+3JmPuUNTCoqCg4XtXwmbJiY58K3SWM2+Gvwq47L2tBiFzwSpKvVGBt524HwNe2MwccqlJUSRTxV1DD3GqPtfstw5bvsFJJg5xwMbHJ7VvcDwUgeBoL/AEUsMJvbtLZ8ndbTgaaKxy4mBC3Dm1rL7CFPPWrrJvZgVjSU4qEJIuZDnF2HULxPu0oKZ22YIGOCdWCyK5TiM1mF1YDicjqraVO7s79Li3giWCcs8eaWQKO6hYJdlZr8b6Cw1uKq3aJt/ZOJiJDPNOUKxd1nWzWOQk+iDYsRzNmOlRXZNvnFhS+HxEiRwODLGzaZZLhZI/G9ibW4huoFXwh3UVQNq9rODj/wllm8cvdp75LE+wGquvapjsTIEwsC25rGkkrDpmewCjT7h8xxqaqnPUbj9v4aEXkmRbG3rDQ9D04jjS5Gxds4y/eyd0hA0zW91r28QQL61vQdkkTkNiZ5XPMKxXNf72pP8uX21n4r7T8o2tq9rWBivbM5A5W4+/5da09l727Rx5+phEEF/wDEKszN4RjQe06eJ4Va9j7k4DDWMWGjDD7RGZv5mu3xqwKoHAAeVPT73YqWE2DOWzMx8Gexf26HjpcLYacKlsPsFR6zsfAEgew3v1586mKK1OJqcGoj5dh4ZgoeGN8jB1zKGsy3swv9oXOvjUH2gb3rs+ABAGxEmkMfL87fgHxOnUiW3j24uFjBtnlkbJDEPWkc8AOijiW4AAmlV2hbLxUk+EhjHfYmcPd7WRWuveNzyxouQAakAcyTeyb5LVF2dtU4adJgxaaKQTP4gH6weZQtf2V1FBKHVWU3VgCD1BFxSJ7QOz1Nn4TDzwjOyXXFSkm7l+DZdQFvcacioN+NXTsy3mjTY0cs8hIgJib0blVDhYgQBewRo7seGtzSi/4qbKNPWY2UeJ/QcT4Cs4YgqhRy+PUnxNV+TeXCxr9IxMyRXLLGjmzgIxVvR9YsSNbDSwHW8fF2lYWVsmFjxOKfpDC1h+ZmyhR4nSprnarnRWjsvETuM00Ih6L3gdv4rDKPYzVvUBRRRQFFFFAUUUUBRRRQFFa+0MdHBG0srqiKLszGwH9fDnSW3z7WpZS0eDvDHw7w/wCK3l9wf5vEUDZ29vThMGP94nRDa4Ti58kF2I8bVQ9q9tMK3GHw0knQyMI1PuDH3gUkpsSWYsxJYm7Mxux8STxPialdi7u43FAGDCySKbWcgrGb9GYhT7DV0i8z9tGNPqQYZPzF3+TLX3D9s+MHrwYdvBc6/Eu1aeE7LtqXtkwiaX9JifkrfOtmfs12opsI8BJpf7S8LdFUX169acCf2Z21RGwxGFkj8Y2Djz1Cn51e9g724PGaYedGa18h9F/5TY28RpSD2pu7iIMxxGz5o1XQyQN3iDnci7WFuZYVBnCo/pQyB7ajLdZFtwNvDqL00Os6o+K3W2YuLPoocTMxKxubqub0nZU4HgW1vrppeltuv2rYzCgxz/7zGFOVnJEiEDS7fbF7Cx18eVWrZO3YcNhn2ri5UxGIxFxCquCAoAJQC31djYPxtlA1J9IqybwY7AbHh7xIYxKwyxqoAeQqOLNYnKNLsb6kcSQCl8VgJlxSJjA+H790mcpYMI8RKQ5AN8hUn1dcoGtyKZ24e7EuKlG1No3LtY4eJr2QD1WKnha/oqb2vmN2N6w7dNjhoIcVb/CYxS/8uf0fg+T+Y0RPbO7L9mRDXD963NpmZyfYTlHsAqxYDYmHhYvFCiMVCkqLGy6geQqM7PtsHFYCCRjeRV7uX88ZyMfbbN5MKsdRRRRRQFFFFAV54idUGZiALga8yTYDzJIFfZpVRSzEKqglmJsAALkk8gBS021tSV8dL37qkEYZMPFqe8IUF5G6AX7sn8RQcWvjqdSdPG5ZdolrVw2LmkxkuLmKGf8Aw8LELv3cTOVVlFwM0uW+Y6kcgDYMDd7ZTxL3kzmSdx6RNrIOORbAADhcgakeAtXezjdaaJfpeN1xUlzl5RZ+N+shFgT9lVCiwvfa3+34TAKI0XvcVJpHELm19AWA1tfQAasdB1rPTxz3bll8p4n9+pJ5ePa1iohgXikxSQZ7aFO8aQA3CqoNwCwW7WNhSQ3RlxHePhoJ0g+kxsrNIBlZVQuUzHRcygjN4Wq1Y/GJgZVxm02OL2k1niwoYZIL6qZSLhSOIUcOIB9YL8YhsU0sZQGSV2dFQGwZmL5UGptcsLa8RXYWbYGP2VCXfHRTYqcEABXDRuwuJCSHs4vqGJOYFTa972CXtlkjXJhMDBCg9UMxI/kUIB76WWHwoMTeke9VwO6ysG+6fbcgW46VbNldmW05bH6MsYIuDNIB8FJPPpQSR7Z9pfdwo8o3/wDkNbWE7bMaD9ZBh3H4Q6H3l2+VYw9kG0DdS+EUgD7xvfoe68K08Z2V7TS9ocNNpf0HsT7wmvtpwq7bI7a8K9hiIJITzKkSIPcA3uU0wNi7ew2LXPhpklA45Tqv5l4qfAgVy1tTZkmHNp4JcOb5QWBKEjiA3AnyY8K1cNiJIXEsUhR19WSNiCP19hpodg0Uotz+1GWMRx7TWyvomKUaG3/mqNOY9Jeo0502opFZQykMrC4INwQdQQeYqDOiiigK19oY6OCJ5ZWCoguzHkB+vhWxSM7aN7DLN9Ejb6qE/WWOjydD1CcPO/QUFb3831lx8tzdYUP1UV+HLM3IuRfXlew5kw27e7+Ix83c4dMx4sx0SMdWPIdOZ5DSvHd3Y8mNxKQRkAudWPqotxdm8BcC3MlRzrpzdndyLAQiGAHLxYm2Z2tYuT1PTh0tVRWd0ey7CYRUkkHfzrqWcDIDaxCJqLa3BNzcDXlV/tppWIbmOB0oj006cPLl+3sqKxfip8x7xf5gVlfUnoP6n9Kxl4Hw19xv8xQdR5n4f9hQZQjQX48T7dTVA7Rtz8DJh5MU8TJKCCJIfRfUhRcWIYczcddRTAk6ddP3qO2zjoo0JlylbEZWtZtPSvfTKBxJ018hUtkm6OZIsE047mGIvMpJeTUKALC7A2CC97EnhfmbVrbHxyYfFRyGNJ4opAWUn0ZbcTfhpxHEaDiLkunY+6cePLyMghwLkkRxDu/pBIy52y2IjA9VefE3J0Um927b7OxRhYlom1hktbOvyzC4BtpwPMVnDLLLm8T8/X+I6c2NtWLFQpPC2aNxcHmOoI5MDcEciKw3g2WuKw02HfhLGyX6XGh9hsfZSS7Id6ThcSMNI31GINhfgkhsFP8AFop/h6G79ralf2Pz9wPokuksoeQjo8JWKQfy92ffTQpW704f6PtRJl0ZSJ05Zlb6vEp4kglr8iycibNFWBFxwNcullvcveW/vhH2iiiuqvBic9r2Fq858ZkNiPL++njRiZMrr/fWqVvvvBiYpojH3aYVVZp5ZAGWwIGUAMGv4D1iVF9DWrqTdZ20t9N5j30TmZE2eiLIXW7Gd3zd2FA4lQA44gaMb+jW1udus8mIfHYlgyFgcLHbQKB9W7dbXOUcLkvqSCNXd/d/6fiTipMkmBEaiBWW5drhmNuAFwt9NbKugUimbXnw+O+u9vE+3PzWK5v3vUmz8MZTYyN6MSfebx/COJPs4kUlcVtN8Ev0uU95tTFjPHnF/osb/wDEZf8AzGGiqfVHtBnNvbRXF4nEbTnGbA4I93AnLESA+go6qzWZj93KOtlZtHHyTyyTTNmllYs5PjyHQAWAHIACu6vKeYszOzFmYlndjcsTqSSatMG6GLwUUO05lMcXeBcuveqsisveEfZ1IAXjcjQVdex3cBSEx2LjzKwvh0a2XwkccyeKDhbXiVs0t4tjpiMLLhZP8KRCoPExnijfwsAQeVvdMpuaCz3P3NweLlkllZ+97wO6KyhWWUEKRpmymRX1BFwelOBlAygCwBtbkBY/0rnncfbkuz8euGxFlXMcPKT9gEkKQfuq5Ug/dPSuhWe6g87i/hqL/rSb8gUfWHxUfAtf5ivsj2ufAW8ySBQ3rj8p+a18td/BfmR+gv7xQfJMMhjKOquhHpBgCGvxuOBuaVu+3ZDC6NNgj3MnHudTG/RV5ofK6+A4hq8T4D4n+n98K+J6Rzcvs/v/AH+tByeZ5sK74bERtZTZ4n0ZCeaGxtfqLqQb61eez3fZsAVR2Z8A5FydThy50Yfgvow5G5HRmT2jbkJtKL0cqTxg93IRx/8AbY/cJ4nWx4c654wsz4eR8PMCgzFZFb7DC6m/68joaLObq11xHIGAZSCCLgg3BB1BB5isqVPY/vCUdtmSvmyjPhm6rxaPX7t7jjpfkoprUSzSH3u2x9Ewc0+mZV9C/Nm9FP8AMRXKW0ZizakksSSSbk3NySeZp59vO0CsGHgH/EdnPlGAAD7Xv7KSewtnHFYyGAf8WRUOvIn0/wDLf3VYh9di27i4bBiZ1tNibMbjhHa8ajwIOY+LW5UwMhHD3ft0r4mihStgBaw1A8B4ewVkvgbj++dRWJAPDQ8x+/718z8CeI4+R5+XA++szY8ePx9lYSL11HXnQZuba1hh+A/CLe3h+nxrAPplOp4A9entqO2vt6HCRNNO4UE3UaAsSNAL89LknQcSQKD229tmPCxNNIRYCyj7xte3l1PIAk0t929lT7Xl+l464wl7xQC4E4Bupa9vqb662znU6AX2tkbGk2zIuLxeZcINY4rWEutxe+vdcCdBmPG9gFZyKqiwFhyAoPixcL2sOCjgP3qq9p+7Qx+CeNVzTx+nCRa4YDUE9GFxbxB5CrU56mw6c/78q+gn7IsPHT4cflQcf4aXMvO49h/oa6k3C259MwME5Pplcsn509Fj4Xtm8mFc7b/7L+ibUxMX2WfOthYWlHeaDkAxK/w0zP8AZ+2ldMVhifUZJF/jBU2/kX31RLdt+FAwkWKVgsuHmBXqyyDJIo66WYjohqI2V2skQQwiFTNpGzu5WNdbBmIU+jax43q/72bqQ7QWNJ2cJGxYKthclcoJJBNgCdBbj4CkFudh1g2rBDiVVhHiDDIrqCpazRISD+JkYeV6mpvYeG4u38RjGxDSiLuo3EcbRXKSED02VifSF7DlwN9eFrIr5HGFFlAAHAAWFVHtG3w+gxBIhmxM1xGOIS3F28BcWHM+ANAb87QxMQjbDCIkSDvSzABEAzPe/C41JFyqgmq1BuqcZiVCZRgRneZQpGeSUkkL0uGNvuAseL3qK2d3+1ZSIO7jEgaPHyAa2EQUFb8SQxt4gXuFpxbPwSQxrFGLKosLm5PiSdSTzJrjlMs85/mb49/DMj0w8KoqoihVUAKoFgABYADkAK1ttYZ5YJI42yM65c/3Q2jMPxBSSPG1btFdmnPnbJiY4nw+zcOMsGFTMV6u/At1YLc3596arPZzu2doY9IiPqk+smJ4ZVOin8zEL5E9K1N8NpGfF4ma988r5T+EMQnuUKKbf+z7sYLg5cUbhppSqkE+pGLDwPpF6oaiEABSAvIDl5D9qyvby/vjXxkPDQjoR/fyrzzMvIke/wBx4n2++oFX2z7kh0OPhGqLaZeRQD1v4RofC3ALU32T70fS8C0bm80Hotc3LAi6OfPUeatV6DqQRoV4EHlfkQeXnSQ3g2dJsHaSYqEE4OUkZR906vF+Yesh/CByaqHhM4GU8tf+kn9KxjuBb7TH3dfYOHurUwmNSWGGRGDIwRww4ENbKfeb+wituNrX+8SdOmtQZMt/RHAcf29vP+tDygmw9tuPkP3/ALGJ6XsOduJ/r5Vkmgsq2HjoP3+FBkAfIdBxpLdvW6qJ3eOiAGY93MOZNvq3PU6FSePqdKdOQnifdp/Wobe3ZceIweIgIuZI2AsMzBuKHmdGCn2UHOGx9rlI4pkYCfCSBkubZ1H2T5i6nwNdR7MxyTwxzRm6Sorr5MAR865E2MAZgjgWYFSDyJBt5EHnXQfYbtAy7LWMm5gkeLjyvnX2AOAPKi27VPt7l/3mBeQhJ/mcg/8ASKp3Y7Dn2vh+F1MjC+vCJ/3q59vsNsRhm+9Ew/kcH/XVH7JZ8m1sPqVu7LcW+1G4HEHibD21WXUWvhWBTnp50d11JPtI+VqO7XoPbxqKwZ/xKfnWPengL+RBHuJ0r3zV4yzcgP1+FAlt9t/sZJiZIcGWRI8y/VqC75TlZmOul72tbz1qmLjmxbscbJNMe6buglic1jlW1vV4Cwtr76ue+m4uJhxEk0CtJHITJ6Iuym+Y3W5JAJuD48Krm5W7kc2OignDC7EMpZlOiO2p0N7qBYa34ix1ovWC3zVI0D46bDWAXu5sPEQlluFDLGFygZRe/LhrpN7N273nqbZwrHp3cV/baQePIcayl7P1BIXFY+NTwyYi6jwIYcPH+zC7T7JzJquMufvSYZXb+dSDRFyw0GLOqY7DNpx+j3vw5ifz99bH0XaP/qcMdP8A0z9P+f5UtcP2Rsh/+4DH8DhT7AyH51tLuTjoTeObHAD7sqkH2CZflXLLqzG9r9tin9tcLx7QjbEFZJGhU3iUxrZZGABDM5vbnfp0vW32KSSnHSpAVjZsOWYyAuCEkjFgoZbG7cb9dKq2/wA8z4oLiWnEqKABiMufKSWHqXFtT1rPczes7OxDYlRG5MZjKsXGjMrG2nH0B7zXSXcD53i2ricFCZsRi8MqjSwwzlnOnoqPpGpNm8uJsAaQW2dqvicRJjDkVyyk5TluUUKGVLs17AEnQXvz0r37Qd9JdpSRuy92ioAsYa6i+pN7DVtOXBRW1tA7JOAiEJm+mKVaRnVwJbj0xxMYUXBHOy21JN9DdwHa3tONrvKso6PGgH+VUPxrTSfFbVxeVNZ5zYudFiQDWw6AanmbWHKq/g1jKt3sjHKpWGMAs2puAo4KCzHxuTYNW5i8HidmYqLODFOqpKmtxrw1B6hlI52I1HEOld0924cBh1ghHDV3PrSMeLN4+HIADlUzWnsfHriIIp19WWNXH8Sg/rW5WVFeWLeyORyUn3CvWvOePMrL1BHvFqDjSQ3QHrXS/Y9Ci7IwtjqVZm9I8WkY9a5sxERC5TxU2Ps0rpDsWxavsjDi4vHnRh0tK1r+wigu4jHU/wAx/evuTxNY5V+7/lrA24AG/QG3yNBlLhw3Em/XT9uHhUBvZs0SYSWKVe8VlOUCw9ID0bE+qQefAfCpsqx0U2PmTb+vhXnNCUVmznNawPo8ToOINhe3hQIHcvfDFYItAFM0CNnZVuSgBuwVh6q3187m2pp57J2kk8SSofRkUMLaEA62toc3W16pG1+zRHneSGZ4lkClkyqe8ZTa63tlIvp+bpoLvsrAph41gTMIkUBQbHLbSxuL+N/GqJJJQOAt5jL89fhWdmPMDy/c/tXn9H+6x9rEj51h3aj1owPFRf5a/C3jUHoVXmb+Z093D4VmJFHD4An5ChNdVNx7CKHZgL2B9tqDkDbUYXGzqNAs8oA4WAkYD4U5v9niT6rGLyEqH+ZLH/pFJfa0/eYyeQcHmkb+Z2b9adP+zvEe4xj8mmVf5Y7/AOoUEh277Nz4OKcDWGWxPRZRlP8AnEdIjZuJaHEpInrKyumtvSUhlHtIA9tdabe2WuKw8uHf1ZUK36EjQ+YNj7K5O2tg3idkcZZImKsOhU2NvDmDzFjViOtMBjI5Yo5VbMkiK6m/rBhcaeR6VsBugsOp0/rSq7FN6o2iOFkIDavEbetc+mnUsGOYD7rWHqGmra+p0HT96isGBOpJt4aX/X461nFHbkB5cBX1Rc3Ps/esXa/kPj4UHjfNKOgU/Ej9qV+08GG3gkili7yKRUcKw0H1RVmB5are/IgaimnGPSv1zX+A/SoXakd9o4b8WGxKe94G/Q1QDdvLrhsViIfwlu9j8ssmYqL2FlK8OVYiTaERs0cGIUc42MMhHgrEqT1GcC5HCpqFjYMOguOoI0PmOHjbyrYIBHxBFQV1N7YhpOk2HPPv4mCg6f8AEXNHxPXkTUrhcdh5E7xHjKcc6stuX2gbcx762gL+Dc+h/pSv7ZMfhMNAVWGMYybRWVcrKt7sxYWuNLWPj0oFJvTtUYraE8wvlzsEzEk5U9BLk63trTZ7Bdkj6NiZ3UETSBBcXBWIf/0zD2UmcLE0hVFjDSSMFVV0LFjZR5kmujt3dmY3AYePDxxYeaKMWGV3jfU3YkMrKxLFje6+Q4VQgd98L3O0MUjWUd89rDRQzl1NhyCMDYVct9Oz1MFgji1xfe3ZNDGoD94QLqQehzcOANbXa3sJ8Sy4lcHiY5bBZVyCQEKPQkDRswuBZSDa4I+6aXcu28UcIMFJLmw4cMgIzd2VuLK1rqNSMpOnhrVRt7rbXbB4uPFLAJxH6wKk2zaXDAHI/GzHxqS7U964dpYjDywI6rHHZi4ANy+a2hOgHPxNROxt5cRhA74UhHkXujpcqCw1W/2gRoTfQnzqe7NtxXx8ySSKRhY7d459WTKbmND9onQMw0AB1uaB5biYZo9nYRGFmECXHQlQbey9T1fAK+1lRRRRQcr9omyzh9oYuKxsZDInlKe8FvAZiP4av/8As87b9HEYI8Qe+TXkbJJ7iE4D7VbPb7u9dYccg9T6qW33SbxsfAMWX+MUqN2NtvgcZFik1yN6S/fRtHX3cPEA8qo6zK/eOnhoPfxr4ovw0X3E+XStTZGPjxMMeIRg0cihktwsev4hwN+BFq3MxPq8Ov7fv86gCwGg48gP7+NapUyOL+qp4ciRz8baV6uNDbhzPNjwtf4fDy9IlsbdB8Tqf0oPDaA9QjjmHz/UgD216zxB1uOPFT0/pyNYYoXvbiALeZYEfIe+vWJ/cwuPbx/f2mg8I5LWzaX4MPk3Qjx6Vs3I8fLjXmy+lbk2o8COP7+w1jGCNBa44ry816fLQ+dBnkVjcaN1Gh9v7GoDfzbDYPAzzXBOXKt9GzP6CcAQTmIPLQGrACrcRqOR0I/vqKQ/bfvN30gwsb5ooWN/GW2VhfmIwSv5nYcqBX4fVif71rpHsT2aYdlRsRYzu8p8mbKh9qKp9tIPdzYr4qeHCp60zWJH2V4u38Kgn2V1lg8MsUaRoLIihVHQKLAe4VR7Un+2zdAn/wCoQrewC4hQOQ0WT2eq3hlPAGnBWMiBgVYAgixBFwQeII6VByDs7GSYaVZI2KkMGVhxUjgfnpzBIOhNdH7hb8R7RQI2VMQi3eO/r9Xj6pw04gmx5Flj2mdnjYMtiMOpbCNqw4mC/I/+30blwPU0TZ+KaF1YFhlN1dDZ0PVT+nA1Udbsb6D2np/WsCRfwX5209w19opW7o9priMLiEM6qP8AHhF3HjNF6wPVkuDfgKYGy9u4XER3w88cuoBysMwLHXMvFTrwIFNKkwNV8jUPtjTG4E9e+X3xZv8ATUzJxXz/ANJqibd2riZMTsySLDSMomk7zKMwUXaAlmtZQFLNrbkL3qC7poPyk38jr8iPdWZ9HX7J4+Hj5dffWltHa+Hw2Zp5o4lIBu7BbngbX48BoKWu8/bJHGGjwKd4eAlkBCAeC6MxB62HDjwoLzvtvZBs+HvJGBkIPdRj1pD5fc4XblpztXOW1sdiMdNJi57trqR6qj7KL0AH9dTr9eKXEP3+KdrGxLtoxUHhGDoq9BoNdKvG5G6Uu0ijSK0OzYyCqAkd+RyXnl+9Jz4D8N7I3+xXdAu//iMy2RbjDAjiTo0nkBdR5k8gadFYQxKihVAVVACgCwAAsAByAFZ1FFVzbm42AxbF5sOveHi6Fo3P5ihGb23qx1p7Y2imHgknkvkiQs1uJAF7DxoEt2i7q4XZk2DlRC2HaT65JGMgOR1Yj0r6FM2nhTxwwUIuQAJYZctgLW0tblaufO0jexsdhIC6yqe8zK/cFIPVYZUdixkYDmDY6mw0rZwu2MY2CwsEObPMyxRSJjXaQAXuTAp0VUWxvr6N761Q/qKxjWwAvew49ayqAooooNbaWBjnieGVc0cilWHUEWNctb4btSYDEth5bkcYn5SJfQ+fIjkfCxPV1V/fXdOHaMHdSeiy6xSAelG36qeBXn5gEAjezHfo4CTuZ8zYRzcgXPdMftgc16r/ABDW9+iMPi0mVWidXRgCHUggg6ixHG4rlbeTYE+CnMGIXKw9Vtckg+8h5j4jnapPc7ffFbPa0TAxE3aGS/dm/EqeKMeo06g1R00BdrDgvzI09w+YrOLmep/oPgBVH2D2m4KWMCVjh5bXKy6Kx/BJ6jAnhqD4VdVkGS6kEW0IOh6a1Bjyv1cfBgB8BQi6EDirafMeyxtWjgsYzyTRkLlhlRFIvc/VI7ZvG7cuVqkGNnH4hb2rqLewt7qD64zLpx4jwI4Xr56wDDRh/wBip9o+FQm3N78HgmInnVTYsEHpP0IyLdteI060o98O12WYvHgw0ETcWNu9bloRpGCLcLnoVN6C7dom/UcaNDC5WUaSyjQwfgX705tovAD0m0sCg8XPnYuRlUaKt75QOAudSeJLHiSTXySVm1c2AvYchfU+/mTqaanZd2aPK6YzGpliX0oYGGrn7LyA8EHELxJsTpoaiw9iu5xw8Rxs6kTTraNTxjjve/gz6E+AXxpn0UVFFFFFB8ZQRY6g8RSs3z7IkkLTYBlic6mFv8JvyEaxnw1XwFNSig5Q2psrEYKQCeOTDyA+i3AH8jg2P8Jr2/8AHpDYypFORwZ0GceTqVb23NdS4iBHUq6qynirAEHzBqnbV7K9mTEsITCxHGFygHiE1S/8NXaaJyLfCRbZfpK21GXGTEDloGDW08a92xG0pEXu0xgQjMh+kuAQ/pEi2S4PHxq+v2I4a/o4vEgeIiP+gV7p2OQ2AbHYwqOADRgC3C3oECmwnV2RJIzNLJHGQ2Vi7EtccepNvOpHY2yllYphIZcXNp6QUd2h1vc+qvKxY06tldluzYdWiaduOadi/wDl0T/LVww+HSNQiKqKOCqAAPIDSo1Lotd2uy7MVl2k4lK6rh1J7pfzk6ufDh50zEQAAAAACwA4ADhasqKFtt3RRRRRBUZvJsSPG4d8NKzqkmXMUIDeiwa1yCNSLcOFSdFBVBuBhC6PI08pT1BJM7Kvo5dFuABbkBapTZO6+DwzZocPGj/fy3fW9/TN25nnzqXooCiiigKKKKAooooIzeHYGHxsRhxEYdeI5Mp6qw1B8qSO9nZHisNd8LfFQ/d0EyjxXg/muv4a6BooOQo8Q8TFLsjA+lHIvA/iVh8xUps/bwi4QlOf+7zSwXPEEhSVve32eVdL7Z2BhcUMuIgjlHLOoJHkeI9hqk7Q7F9nubxviIfBJAy/51Y/GrtCvG+siglJsajFsx+uRgWtlubxgk2AGvSozaW8+Jm9abEuPxztbp6osP8AvTRfsNh5Yyceaxn9BWUPYbhvt4vEMPwiNfmrU2EiU/Ko6CpbdzdrE4xrYWBpBzkOka+bn0fYLnwroDZHZjsyAhhhhIw+1MTJw52Y5QfIVbo0CgBQABwAFgPKm1LrcjsogwrCbFEYicaqLfVRnqoPrMPvN7AKY9FFQFFFFB//2Q=="
+                            alt="GEAR BOLT 26T">
+                    </a>
+                    <p class="colors">2 Colors Available</p>
+                    <p class="price">₹9488 <span class="old">₹10299</span></p>
+                    <button class="buy">BUY NOW</button>
+                </div>
+
+                <div class="product-card">
+                    <h3>TEDDY 20T KIDS</h3>
+                    <hr>
+                    <a href="https://avoncycles.com/product/inspiro-20t.html">
+                        <img src="https://avoncycles.com/data/product/1/_/1_67_2.jpg" alt="TEDDY 20T">
+                    </a>
+                    <p class="colors">5 Colors Available</p>
+                    <p class="price">₹5099 <span class="old">₹5599</span></p>
+                    <button class="buy">BUY NOW</button>
+                </div>
+
+                <div class="product-card">
+                    <h3>MACH CITY 700C</h3>
+                    <hr>
+                    <a href="https://avoncycles.com/product/ahead-700-x-35c.html">
+                        <img src="https://m.media-amazon.com/images/I/81kipf8Rj6L._AC_UF894,1000_QL80_.jpg"
+                            alt="MACH CITY 700C">
+                    </a>
+                    <p class="colors">3 Colors Available</p>
+                    <p class="price">₹16350 <span class="old">₹17800</span></p>
+                    <button class="buy">BUY NOW</button>
+                </div>
+
+                <div class="product-card">
+                    <h3>STUDD SHADOW 24T</h3>
+                    <hr>
+                    <a href="https://avoncycles.com/product/avonic-24t.html">
+                        <img src="https://stryderbikes.com/cdn/shop/products/Shadow-24T-21S-Grey_1445x.jpg?v=1660295181"
+                            alt="STUDD SHADOW 24T">
+                    </a>
+                    <p class="colors">3 Colors Available</p>
+                    <p class="price">₹6188 <span class="old">₹6799</span></p>
+                    <button class="buy">BUY NOW</button>
+                </div>
+
+                <div class="product-card">
+                    <h3>RIDER PRO 26T</h3>
+                    <hr>
+                    <a href="https://avoncycles.com/product/retro-26t.html">
+                        <img src="https://m.media-amazon.com/images/I/81aNLhSxX2S.jpg" alt="RIDER PRO 26T">
+                    </a>
+                    <p class="colors">2 Colors Available</p>
+                    <p class="price">₹9249 <span class="old">₹9999</span></p>
+                    <button class="buy">BUY NOW</button>
+                </div>
+
+                <div class="product-card">
+                    <h3>CHAMPION 26T</h3>
+                    <hr>
+                    <a href="https://avoncycles.com/product/vaango-26t.html">
+                        <img src="https://avoncycles.com/data/product/01/vanngo.jpg" alt="CHAMPION 26T">
+                    </a>
+                    <p class="colors">3 Colors Available</p>
+                    <p class="price">₹7999 <span class="old">₹8799</span></p>
+                    <button class="buy">BUY NOW</button>
+                </div>
+
+                <div class="product-card">
+                    <h3>GAMER APX 29T</h3>
+                    <hr>
+                    <a href="https://avoncycles.com/product/gamer-apex-ibc-26t.html">
+                        <img src="https://avoncycles.com/data/product/01/gamer-apx.jpg" alt="GAMER APX 29T">
+                    </a>
+                    <p class="colors">4 Colors Available</p>
+                    <p class="price">₹15499 <span class="old">₹16999</span></p>
+                    <button class="buy">BUY NOW</button>
+                </div>
+
+                <div class="product-card">
+                    <h3>EXPLORER SHT 26T</h3>
+                    <hr>
+                    <a href="https://avoncycles.com/product/retro-26t.html">
+                        <img src="https://avoncycles.com/data/product/01/retro.jpg" alt="EXPLORER SHT 26T">
+                    </a>
+                    <p class="colors">3 Colors Available</p>
+                    <p class="price">₹10799 <span class="old">₹11999</span></p>
+                    <button class="buy">BUY NOW</button>
+                </div>
+
+                <div class="product-card">
+                    <h3>STUDD SHADOW 24T</h3>
+                    <hr>
+                    <a href="https://avoncycles.com/product/avonic-24t.html">
+                        <img src="https://avoncycles.com/data/product/01/echo.jpg" alt="STUDD SHADOW 24T">
+                    </a>
+                    <p class="colors">3 Colors Available</p>
+                    <p class="price">₹6188 <span class="old">₹6799</span></p>
+                    <button class="buy">BUY NOW</button>
+                </div>
+
+                <div class="product-card">
+                    <h3>RIDER PRO 26T</h3>
+                    <hr>
+                    <a href="https://avoncycles.com/product/vaango-26t.html">
+                        <img src="https://avoncycles.com/data/product/26-jan-2025/wa01.jpg" alt="RIDER PRO 26T">
+                    </a>
+                    <p class="colors">2 Colors Available</p>
+                    <p class="price">₹9249 <span class="old">₹9999</span></p>
+                    <button class="buy">BUY NOW</button>
+                </div>
+
+                <div class="product-card">
+                    <h3>Cylucx Yumi 26T</h3>
+                    <hr>
+                    <a href="https://avoncycles.com/product/vector-plus-26t.html">
+                        <img src="https://avoncycles.com/data/product/1/_/1_241_2.jpg" alt="Cylucx Yumi 26T">
+                    </a>
+                    <p class="colors">3 Colors Available</p>
+                    <p class="price">₹10750 <span class="old">₹11599</span></p>
+                    <button class="buy">BUY NOW</button>
+                </div>
+
+                <div class="product-card">
+                    <h3>ROCKET 20T KIDS</h3>
+                    <hr>
+                    <a href="https://avoncycles.com/product/roar-20t.html">
+                        <img src="https://avoncycles.com/data/product/10-feb-2025/14/ror01.jpg" alt="ROCKET 20T">
+                    </a>
+                    <p class="colors">4 Colors Available</p>
+                    <p class="price">₹4899 <span class="old">₹5499</span></p>
+                    <button class="buy">BUY NOW</button>
+                </div>
+
+                <div class="product-card">
+                    <h3>ZIPPY 24T</h3>
+                    <hr>
+                    <a href="https://avoncycles.com/product/passo-ex-ibc.html">
+                        <img src="https://avoncycles.com/data/product/10-feb-2025/14/ex01-d.jpg" alt="ZIPPY 24T">
+                    </a>
+                    <p class="colors">2 Colors Available</p>
+                    <p class="price">₹5988 <span class="old">₹6799</span></p>
+                    <button class="buy">BUY NOW</button>
+                </div>
+
+                <div class="product-card">
+                    <h3>STORM X 26T</h3>
+                    <hr>
+                    <a href="https://avoncycles.com/product/passo-ex-single-shocker-26t.html">
+                        <img src="https://avoncycles.com/data/product/1/_/1_169_1.jpg" alt="STORM X 26T">
+                    </a>
+                    <p class="colors">3 Colors Available</p>
+                    <p class="price">₹9599 <span class="old">₹10499</span></p>
+                    <button class="buy">BUY NOW</button>
+                </div>
+
+                <div class="product-card">
+                    <h3>RAPTOR 700C</h3>
+                    <hr>
+                    <a href=" https://avoncycles.com/?srsltid=AfmBOop5m4mJRebmYQD2RABstlu4HC2dNS9iEKpwIRyathwO-GCxYyji">
+                        <img src="https://avoncycles.com/public/data/product/18-dec/ZING.jpg" alt="RAPTOR 700C">
+                    </a>
+                    <p class="colors">3 Colors Available</p>
+                    <p class="price">₹17499 <span class="old">₹18999</span></p>
+                    <button class="buy">BUY NOW</button>
+                </div>
+
+                <div class="product-card">
+                    <h3>CYCLELEC 26T</h3>
+                    <hr>
+                    <a href="https://avoncycles.com/product/cyclelec-connect-gents-bike-26t.html">
+                        <img src="https://avoncycles.com/data/product/d/s/dsc_8805_1_1_1.jpg"
+                            alt="CYCLELEC CONNECT II 26T">
+                    </a>
+                    <p class="colors">4 Colors Available</p>
+                    <p class="price">₹9499 <span class="old">₹10599</span></p>
+                    <button class="buy">BUY NOW</button>
+                </div>
+
+                <div class="product-card">
+                    <h3>ACTION 28T</h3>
+                    <hr>
+                    <a href="https://avoncycles.com/product/action-28t.html">
+                        <img src="https://avoncycles.com/data/product/1/_/1_17_1_2.jpg" alt="ACTION 28T">
+                    </a>
+                    <p class="colors">3 Colors Available</p>
+                    <p class="price">₹8988 <span class="old">₹9699</span></p>
+                    <button class="buy">BUY NOW</button>
+                </div>
+
+                <div class="product-card">
+                    <h3>CLASSIC 28T</h3>
+                    <hr>
+                    <a href="https://avoncycles.com/product/classic-28-t.html">
+                        <img src="https://avoncycles.com/data/product/c/l/classic_28_t_4.jpg" alt="CLASSIC 28T">
+                    </a>
+                    <p class="colors">5 Colors Available</p>
+                    <p class="price">₹4650 <span class="old">₹5299</span></p>
+                    <button class="buy">BUY NOW</button>
+                </div>
+
+
+
+                <div class="product-card">
+                    <h3>BEST BIKES</h3>
+                    <hr>
+                    <a href="https://avoncycles.com/category/mtb-single-speed-cycles.html">
+                        <img src="https://avoncycles.com/data/product/18-dec/ryno.jpg" alt="BEST MOUNTAIN BIKES">
+                    </a>
+                    <p class="colors">4 Colors Available</p>
+                    <p class="price">₹9788 <span class="old">₹10599</span></p>
+                    <button class="buy">BUY NOW</button>
+                </div>
+
+                <div class="product-card">
+                    <h3>Avon 20 Genie Bicycle</h3>
+                    <hr>
+                    <a href="https://avoncycles.com/product/black-hawk-29t.html">
+                        <img src="https://justbuycycles.com/cdn/shop/products/T05185_1.jpg?v=1682688446"
+                            alt="Avon 20 Genie Bicycle">
+                    </a>
+                    <p class="colors">3 Colors Available</p>
+                    <p class="price">₹16888 <span class="old">₹18299</span></p>
+                    <button class="buy">BUY NOW</button>
+                </div>
+
+
+            </div>
+        </section>
+
+
+    </div>
+</body>
+
+</html>

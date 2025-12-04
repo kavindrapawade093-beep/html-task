@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Upload</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body>
+
+    <img src="https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg?semt=ais_hybrid&w=740&q=80"
+        alt="">
+    <input type="file" />
+
+    <script>
+
+        const image = document.querySelector('img');
+        const input = document.querySelector('input');
+
+        input.addEventListener('change', e => {
+            image.src = URL.createObjectURL(e.target.files[0]);
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsieve verticle tabs</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        body {
+            background-color: #4d5bf9;
+        }
+
+        .container {
+            background-color: #ffffff;
+            width: 95vmin;
+            font-size: 16px;
+            min-width: 30em;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            top: 50%;
+            left: 50%;
+            display: grid;
+            grid-template-columns: 2fr 9fr;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            border-radius: 0.5em;
+            overflow: hidden;
+        }
+
+        .tabs {
+            background-color: #cdd0f0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+
+        h3 {
+            height: 34%;
+            display: grid;
+            place-items: center;
+            font-size: 1.2em;
+            font-weight: 600;
+            color: black;
+            cursor: pointer;
+        }
+
+        .tab-content {
+            padding: 1em 1.5em;
+            background-color: #ffffff;
+
+        }
+
+        .tab-content h4 {
+            font-size: 1.8em;
+            margin-bottom: 0.5em;
+            color: black;
+            font-weight: 600;
+
+        }
+
+        .tab-content p {
+            text-align: justify;
+            line-height: 1.9;
+            letter-spacing: 0.4px;
+            color: #202238;
+
+        }
+
+        .tab-content div {
+            display: none;
+        }
+
+        .tab-content .active {
+            display: block;
+        }
+
+        .tabs .active {
+            background-color: #4d5bf9;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="tabs">
+            <h3 class="active">Tab 1</h3>
+            <h3>Tab 2</h3>
+            <h3>Tab 3</h3>
+            <h3>Tab 4</h3>
+            <h3>Tab 5</h3>
+        </div>
+        <div class="tab-content">
+            <!-- First title -->
+            <div class="active">
+                <h4>first title</h4>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque temporibus molestiae sed eligendi
+                    ipsam ab dolorem ratione aut! Incidunt, exercitationem quisquam nisi error aperiam vel eius
+                    molestias magni velit? Veritatis eos provident corrupti pariatur excepturi similique rerum commodi
+                    dolores eum!</p>
+            </div>
+
+
+            <!-- second title -->
+            <div>
+                <h4>second title</h4>
+                <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam ullam laborum deserunt ipsum ad
+                    architecto dignissimos tempora reprehenderit culpa quia?</p>
+
+            </div>
+
+            <!-- 3rd title -->
+            <div>
+                <h4>third title</h4>
+                <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Error officiis unde fugit? Neque
+                    dignissimos molestiae, reprehenderit, sunt modi doloremque ex amet ipsa quidem laboriosam quos
+                    autem. Nesciunt dicta ullam totam.</p>
+            </div>
+
+
+            <!-- Fourth title -->
+            <div>
+                <h4>Fourth title</h4>
+                <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt, delectus.</p>
+            </div>
+
+
+
+            <!-- Fifth title -->
+            <div>
+                <h4>fifth title</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos porro accusantium at nemo?
+                    Provident molestias ullam maiores minus non similique voluptates nisi corrupti reprehenderit, ab
+                    mollitia laboriosam ipsum tenetur incidunt placeat autem facilis officia quaerat fugit natus aliquid
+                    animi? Provident, odit perferendis quidem aliquam aperiam accusamus sint tenetur quam
+                    exercitationem!</p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script>
+        let tabs = document.querySelectorAll('.tabs h3');
+        let tabContent = document.querySelectorAll('.tab-content div');
+        tabs.forEach((tab, index) => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(tab => {
+                    tab.classList.remove('active');
+                });
+                tabContent.forEach(tab => {
+                    tab.classList.remove('active');
+                });
+                tab.classList.add('active');
+                tabContent[index].classList.add('active');
+            });
+        });
+
+    </script>
+</body>
+
+</html>
