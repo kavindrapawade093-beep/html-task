@@ -1,0 +1,30 @@
+from moviepy.editor import *
+
+background = ImageClip("/mnt/data/kavindra pawade 12.png").set_duration(6)
+
+# ----- TEXT CLIPS -----
+
+first_name = TextClip("Apeksha", fontsize=120, color="white", font="Arial") \
+                .set_position("center") \
+                .set_duration(2) \
+                .fadein(1) \
+                .fadeout(1)
+
+second_name = TextClip("Mauresh", fontsize=120, color="white", font="Arial") \
+                .set_position("center") \
+                .set_duration(2) \
+                .fadein(1) \
+                .fadeout(1) \
+                .set_start(2)   # starts after first finishes
+
+third_name = TextClip("Sakharpuda Samarambh", fontsize=100, color="yellow", font="Arial") \
+                .set_position("center") \
+                .set_duration(2) \
+                .fadein(1) \
+                .set_start(4)   # starts after second finishes
+
+# ----- COMBINE -----
+
+video = CompositeVideoClip([background, first_name, second_name, third_name])
+
+video.write_videofile("/mnt/data/final_name_animation.mp4", fps=24)
