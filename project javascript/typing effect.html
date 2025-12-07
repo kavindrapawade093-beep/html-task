@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: aqua;
+        }
+
+        .typing-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .typing-text {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .cursor {
+            display: inline-block;
+            width: 2px;
+            height: 20px;
+            background-color: #333;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="typing-container">
+        <span class="typind-text" id="typingtext"></span>
+        <span class="cursor" id="cursor"></span>
+    </div>
+
+
+    <script>
+        const text = "welcome to coding artists";
+        const typingText = document.getElementById('typingtext');
+        const cursor = document.getElementById('cursor');
+
+        let index = 0;
+
+        function typeWriter() {
+            if (index < text.length) {
+                typingText.textContent += text.charAt(index);
+                index++;
+                setTimeout(typeWriter, 100);
+            }
+            else {
+                cursor.style.display = 'none';
+            }
+        }
+        typeWriter();
+    </script>
+</body>
+
+</html>
