@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Vandana Hub — PF Service Center</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --yellow: #FFC400;
+            --blue: #0B63D4;
+            --bg: #f7fbff;
+            --card: #ffffff;
+            --muted: #6b7280;
+            --radius: 14px;
+            --container: 1100px;
+            font-family: 'Poppins', system-ui, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: linear-gradient(180deg, var(--bg), #ffffff);
+            color: #0f1724;
+            line-height: 1.45;
+        }
+
+        .wrap {
+            max-width: var(--container);
+            margin: 28px auto;
+            padding: 20px;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--yellow), var(--blue));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-weight: 700;
+            font-size: 18px;
+            box-shadow: 0 6px 18px rgba(11, 99, 212, 0.12);
+        }
+
+        .brand h1 {
+            font-size: 20px;
+            margin: 0;
+        }
+
+        .brand p {
+            margin: 0;
+            font-size: 13px;
+            color: var(--muted);
+        }
+
+        .contact {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        .contact a {
+            background: var(--blue);
+            color: #fff;
+            padding: 8px 12px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 380px;
+            gap: 20px;
+            margin-top: 18px;
+            align-items: start;
+        }
+
+        .card {
+            background: var(--card);
+            border-radius: var(--radius);
+            padding: 22px;
+            box-shadow: 0 8px 30px rgba(11, 99, 212, 0.06);
+        }
+
+        .hero h2 {
+            margin: 0 0 8px;
+            font-size: 24px;
+        }
+
+        .hero p.lead {
+            margin: 0 0 14px;
+            color: var(--muted);
+        }
+
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 12px;
+        }
+
+        .chip {
+            background: linear-gradient(90deg, var(--yellow), var(--blue));
+            color: #fff;
+            padding: 8px 12px;
+            border-radius: 999px;
+            font-weight: 600;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+            margin-top: 20px;
+        }
+
+        .feature {
+            padding: 14px;
+            border-radius: 12px;
+            background: linear-gradient(180deg, rgba(11, 99, 212, 0.03), #fff);
+            border: 1px solid rgba(11, 99, 212, 0.04);
+        }
+
+        .feature h4 {
+            margin: 0 0 8px;
+        }
+
+        .docs {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .right {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .qr {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .qr img {
+            width: 110px;
+            height: 110px;
+            border-radius: 8px;
+            background: #fff;
+            padding: 8px;
+            border: 1px solid #eef3ff;
+        }
+
+        .wa-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+            border-radius: 10px;
+            background: linear-gradient(90deg, #25D366, #128C7E);
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .contact-section {
+            display: grid;
+            grid-template-columns: 1fr 380px;
+            gap: 18px;
+            margin-top: 22px;
+        }
+
+        input,
+        textarea,
+        select {
+            padding: 12px;
+            border-radius: 10px;
+            border: 1px solid #e6eefb;
+            background: #fff;
+            font-size: 14px;
+            width: 100%;
+        }
+
+        button.primary {
+            background: var(--blue);
+            color: #fff;
+            padding: 12px;
+            border-radius: 10px;
+            border: none;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        footer {
+            margin-top: 26px;
+            padding: 18px;
+            border-radius: 12px;
+            background: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        small {
+            color: var(--muted);
+        }
+
+        @media (max-width:980px) {
+
+            .hero,
+            .contact-section {
+                grid-template-columns: 1fr;
+            }
+
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .brand h1 {
+                font-size: 18px;
+            }
+        }
+
+        @media (max-width:560px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .logo {
+                width: 52px;
+                height: 52px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <header>
+            <div class="brand">
+                <div class="logo">V H</div>
+                <div>
+                    <h1>Vandana Hub</h1>
+                    <p>PF Service Center • Mumbai</p>
+                </div>
+            </div>
+            <div class="contact">
+                <a href="tel:+918767080061">Call: +91 87670 80061</a>
+                <small style="color:var(--muted);margin-top:6px">Open: Mon–Sat • 10:00–18:00</small>
+            </div>
+        </header>
+
+        <section class="hero">
+            <div class="card">
+                <h2>EPFO Services — PF Withdrawal • Balance • UAN Merge</h2>
+                <p class="lead">Quick, reliable and friendly PF services. We help with withdrawal claims, UAN merging,
+                    KYC
+                    updates and passbook checks — all under one roof.</p>
+
+                <div class="services">
+                    <div class="chip">PF Withdrawal</div>
+                    <div class="chip">Balance Check</div>
+                    <div class="chip">UAN Merge</div>
+                    <div class="chip">KYC Update</div>
+                </div>
+
+                <div class="grid">
+                    <div class="feature">
+                        <h4>Fast Processing</h4>
+                        <p class="muted">Most tasks completed within 10–20 minutes (documents ready).</p>
+                    </div>
+                    <div class="feature">
+                        <h4>Documents</h4>
+                        <div class="docs">
+                            <small>• Aadhar Card</small>
+                            <small>• PAN Card</small>
+                            <small>• Bank Passbook</small>
+                            <small>• UAN Number</small>
+                        </div>
+                    </div>
+                    <div class="feature">
+                        <h4>Assistance</h4>
+                        <p class="muted">Support for online claim filling and corrections in service history.</p>
+                    </div>
+                </div>
+            </div>
+
+            <aside class="right">
+                <div class="card">
+                    <div style="display:flex;align-items:center;justify-content:space-between;">
+                        <div>
+                            <h3 style="margin:0">Contact on WhatsApp</h3>
+                            <p style="margin:6px 0 0;color:var(--muted)">Tap to message us directly</p>
+                        </div>
+                        <div class="qr">
+                            <img alt="WhatsApp QR" id="qrImg" src="" />
+                        </div>
+                    </div>
+
+                    <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+                        <a class="wa-btn" id="waBtn" href="#" target="_blank">Message on WhatsApp</a>
+                        <a class="wa-btn" href="https://wa.me/918767080061"
+                            style="background:linear-gradient(90deg,#ffd54a,#ff9800);">Open Chat</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h4 style="margin-top:0">Quick Links</h4>
+                    <ul style="margin:10px 0 0;padding-left:18px;color:var(--muted)">
+                        <li>Online PF Withdrawal Help</li>
+                        <li>UAN Merge Assistance</li>
+                        <li>Passbook & Balance Check</li>
+                    </ul>
+                </div>
+            </aside>
+        </section>
+
+        <section class="contact-section">
+            <div class="card">
+                <h3>Get in touch</h3>
+                <p style="margin:6px 0 12px;color:var(--muted)">Fill this form and we will reach out. Or use the
+                    WhatsApp
+                    button for instant chat.</p>
+                <form id="contactForm">
+                    <input type="text" id="name" placeholder="Your name" required />
+                    <input type="tel" id="phone" placeholder="Phone (e.g. +91 9xxxxxxxxx)" required />
+                    <select id="service" required>
+                        <option value="">Select Service</option>
+                        <option value="PF Withdrawal">PF Withdrawal</option>
+                        <option value="Balance Check">Balance Check</option>
+                        <option value="UAN Merge">UAN Merge</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    <textarea id="message" rows="4" placeholder="Your message (optional)"></textarea>
+                    <button type="submit" class="primary">Send</button>
+                </form>
+                <small id="statusMsg"></small>
+            </div>
+        </section>
+
+        <footer>
+            <small>© Vandana Hub • PF Services • Mumbai</small>
+            <small>Designed for Instagram/WhatsApp (1080×1350)</small>
+        </footer>
+    </div>
+
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script>
+        // WhatsApp QR
+        const phone = '918767080061';
+        const preset = `Hi Kavindra here%0APF+बद्दल+माहिती+आहे%3F`;
+        const waLink = `https://wa.me/${phone}?text=${preset}`;
+        document.getElementById('waBtn').href = waLink;
+        document.getElementById('qrImg').src = `https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=${encodeURIComponent(waLink)}`;
+
+        // Initialize EmailJS
+        emailjs.init("Nz0pGy1VmTmLTCVgN"); // Your Public Key
+
+        const form = document.getElementById('contactForm');
+        const statusMsg = document.getElementById('statusMsg');
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const service = document.getElementById('service').value;
+            const message = document.getElementById('message').value;
+
+            emailjs.send('service_jy4f3q4', 'template_4ejw19q', {
+                name: name,
+                phone: phone,
+                service: service,
+                message: message
+            })
+                .then(function (response) {
+                    statusMsg.style.color = 'green';
+                    statusMsg.innerText = 'Your message was sent successfully!';
+                    form.reset();
+                }, function (error) {
+                    statusMsg.style.color = 'red';
+                    statusMsg.innerText = 'Failed to send message. Please try again.';
+                    console.error('EmailJS Error:', error);
+                });
+        });
+    </script>
+
+</body>
+
+</html>
