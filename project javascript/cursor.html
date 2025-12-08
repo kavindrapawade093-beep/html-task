@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+            cursor: none;
+        }
+
+        body {
+            width: 100%;
+            height: 200vh;
+            background-color: #fff;
+        }
+
+        .inner-cursor {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #fff;
+            position: fixed;
+            left: 10px;
+            top: 10px;
+            transform: translate(-50%, -50%);
+            mix-blend-mode: difference;
+            pointer-events: none;
+            transition: width 0.5s height 0.5s;
+
+
+        }
+
+        .outer-cursor {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            border: 1px solid #fff;
+            position: fixed;
+            left: 10px;
+            top: 10px;
+            transform: translate(-50%, -50%);
+            mix-blend-mode: difference;
+            pointer-events: none;
+            transition: width 0.5s height 0.5s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="inner-cursor"></div>
+    <div class="outer-cursor"></div>
+
+
+    <script>
+        let innerCursor = document.querySelector('.inner-cursor');
+        let outerCursor = document.querySelector('.outer-cursor');
+        document.addEventListener("mousemove", moveCursor)
+        function moveCursor(e) {
+            let x = e.clientX; // X position of mouse
+            let y = e.clientY; // Y position of mouse
+            // Inner cursor ki position update karo
+            innerCursor.style.left = `${x}px`;
+            innerCursor.style.top = `${y}px`;
+            // Outer cursor ki position bhi update karo
+            outerCursor.style.left = `${x}px`;
+            outerCursor.style.top = `${y}px`;
+        }
+
+    </script>
+</body>
+
+</html>
