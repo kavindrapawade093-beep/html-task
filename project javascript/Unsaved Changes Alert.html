@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unsaved Changes Alert</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+
+        }
+
+        body {
+            height: 100vh;
+            background-color: #0f35d0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #myform {
+            background-color: #c6cfda;
+            width: min(90%, 400px);
+            position: absolute;
+            transform: translate(-50%, -50%);
+            left: 50%;
+            top: 50%;
+            padding: 35px;
+            border-radius: 1em;
+        }
+
+        input,
+        label {
+            display: block;
+            margin: 0.5em 0;
+        }
+
+        input {
+            padding: 0.5em;
+            border: 1px solid black;
+            width: 100%;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        h2 {
+
+            text-align: center;
+            margin-bottom: 1em;
+        }
+
+        button {
+            padding: 0.5em;
+            border: 1px solid black;
+            width: 100%;
+            margin-top: 1em;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="" id="myform">
+        <h2>Unsaved Changes Alert</h2>
+        <label for="name">Name</label>
+        <input type="text" id="name">
+        <label for="email">Email</label>
+        <input type="email" id="email">
+        <button type="submit">Submit</button>
+    </form>
+
+
+    <script>
+        let unsavedChanges = false;
+
+        function handleFormChange() {
+            unsavedChanges = true;
+        }
+
+        const form = document.getElementById('myform');
+
+        const formElements = form.querySelectorAll("input", "textarea", "select");
+
+        formElements.forEach((element) => {
+            element.addEventListener("input", handleFormChange);
+
+        });
+
+        window.addEventListener("beforeunload",
+            function (e) {
+                if (unsavedChanges) {
+                    e.preventDefault();
+                    e.returnValue = '';
+                }
+            });
+
+        form.addEventListener("submit", function (e) {
+            unsavedChanges = false;
+        });
+    </script>
+
+</body>
+
+</html>

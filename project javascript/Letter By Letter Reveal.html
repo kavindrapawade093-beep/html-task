@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letter By Letter Reveal</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: lightgreen;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: sans-serif;
+            color: white;
+            overflow: hidden;
+        }
+
+        .text-container {
+            color: #ffffff;
+            font-size: 40px;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="text-container"></div>
+
+    <script>
+        // Select the text container
+        const textContainer = document.querySelector('.text-container');
+
+        // Words to reveal
+        const phrases = ["Awesome", "Fun", "Challenging", "Fantastic"];
+
+        let phraseIndex = 0;
+        let letterIndex = 0;
+
+        function typeEffect() {
+            letterIndex++;
+
+            const currentPhrase = phrases[phraseIndex];
+
+            // print letters one by one
+            textContainer.innerHTML = `<h1>Coding is ${currentPhrase.slice(0, letterIndex)}</h1>`;
+
+            if (letterIndex === currentPhrase.length) {
+                phraseIndex = (phraseIndex + 1) % phrases.length;
+                letterIndex = 0;
+                setTimeout(typeEffect, 2000);
+            } else {
+                setTimeout(typeEffect, 100);
+            }
+        }
+
+        typeEffect();
+    </script>
+</body>
+
+</html>
