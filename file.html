@@ -4,60 +4,68 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Dynamic Greetings</title>
+   <title>cursoe effect 2</title>
    <style>
       * {
          margin: 0;
          padding: 0;
          box-sizing: border-box;
+         font-family: sans-serif;
+
       }
 
       body {
-         background-color: #ae9eff;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         min-height: 100vh;
+         background-color: red;
       }
 
-      .container {
-         background-color: blue;
-         width: 18em;
+      #cursor {
          position: absolute;
+         width: 20px;
+         height: 20px;
+         background-color: #fff;
+         border-radius: 50%;
          transform: translate(-50%, -50%);
-         left: 50%;
-         top: 50%;
-         padding: 48px;
-         border-radius: 1em;
-         box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-         text-align: center;
+         pointer-events: none;
       }
 
-      .container h1 {
-         color: #fff;
-         font-family: sans-serif;
-         text-transform: uppercase;
-         font-weight: 400;
-         letter-spacing: 0.1em;
-         word-spacing: 0.4em;
+      #cursor-border {
+         position: absolute;
+         width: 30px;
+         height: 30px;
+         border: 2px solid #fff;
+         border-radius: 50%;
+         transform: translate(-50%, -50%);
+         pointer-events: none;
+         background-color: transparent;
+         transition: all 0.3s ease;
       }
    </style>
 </head>
 
 <body>
-   <div class="container">Demo Text</div>
+   <div id="cursor"> </div>
+   <div id="cursoe-border"></div>
+
+
+
    <script>
-      let container = document.querySelector('.container');
+      const cursor = document.querySelector('#cursor');
+      const cursorBorder = document.querySelector('#cursor-border');
 
-      let timeNow = new Date().getHours();  // get hours (0–23)
-      timeNow = 10
-      console.log(timeNow);
+      document.addEventListener('mousemove', (e) => {
+         let x = e.clientX;
+         let y = e.clientY;
 
-      let greeting =
-         timeNow >= 5 && timeNow < 12
-            ? "Good Morning"
-            : timeNow >= 12 && timeNow < 18
-               ? "Good Afternoon"
-               : "Good Evening";
+         cursor.style.left = `${x}px`;
+         cursor.style.top = `${y}px`;
 
-      console.log(greeting);
-      container.innerHTML = `<h1>${greeting}</h1>`;
+         cursorBorder.style.left = `${x}px`;
+         cursorBorder.style.top = `${y}px`;
+      });
    </script>
 
 </body>
