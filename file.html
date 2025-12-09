@@ -4,70 +4,42 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>cursoe effect 2</title>
+   <title>Clock</title>
    <style>
       * {
-         margin: 0;
          padding: 0;
+         margin: 0;
          box-sizing: border-box;
-         font-family: sans-serif;
 
       }
 
       body {
-         display: flex;
-         justify-content: center;
-         align-items: center;
-         min-height: 100vh;
-         background-color: red;
+         height: 100vh;
+         background: linear-gradient(to bottom, #2987e4 50%, #16191e 50%);
+
       }
 
-      #cursor {
+      .clock {
+         background: #16191e;
+         height: 320px;
+         width: 320px;
          position: absolute;
-         width: 20px;
-         height: 20px;
-         background-color: #fff;
-         border-radius: 50%;
          transform: translate(-50%, -50%);
-         pointer-events: none;
-      }
+         top: 50%;
+         left: 50%;
+         box-sizing: border-box;
+         border-radius: 50%;
+         border: 15px solid #242931;
+         box-shadow: 15px 15px 35px rgba(0, 0, 0, 0.2);
+         inset: 0 0 30px white;
 
-      #cursor-border {
-         position: absolute;
-         width: 30px;
-         height: 30px;
-         border: 2px solid #fff;
-         border-radius: 50%;
-         transform: translate(-50%, -50%);
-         pointer-events: none;
-         background-color: transparent;
-         transition: all 0.3s ease;
       }
    </style>
 </head>
 
 <body>
-   <div id="cursor"> </div>
-   <div id="cursoe-border"></div>
-
-
-
-   <script>
-      const cursor = document.querySelector('#cursor');
-      const cursorBorder = document.querySelector('#cursor-border');
-
-      document.addEventListener('mousemove', (e) => {
-         let x = e.clientX;
-         let y = e.clientY;
-
-         cursor.style.left = `${x}px`;
-         cursor.style.top = `${y}px`;
-
-         cursorBorder.style.left = `${x}px`;
-         cursorBorder.style.top = `${y}px`;
-      });
-   </script>
-
+   <div class="clock"></div>
+   <img src="c:\Users\kavin\Downloads\simple-round-clock-svgrepo-com.svg" alt="clock">
 </body>
 
 </html>

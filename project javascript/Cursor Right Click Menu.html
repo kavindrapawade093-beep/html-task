@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursor Right Click Menu</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            display: grid;
+            place-items: center;
+            background-color: blue;
+        }
+
+        .custom-menu {
+            position: absolute;
+            display: none;
+        }
+
+        .custom-menu ul {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .custom-menu ul li {
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .custom-menu ul li:hover {
+            background-color: #9c1b1b;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="custom-menu" id="custom-menu">
+        <ul>
+            <li>Refresh</li>
+            <li>Edit</li>
+            <li>Delete</li>
+        </ul>
+    </div>
+
+    <script>
+        const customMenu = document.getElementById("custom-menu");
+
+        document.addEventListener("contextmenu", (e) => {
+            e.preventDefault();
+            customMenu.style.display = "block";
+            customMenu.style.left = `${e.clientX}px`;
+            customMenu.style.top = `${e.clientY}px`;
+        });
+
+        document.addEventListener("click", () => {
+            customMenu.style.display = "none";
+        });
+    </script>
+</body>
+
+</html>
