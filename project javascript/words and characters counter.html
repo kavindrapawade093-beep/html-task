@@ -1,11 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- Declares HTML5 document and language -->
 
 <head>
     <meta charset="UTF-8">
+    <!-- Supports all characters -->
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Makes page responsive on mobile -->
+
     <title>words and characters counter</title>
+    <!-- Page title shown in browser tab -->
+
     <style>
+        /* Reset default margin & padding */
         * {
             margin: 0;
             padding: 0;
@@ -13,20 +21,22 @@
             font-family: poppins, sans-serif;
         }
 
+        /* Page background */
         body {
             background-color: #8b5ceb;
-
         }
 
+        /* Wrapper to center content */
         .wrapper {
             position: absolute;
             width: 90vmin;
+            /* Responsive width */
             transform: translate(-50%, -50%);
             top: 50%;
             left: 50%;
-
         }
 
+        /* Main white box */
         .container {
             background-color: #fff;
             padding: 50px 30px 80px 30px;
@@ -34,18 +44,19 @@
             box-shadow: 0 30px 50px rgba(30, 20, 49, 0.3);
         }
 
+        /* Text area styling */
         textarea {
             width: 100%;
             resize: none;
+            /* Disable resize */
             border: none;
             outline: none;
-            font-size: 16px;
+            font-size: 25px;
             line-height: 28px;
             color: #09011a;
-            font-size: 25px;
-
         }
 
+        /* Counter box */
         .count {
             background-color: #000000;
             width: 80%;
@@ -60,6 +71,7 @@
             box-shadow: 0 30px 50px rgba(30, 20, 49, 0.3);
         }
 
+        /* Counter text */
         .count div {
             color: #fff;
             font-size: 18px;
@@ -68,36 +80,62 @@
 </head>
 
 <body>
+
+    <!-- Main wrapper -->
     <div class="wrapper">
+
+        <!-- Text input container -->
         <div class="container">
+            <!-- Textarea where user types -->
             <textarea id="input-textarea" rows="12" placeholder="start typing here..."></textarea>
         </div>
+
+        <!-- Counter section -->
         <div class="count">
+
+            <!-- Word counter -->
             <div>
                 <h5 id="word-count">0</h5>
                 <p>Words</p>
             </div>
 
+            <!-- Character counter -->
             <div>
                 <h5 id="charac-count">0</h5>
                 <p>Characters</p>
             </div>
+
         </div>
     </div>
 
-
+    <!-- JavaScript -->
     <script>
+        // Get textarea element
         let inputTextArea = document.getElementById("input-textarea");
+
+        // Get character counter element
         let characCount = document.getElementById("charac-count");
+
+        // Get word counter element
         let wordCount = document.getElementById("word-count");
 
+        // Run function whenever user types
         inputTextArea.addEventListener("input", () => {
+
+            // Split text by space to get words
             let wordArr = inputTextArea.value.split(" ");
+
+            // Split text into characters
             let characArr = inputTextArea.value.split("");
+
+            // Display word count
             wordCount.innerHTML = wordArr.length;
+
+            // Display character count
             characCount.innerHTML = characArr.length;
         });
     </script>
+
 </body>
 
 </html>

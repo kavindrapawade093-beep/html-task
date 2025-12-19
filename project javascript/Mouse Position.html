@@ -1,11 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- HTML5 document -->
 
 <head>
     <meta charset="UTF-8">
+    <!-- Supports all character encodings -->
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Makes layout responsive on mobile devices -->
+
     <title>Get Mouse Position</title>
+    <!-- Browser tab title -->
+
     <style>
+        /* Reset default browser styles */
         * {
             margin: 0;
             padding: 0;
@@ -13,12 +21,13 @@
             font-family: sans-serif;
         }
 
+        /* Page background */
         body {
             height: 100vh;
             background: linear-gradient(#ab9dff 50%, #ffffff 50%);
-
         }
 
+        /* Output box styling */
         #output {
             position: absolute;
             top: 50%;
@@ -36,14 +45,26 @@
 </head>
 
 <body>
+
+    <!-- Box to display mouse coordinates -->
     <div id="output">Move the Mouse to Get the coordinates</div>
 
+    <!-- JavaScript -->
     <script>
+        // Get the output div
         let output = document.getElementById('output');
+
+        // Listen for mouse movement on the entire document
         document.addEventListener('mousemove', (e) => {
+
+            // e.clientX → mouse X position from left
+            // e.clientY → mouse Y position from top
+
+            // Display mouse coordinates inside the div
             output.innerHTML = `X: ${e.clientX} <br> Y: ${e.clientY}`;
         });
     </script>
+
 </body>
 
 </html>
