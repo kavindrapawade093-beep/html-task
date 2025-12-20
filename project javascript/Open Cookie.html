@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Character encoding -->
+    <meta charset="UTF-8">
+
+    <!-- Responsive design for mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Page title -->
+    <title>Fortune Cookie</title>
+
+    <style>
+        /* Reset default browser margin & padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            background-color: #f1c216;
+            margin: 50px;
+        }
+
+        /* Main container styling */
+        .container {
+            max-width: 400px;
+            margin: auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 15px;
+        }
+
+        /* Fortune cookie emoji size */
+        h1 {
+            font-size: 50px;
+        }
+
+        /* Heading text size */
+        h3 {
+            font-size: 40px;
+        }
+
+        /* Fortune message styling */
+        p {
+            background-color: rgba(242, 167, 29, 0.932);
+            font-size: 18px;
+            margin: 20px 0;
+        }
+
+        /* Button styling */
+        button {
+            padding: 10px 15px;
+            background-color: orange;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Button hover effect */
+        button:hover {
+            background-color: #f1c216;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Main fortune cookie container -->
+    <div class="container">
+
+        <!-- Heading text -->
+        <h3>This is a fortune cookie</h3>
+
+        <!-- Fortune cookie emoji -->
+        <h1>🥠</h1>
+
+        <!-- Paragraph to display fortune message -->
+        <p id="fortuneMessage">click the cookie to get your fortune!</p>
+
+        <!-- Button to open the cookie -->
+        <button id="openCookie">Open Cookie</button>
+    </div>
+
+    <script>
+        // Array containing all fortune messages
+        let fortunes = [
+            "You will have a great day today!",
+            "Something unexpected will make you smile.",
+            "Success is coming your way!",
+            "A pleasant surprise is waiting for you.",
+            "You will make a new friend soon.",
+            "An exciting opportunity will present itself.",
+            "Happiness is closer than you think!",
+            "Be patient. Good things take time.",
+            "A big change is coming in your life. Embrace it!",
+            "Your kindness will return to you in unexpected ways.",
+            "You will soon cross paths with someone important.",
+            "Good fortune will follow you wherever you go.",
+            "A dream you have will soon come true.",
+            "Trust your instincts, they will guide you well.",
+            "Adventure is out there-be ready!",
+            "You will soon receive great news.",
+            "A new chapter of your life is about to begin.",
+            "Your hard work will pay off soon.",
+            "A new opportunity will open up for you.",
+            "You will receive a gift that will make you smile.",
+            "Your kindness will return to you in unexpected ways.",
+            "You will soon cross paths with someone important.",
+            "Good fortune will follow you wherever you go.",
+            "A dream you have will soon come true.",
+            "Trust your instincts, they will guide you well.",
+            "Adventure is out there-be ready!",
+            "You will soon receive great news.",
+            "A new chapter of your life is about to begin.",
+            "Your hard work will pay off soon.",
+            "A new opportunity will open up for you.",
+            "You will receive a gift that will make you smile.",
+            "Your kindness will return to you in unexpected ways.",
+            "You will soon cross paths with someone important.",
+            "Good fortune will follow you wherever you go.",
+            "A dream you have will soon come true."
+        ];
+
+        // Add click event to the Open Cookie button
+        document.getElementById("openCookie").addEventListener("click", function () {
+
+            // Generate a random number based on array length
+            let random = Math.floor(Math.random() * fortunes.length);
+
+            // Display random fortune message
+            document.getElementById("fortuneMessage").innerHTML = fortunes[random];
+        });
+    </script>
+</body>
+
+</html>

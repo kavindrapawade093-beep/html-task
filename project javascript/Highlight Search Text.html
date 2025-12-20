@@ -2,23 +2,31 @@
 <html lang="en">
 
 <head>
+    <!-- Character encoding -->
     <meta charset="UTF-8">
+
+    <!-- Responsive viewport for mobile devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Page title -->
     <title>Document</title>
+
     <style>
+        /* Reset default margin & padding and set global font */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: "Rubik", sans-serif;
-
         }
 
+        /* Full screen background with gradient */
         body {
             height: 100vh;
             background: linear-gradient(to left, #2987e4 50%, #16191e 50%) fixed;
         }
 
+        /* Main container styling */
         .container {
             width: 90vmin;
             background-color: #ffffff;
@@ -31,13 +39,14 @@
             box-shadow: 0px 30px 50px rgba(30, 21, 49, 0.3);
         }
 
+        /* Wrapper for input and button */
         .wrapper {
             display: flex;
             justify-content: space-between;
             align-items: center;
-
         }
 
+        /* Input field styling */
         .wrapper input {
             width: 60%;
             padding: 10px 7px;
@@ -45,6 +54,7 @@
             border: 1px solid #130303;
         }
 
+        /* Search button styling */
         .wrapper button {
             width: 30%;
             background-color: #201d2e;
@@ -56,51 +66,72 @@
             border-radius: 5px;
         }
 
+        /* Button hover effect */
         .wrapper button:hover {
             background-color: #0f4376;
         }
 
+        /* Paragraph styling */
         .container p {
             line-height: 25px;
             text-align: justify;
             margin-top: 30px;
-
         }
 
+        /* Highlighted search text */
         mark {
             background-color: #ffdd4d;
         }
     </style>
-
 </head>
 
 <body>
+    <!-- Main container -->
     <div class="container">
+
+        <!-- Input & button wrapper -->
         <div class="wrapper">
+
+            <!-- Text input to enter search word -->
             <input type="text" id="text-to-search">
+
+            <!-- Button triggers search function -->
             <button onclick="search()">search</button>
 
         </div>
-        <p id="paragraph">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores labore laboriosam magni,
+
+        <!-- Paragraph where search text will be highlighted -->
+        <p id="paragraph">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores labore laboriosam magni,
             fugit, dolorem possimus quidem libero, assumenda porro blanditiis qui et dicta accusamus itaque ea ex hic
             harum! Odit maxime dignissimos ullam ipsam officia hic recusandae vero nostrum vel maiores deserunt totam
             itaque dicta ut iste sequi, rerum explicabo voluptatem? Vitae repellendus accusamus recusandae optio animi
             magnam cumque ipsum exercitationem reiciendis enim! Consequuntur temporibus perspiciatis similique
-            molestias? Fugiat, laudantium!</p>
+            molestias? Fugiat, laudantium!
+        </p>
     </div>
 
-
     <script>
+        // Function to search and highlight text
         function search() {
+
+            // Get value entered by user
             let textToSearch = document.getElementById("text-to-search").value;
 
+            // Get paragraph element
             let paragraph = document.getElementById("paragraph");
 
+            // Escape special regex characters from input
             textToSearch = textToSearch.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-            let pattern = new RegExp(textToSearch, "gi");
-            paragraph.innerHTML = paragraph.textContent.replace(pattern, (match) => `<mark>${match}</mark>`);
-        };
 
+            // Create case-insensitive and global regex pattern
+            let pattern = new RegExp(textToSearch, "gi");
+
+            // Replace matched text with highlighted <mark> tag
+            paragraph.innerHTML = paragraph.textContent.replace(pattern, (match) => {
+                return `<mark>${match}</mark>`;
+            });
+        };
     </script>
 </body>
 

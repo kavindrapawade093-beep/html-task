@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Random Images</title>
+    <style>
+        /* Reset default browser styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Style for the body: center content vertically & horizontally */
+        body {
+            font-family: "poppins", sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        /* Container for the images, with spacing between them */
+        .images {
+            display: flex;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        /* Style each image */
+        img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            /* Ensure image fills box without stretching */
+            border: 2px solid #ffffff;
+            border-radius: 8px;
+        }
+
+        /* Style the button */
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            background-color: rgb(244, 244, 28);
+            color: #131313;
+            border-radius: 5px;
+        }
+
+        /* Button hover effect */
+        button:hover {
+            background-color: rgb(255, 255, 0);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Page heading -->
+    <h1>Random Images Generator</h1>
+
+    <!-- Container to display the generated images -->
+    <div class="images" id="images"></div>
+
+    <!-- Button to trigger image generation -->
+    <button id="generate-btn">generate button</button>
+
+    <script>
+        // Function to generate a random image URL from Picsum
+        function getRandomImageUrl() {
+            const width = 150;
+            const height = 150;
+
+            // Using Math.random() to ensure each URL is unique
+            return `https://picsum.photos/${width}/${height}?random=${Math.random()}`;
+        }
+
+        // Function to generate 8 random images and display them
+        function generateImages() {
+            const imagesContainer = document.getElementById("images");
+            imagesContainer.innerHTML = ""; // Clear previous images
+
+            // Loop to create 8 image elements
+            for (let i = 0; i < 8; i++) {
+                const img = document.createElement("img"); // Create <img> element
+                img.src = getRandomImageUrl(); // Set the image source
+                imagesContainer.appendChild(img); // Add image to the container
+            }
+        }
+
+        // Add event listener to the button to trigger generateImages on click
+        document.getElementById("generate-btn").addEventListener("click", generateImages);
+    </script>
+</body>
+
+</html>
