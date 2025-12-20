@@ -1,75 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- Root HTML document -->
 
 <head>
+    <!-- Character encoding -->
     <meta charset="UTF-8">
+
+    <!-- Responsive support for all devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Div Follow ouse Cursor</title>
+
+    <!-- Page title -->
+    <title>Div Follow Mouse Cursor</title>
+
     <style>
+        /* Reset default browser styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: sans-serif;
-
         }
 
+        /* Body styling */
         body {
             padding: 0;
             margin: 0;
             height: 100vh;
+            /* Full viewport height */
             background-color: red;
-
+            /* Red background */
         }
 
+        /* Div that follows the cursor */
         #my-div {
             width: 3em;
+            /* Circle width */
             height: 3em;
+            /* Circle height */
             background-color: white;
+            /* White color */
             position: absolute;
+            /* Positioned by JS */
             transform: translate(-50%, -50%);
+            /* Center on cursor */
             border-radius: 50%;
+            /* Make it circular */
             box-shadow: 0 0 20px rgba(16, 0, 54, 0.15);
-            transition: 0.5 ease-out;
+            /* Soft shadow */
+            transition: 0.5s ease-out;
+            /* Smooth movement */
         }
     </style>
 </head>
 
 <body>
+    <!-- Circle that follows mouse or touch -->
     <div id="my-div"></div>
 
     <script>
+        // Select the div element
         let mydiv = document.getElementById("my-div");
+
+        /*
+            Function to check if device supports touch
+            Returns true for touch devices
+        */
         function isTouchDevice() {
             try {
                 document.createEvent("TouchEvent");
                 return true;
-            }
-            catch (e) {
+            } catch (e) {
                 return false;
             }
         }
 
+        /*
+            Function to move the div
+            Works for both mouse and touch events
+        */
         const move = (e) => {
             try {
+                // Get X and Y coordinates based on device type
                 var x = !isTouchDevice() ? e.pageX : e.touches[0].pageX;
                 var y = !isTouchDevice() ? e.pageY : e.touches[0].pageY;
-
+            } catch (e) {
+                // Ignore errors (safety)
             }
-            catch (e) { }
 
+            // Update div position (offset to center it)
             mydiv.style.left = x - 30 + "px";
             mydiv.style.top = y - 30 + "px";
         };
+
+        // Mouse move event (desktop)
         document.addEventListener("mousemove", (e) => {
-            move(e)
-
+            move(e);
         });
-        document.addEventListener("touchmove", (e) => { move(e) });
 
-
-
-
+        // Touch move event (mobile)
+        document.addEventListener("touchmove", (e) => {
+            move(e);
+        });
     </script>
 </body>
 

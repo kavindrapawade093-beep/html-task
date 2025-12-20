@@ -1,11 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- Root HTML document -->
 
 <head>
+    <!-- Character encoding -->
     <meta charset="UTF-8">
+
+    <!-- Responsive layout -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsieve verticle tabs</title>
+
+    <!-- Page title -->
+    <title>Responsive Vertical Tabs</title>
+
     <style>
+        /* Reset default styles and set font */
         * {
             margin: 0;
             padding: 0;
@@ -13,26 +21,36 @@
             font-family: sans-serif;
         }
 
+        /* Body styling */
         body {
             background-color: #4d5bf9;
+            /* Background color */
         }
 
+        /* Container for tabs and content */
         .container {
             background-color: #ffffff;
+            /* White background */
             width: 95vmin;
+            /* Responsive width */
             font-size: 16px;
             min-width: 30em;
+            /* Minimum width */
             position: absolute;
-            transform: translate(-50%, -50%);
-            top: 50%;
             left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            /* Center container */
             display: grid;
             grid-template-columns: 2fr 9fr;
+            /* Tabs + Content layout */
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            /* Shadow effect */
             border-radius: 0.5em;
             overflow: hidden;
         }
 
+        /* Tabs section */
         .tabs {
             background-color: #cdd0f0;
             display: flex;
@@ -40,20 +58,23 @@
             justify-content: space-around;
         }
 
+        /* Each tab heading */
         h3 {
             height: 34%;
             display: grid;
             place-items: center;
+            /* Center text */
             font-size: 1.2em;
             font-weight: 600;
             color: black;
             cursor: pointer;
+            /* Pointer on hover */
         }
 
+        /* Tab content section */
         .tab-content {
             padding: 1em 1.5em;
             background-color: #ffffff;
-
         }
 
         .tab-content h4 {
@@ -61,7 +82,6 @@
             margin-bottom: 0.5em;
             color: black;
             font-weight: 600;
-
         }
 
         .tab-content p {
@@ -69,17 +89,19 @@
             line-height: 1.9;
             letter-spacing: 0.4px;
             color: #202238;
-
         }
 
+        /* Hide all tab contents by default */
         .tab-content div {
             display: none;
         }
 
+        /* Show active tab content */
         .tab-content .active {
             display: block;
         }
 
+        /* Active tab styling */
         .tabs .active {
             background-color: #4d5bf9;
             color: red;
@@ -88,7 +110,9 @@
 </head>
 
 <body>
+    <!-- Main container -->
     <div class="container">
+        <!-- Vertical tabs -->
         <div class="tabs">
             <h3 class="active">Tab 1</h3>
             <h3>Tab 2</h3>
@@ -96,8 +120,10 @@
             <h3>Tab 4</h3>
             <h3>Tab 5</h3>
         </div>
+
+        <!-- Tab content -->
         <div class="tab-content">
-            <!-- First title -->
+            <!-- First tab content -->
             <div class="active">
                 <h4>first title</h4>
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque temporibus molestiae sed eligendi
@@ -106,16 +132,14 @@
                     dolores eum!</p>
             </div>
 
-
-            <!-- second title -->
+            <!-- Second tab content -->
             <div>
                 <h4>second title</h4>
                 <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam ullam laborum deserunt ipsum ad
                     architecto dignissimos tempora reprehenderit culpa quia?</p>
-
             </div>
 
-            <!-- 3rd title -->
+            <!-- Third tab content -->
             <div>
                 <h4>third title</h4>
                 <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Error officiis unde fugit? Neque
@@ -123,16 +147,13 @@
                     autem. Nesciunt dicta ullam totam.</p>
             </div>
 
-
-            <!-- Fourth title -->
+            <!-- Fourth tab content -->
             <div>
                 <h4>Fourth title</h4>
                 <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt, delectus.</p>
             </div>
 
-
-
-            <!-- Fifth title -->
+            <!-- Fifth tab content -->
             <div>
                 <h4>fifth title</h4>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos porro accusantium at nemo?
@@ -141,28 +162,42 @@
                     animi? Provident, odit perferendis quidem aliquam aperiam accusamus sint tenetur quam
                     exercitationem!</p>
             </div>
-
         </div>
-
     </div>
 
-
     <script>
+        // Select all tab headings
         let tabs = document.querySelectorAll('.tabs h3');
+
+        // Select all tab content divs
         let tabContent = document.querySelectorAll('.tab-content div');
+
+        /*
+            Loop through each tab heading and add click event
+            When a tab is clicked:
+            1. Remove 'active' class from all tabs
+            2. Remove 'active' class from all tab content divs
+            3. Add 'active' class to the clicked tab and corresponding content
+        */
         tabs.forEach((tab, index) => {
             tab.addEventListener('click', () => {
+                // Remove active class from all tabs
                 tabs.forEach(tab => {
                     tab.classList.remove('active');
                 });
+
+                // Remove active class from all content divs
                 tabContent.forEach(tab => {
                     tab.classList.remove('active');
                 });
+
+                // Add active class to clicked tab
                 tab.classList.add('active');
+
+                // Show corresponding content
                 tabContent[index].classList.add('active');
             });
         });
-
     </script>
 </body>
 

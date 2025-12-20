@@ -1,33 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- Root HTML document -->
 
 <head>
+    <!-- Character encoding -->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flash Document Title</title>
 
+    <!-- Responsive layout for all devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Page title -->
+    <title>Flash Document Title</title>
 </head>
 
 <body>
-
-
-
     <script>
+        /*
+            Function to make the document title flash
+            between its original title and a notification text
+        */
         function flashTitle() {
+            // Store the original document title
             var titleOne = document.title;
+
+            // Boolean flag to toggle title
             var isFlashOn = false;
 
+            /*
+                Inner function that actually toggles the title
+                Runs repeatedly via setInterval
+            */
             function flashTitle() {
+                // Toggle title: if isFlashOn true, set original title, else set "New Notification"
+                document.title = isFlashOn ? titleOne : "New Notification";
 
-                document.title = isFlashOn ? titleOne : "New Notification"; titleOne; isFlashOn = !isFlashon;  //this is a comment */
-
-
+                // Toggle the boolean flag
+                isFlashOn = !isFlashOn;
             }
+
+            // Call flashTitle every 1000ms (1 second)
             setInterval(flashTitle, 1000);
         }
+
+        // Start flashing title when page loads
         window.onload = flashTitle;
     </script>
-
 </body>
 
 </html>

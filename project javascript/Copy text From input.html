@@ -1,76 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- Root HTML document, language set to English -->
 
 <head>
+    <!-- Character encoding -->
     <meta charset="UTF-8">
+
+    <!-- Makes the layout responsive on all devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title shown in browser tab -->
     <title>Copy text From input</title>
+
     <style>
+        /* Reset default margin & padding and apply border-box model */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: sans-serif;
-
         }
 
+        /* Body styling */
         body {
             height: 100vh;
+            /* Full viewport height */
             background-color: #577eff;
+            /* Blue background */
             display: flex;
+            /* Flexbox layout */
             flex-direction: column;
+            /* Stack items vertically */
             justify-content: center;
+            /* Center vertically */
             align-items: center;
+            /* Center horizontally */
         }
 
+        /* Container box styling */
         .container {
             background-color: #ffffff;
+            /* White background */
             padding: 30px;
+            /* Inner spacing */
             border-radius: 10px;
+            /* Rounded corners */
             margin: 30px 0;
-
+            /* Space between containers */
         }
 
+        /* Input field styling */
         .container input {
             font-size: 18px;
+            /* Larger text */
             padding: 10px;
+            /* Inner spacing */
             border-radius: 5px;
+            /* Rounded corners */
             border: 1px solid red;
+            /* Red border */
         }
 
+        /* Button styling */
         .container button {
             font-size: 18px;
+            /* Button text size */
             padding: 10px 20px;
+            /* Inner spacing */
             background-color: #f12f12f1;
+            /* Red background */
             color: white;
+            /* White text */
             border-radius: 5px;
+            /* Rounded corners */
             border: none;
+            /* Remove default border */
             margin-left: 10px;
+            /* Space between input and button */
             cursor: pointer;
+            /* Pointer cursor on hover */
         }
     </style>
 </head>
 
 <body>
+    <!-- First input-copy container -->
     <div class="container">
+        <!-- Text input with default value -->
         <input type="text" id="text-1" value="Some text to be copied">
-        <button onclick="copy('text-1')">copy Text</button>
 
+        <!-- Button that copies text from input with id 'text-1' -->
+        <button onclick="copy('text-1')">copy Text</button>
     </div>
+
+    <!-- Second input-copy container -->
     <div class="container">
+        <!-- Another text input with different default value -->
         <input type="text" id="text-2" value="here is anoter text">
+
+        <!-- Button that copies text from input with id 'text-2' -->
         <button onclick="copy('text-2')">copy text</button>
     </div>
 
-
     <script>
-        // pass the id of input element to be copied an argument to the copy()
-        let copy = (textId) => {
-            // selct the text in the <input > element
-            document.getElementById(textId).select();
-            // copy the selected text
-            document.execCommand("copy");
+        /*
+            copy() function
+            ----------------
+            Accepts the ID of an input element
+            Selects its text
+            Copies it to clipboard
+        */
 
+        // Arrow function that receives input id as parameter
+        let copy = (textId) => {
+
+            // Select the input element using its ID
+            let input = document.getElementById(textId);
+
+            // Select (highlight) the text inside the input
+            input.select();
+
+            // Copy the selected text to clipboard
+            document.execCommand("copy");
         };
     </script>
 </body>

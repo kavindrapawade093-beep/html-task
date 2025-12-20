@@ -1,68 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- Root HTML document -->
 
 <head>
+    <!-- Character encoding -->
     <meta charset="UTF-8">
+
+    <!-- Responsive layout -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Page title -->
     <title>Letter By Letter Reveal</title>
+
     <style>
+        /* Reset default browser styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        /* Body styling */
         body {
             background-color: lightgreen;
+            /* Light green background */
             display: flex;
+            /* Flexbox layout */
             justify-content: center;
+            /* Center horizontally */
             align-items: center;
+            /* Center vertically */
             height: 100vh;
+            /* Full viewport height */
             font-family: sans-serif;
             color: white;
             overflow: hidden;
         }
 
+        /* Text container styling */
         .text-container {
             color: #ffffff;
+            /* White text */
             font-size: 40px;
+            /* Large font size */
             font-weight: bold;
             text-align: center;
         }
     </style>
-
 </head>
 
 <body>
+    <!-- Container for dynamically revealed text -->
     <div class="text-container"></div>
 
     <script>
-        // Select the text container
+        // Select the text container element
         const textContainer = document.querySelector('.text-container');
 
-        // Words to reveal
+        // Array of phrases to display letter by letter
         const phrases = ["Awesome", "Fun", "Challenging", "Fantastic"];
 
+        // Track current phrase and letter index
         let phraseIndex = 0;
         let letterIndex = 0;
 
+        /*
+            Function to reveal text letter by letter
+            It types each letter individually, then moves to the next phrase
+        */
         function typeEffect() {
+            // Move to the next letter
             letterIndex++;
 
+            // Current phrase to display
             const currentPhrase = phrases[phraseIndex];
 
-            // print letters one by one
+            // Update container with letters up to current index
             textContainer.innerHTML = `<h1>Coding is ${currentPhrase.slice(0, letterIndex)}</h1>`;
 
             if (letterIndex === currentPhrase.length) {
-                phraseIndex = (phraseIndex + 1) % phrases.length;
+                // If entire phrase is shown, wait 2s, then go to next phrase
+                phraseIndex = (phraseIndex + 1) % phrases.length; // Loop back to first phrase
                 letterIndex = 0;
                 setTimeout(typeEffect, 2000);
             } else {
+                // Otherwise, reveal next letter after 100ms
                 setTimeout(typeEffect, 100);
             }
         }
 
+        // Start the typing effect
         typeEffect();
     </script>
 </body>

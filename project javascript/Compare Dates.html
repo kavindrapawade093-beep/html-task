@@ -1,11 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- Root HTML document with English language -->
 
 <head>
+    <!-- Character encoding -->
     <meta charset="UTF-8">
+
+    <!-- Responsive design for different screen sizes -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Compare Dates </title>
+
+    <!-- Page title shown in browser tab -->
+    <title>Compare Dates</title>
+
     <style>
+        /* Reset default margin & padding and apply box model */
         * {
             margin: 0;
             padding: 0;
@@ -13,15 +21,22 @@
             font-family: sans-serif;
         }
 
+        /* Body styling */
         body {
             height: 100vh;
+            /* Full viewport height */
             background-color: #577eff;
+            /* Blue background */
             display: flex;
+            /* Flexbox layout */
             flex-direction: column;
             justify-content: center;
+            /* Center vertically */
             align-items: center;
+            /* Center horizontally */
         }
 
+        /* Main container styling */
         .container {
             background-color: white;
             padding: 30px;
@@ -31,21 +46,23 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-
         }
 
+        /* Wrapper for date inputs */
         .dates {
             display: flex;
             gap: 20px;
-
+            /* Space between date inputs */
         }
 
+        /* Date input styling */
         .dates input {
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
         }
 
+        /* Button styling */
         #check {
             background-color: #577eff;
             color: white;
@@ -56,6 +73,7 @@
             margin: 20px;
         }
 
+        /* Result text styling */
         #result {
             margin-top: 10px;
             font-size: 20px;
@@ -63,44 +81,60 @@
             color: #333;
         }
     </style>
-
 </head>
 
 <body>
+    <!-- Main UI container -->
     <div class="container">
-        <div class="dates">
-            <input type="date" id="date-1">
-            <input type="date" id="date-2">
 
+        <!-- Date input section -->
+        <div class="dates">
+            <!-- First date input -->
+            <input type="date" id="date-1">
+
+            <!-- Second date input -->
+            <input type="date" id="date-2">
         </div>
+
+        <!-- Button to trigger date comparison -->
         <button id="check">Check</button>
+
+        <!-- Paragraph to show comparison result -->
         <p id="result">Input Some Value To get Started</p>
     </div>
 
     <script>
+        // Get reference to the result paragraph
         let result = document.getElementById("result");
 
+        // Get reference to the button
         let btn = document.getElementById("check");
+
+        // Add click event listener to the button
         btn.addEventListener("click", () => {
+
+            // Get values from both date inputs
             let date1 = document.getElementById("date-1").value;
             let date2 = document.getElementById("date-2").value;
+
+            // Check if any input is empty
             if (date1.length == 0 || date2.length == 0) {
                 result.innerHTML = "<span>Input Some Value To get Started</span>";
-            } else
-                if (date1 > date2) {
-                    result.innerHTML = `<span>${date1} is greater than ${date2}</span>`;
-
-                }
-                else if (date1 < date2) {
-                    result.innerHtml = `<span>${date2} is greater than ${date1}</span>`;
-                }
-                else if (date1 == date2) {
-                    result.innerHTML = `<span>${date1} is equal to ${date2}</span>`;
-                }
-        }
-        );
-
-
+            }
+            // If first date is greater than second date
+            else if (date1 > date2) {
+                result.innerHTML = `<span>${date1} is greater than ${date2}</span>`;
+            }
+            // If first date is smaller than second date
+            else if (date1 < date2) {
+                // ❗ Typo here: innerHtml should be innerHTML
+                result.innerHtml = `<span>${date2} is greater than ${date1}</span>`;
+            }
+            // If both dates are equal
+            else if (date1 == date2) {
+                result.innerHTML = `<span>${date1} is equal to ${date2}</span>`;
+            }
+        });
     </script>
 </body>
 

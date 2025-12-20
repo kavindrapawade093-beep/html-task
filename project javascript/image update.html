@@ -1,38 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- Root HTML document -->
 
 <head>
+    <!-- Character encoding -->
     <meta charset="UTF-8">
+
+    <!-- Responsive layout for all devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Page title -->
     <title>Image Upload</title>
+
     <style>
+        /* Reset default styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        /* Image styling */
         img {
             width: 200px;
+            /* Fixed width */
             height: 200px;
+            /* Fixed height */
             border-radius: 50%;
+            /* Circular shape */
             object-fit: cover;
+            /* Ensure image covers the container without distortion */
         }
     </style>
 </head>
 
 <body>
 
+    <!-- Default image shown initially -->
     <img src="https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg?semt=ais_hybrid&w=740&q=80"
         alt="">
+
+    <!-- File input to upload image -->
     <input type="file" />
 
     <script>
-
+        // Select the image element
         const image = document.querySelector('img');
+
+        // Select the file input element
         const input = document.querySelector('input');
 
+        /*
+            Event listener for input change
+            When a file is selected, update the image source
+        */
         input.addEventListener('change', e => {
+            // Create a temporary URL for the selected file and set it as the image source
             image.src = URL.createObjectURL(e.target.files[0]);
         });
     </script>

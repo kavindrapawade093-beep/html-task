@@ -2,38 +2,61 @@
 <html lang="en">
 
 <head>
+    <!-- Character encoding -->
     <meta charset="UTF-8">
+
+    <!-- Responsive layout for mobile -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Analog Clock </title>
+
+    <!-- Page title -->
+    <title>Analog Clock</title>
+
     <style>
+        /* Reset default browser spacing */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        /* Page background */
         body {
             height: 100vh;
+            /* Full viewport height */
             background: linear-gradient(to bottom,
                     #2987e4 50%,
-                    #16191e 50%);
+                    /* Top half blue */
+                    #16191e 50%
+                    /* Bottom half dark */
+                );
         }
 
+        /* Clock outer container */
         .clock {
             background: #16191e;
             height: 320px;
             width: 320px;
+
+            /* Center clock on screen */
             position: absolute;
-            transform: translate(-50%, -50%);
             top: 50%;
             left: 50%;
+            transform: translate(-50%, -50%);
+
             box-sizing: content-box;
             border-radius: 50%;
+            /* Make it circular */
+
+            /* Clock border */
             border: 15px solid #242931;
-            box-shadow: 15px 15px 35px rgba(0, 0, 0, 0.2),
+
+            /* Shadow for 3D look */
+            box-shadow:
+                15px 15px 35px rgba(0, 0, 0, 0.2),
                 inset 0 0 30px rgba(0, 0, 0, 0.4);
         }
 
+        /* Optional background image for clock */
         img {
             position: absolute;
             top: 50%;
@@ -43,19 +66,23 @@
             width: 100%;
             object-fit: cover;
             z-index: -1;
-
+            /* Send image behind hands */
         }
 
+        /* Common styles for all clock hands */
         .hand {
             position: absolute;
-            background-color: #ffffff;
             margin: auto;
             left: 0;
             right: 0;
+
             border-radius: 5px;
+
+            /* Rotation starts from bottom */
             transform-origin: bottom;
         }
 
+        /* Hour hand */
         .hour {
             height: 60px;
             width: 10px;
@@ -63,6 +90,7 @@
             background-color: red;
         }
 
+        /* Minute hand */
         .minute {
             height: 80px;
             width: 6px;
@@ -70,6 +98,7 @@
             background-color: white;
         }
 
+        /* Second hand */
         .seconds {
             height: 100px;
             width: 4px;
@@ -80,36 +109,58 @@
 </head>
 
 <body>
+
+    <!-- Clock container -->
     <div class="clock">
+
+        <!-- Hour hand -->
         <div class="hour hand" id="hour"></div>
+
+        <!-- Minute hand -->
         <div class="minute hand" id="minute"></div>
+
+        <!-- Second hand -->
         <div class="seconds hand" id="seconds"></div>
 
-
+        <!-- Optional clock background image -->
         <!-- <img src="project javascript/Clock/image24/download.svg" alt="clock"> -->
     </div>
 
     <script>
+        // Get references to clock hands
         let hour = document.getElementById('hour');
         let minute = document.getElementById('minute');
         let seconds = document.getElementById('seconds');
 
+        // Update clock every 1 second
         let set_clock = setInterval(() => {
+
+            // Get current date and time
             let date_now = new Date();
+
+            // Extract hours, minutes, seconds
             let hr = date_now.getHours();
             let min = date_now.getMinutes();
             let sec = date_now.getSeconds();
 
+            /*
+                Calculate rotation angles:
+                - Hour hand: 30° per hour + 0.5° per minute
+                - Minute hand: 6° per minute + 0.1° per second
+                - Second hand: 6° per second
+            */
             let calc_hr = (hr * 30) + (min / 2);
             let calc_min = (min * 6) + (sec / 10);
             let calc_sec = sec * 6;
 
+            // Apply rotations to hands
             hour.style.transform = `rotate(${calc_hr}deg)`;
             minute.style.transform = `rotate(${calc_min}deg)`;
             seconds.style.transform = `rotate(${calc_sec}deg)`;
 
-        }, 1000);
+        }, 1000); // Run every second
     </script>
+
 </body>
 
 </html>

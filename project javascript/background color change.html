@@ -2,46 +2,79 @@
 <html lang="en">
 
 <head>
+    <!-- Character encoding -->
     <meta charset="UTF-8">
+
+    <!-- Responsive scaling for mobile devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <!-- Page title -->
+    <title>Random Background Color</title>
+
     <style>
+        /* Reset default browser padding and margin */
         * {
             padding: 0;
             margin: 0;
             box-sizing: border-box;
         }
 
+        /* Body styling */
         body {
             background-color: blue;
+            /* Initial background color */
             height: 100vh;
+            /* Full viewport height */
+
+            /* Center button horizontally and vertically */
             display: grid;
             place-items: center;
         }
 
+        /* Button styling */
         button {
             font-family: sans-serif;
+            /* Font style */
             font-size: 20px;
+            /* Text size */
             padding: 20px 45px;
+            /* Button spacing */
             background-color: transparent;
+            /* Transparent background */
             border: 5px solid white;
+            /* White border */
             color: white;
+            /* Text color */
             border-radius: 50px;
+            /* Rounded edges */
             cursor: pointer;
+            /* Pointer cursor on hover */
             outline: none;
-
+            /* Remove default outline */
         }
     </style>
 </head>
 
 <body>
+
+    <!-- Button that triggers color change when clicked -->
     <button onclick="changeColor()">Click Me</button>
 
     <script>
+        // Function to change the background color randomly
         function changeColor() {
-            document.body.style.backgroundColor = 'rgb(' + Math.round(Math.random() * 255) + ',' + Math.round(Math.random() * 255) + ',' + Math.round(Math.random() * 255) + ')';
+
+            // Generate random values between 0 and 255 for RGB
+            let red = Math.round(Math.random() * 255);
+            let green = Math.round(Math.random() * 255);
+            let blue = Math.round(Math.random() * 255);
+
+            // Apply the random RGB color to body background
+            document.body.style.backgroundColor =
+                'rgb(' + red + ',' + green + ',' + blue + ')';
         }
     </script>
+
 </body>
 
 </html>

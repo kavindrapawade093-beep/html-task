@@ -1,107 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- Root HTML document -->
 
 <head>
+    <!-- Character encoding -->
     <meta charset="UTF-8">
+
+    <!-- Responsive layout for all devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Page title -->
     <title>Simple Dropdown Menu</title>
+
     <style>
+        /* Reset default browser styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        /* Body styling */
         body {
             font-family: sans-serif;
+            /* Set font */
             display: flex;
+            /* Use flexbox for centering */
             justify-content: center;
+            /* Center horizontally */
             align-items: center;
+            /* Center vertically */
             height: 100vh;
+            /* Full viewport height */
             margin: 0;
             background-color: red;
+            /* Red background */
         }
 
+        /* Navbar container styling */
         .navbar {
             display: flex;
+            /* Horizontal layout */
             align-items: center;
             padding: 20px;
             gap: 20px;
+            /* Space between items */
             background-color: white;
             border-radius: 10px;
         }
 
+        /* Navbar links and menu button styling */
         .navbar a,
         .menu-button {
             text-decoration: none;
+            /* Remove underline */
             color: black;
             padding: 10px 20px;
             border-radius: 5px;
+            /* Rounded corners */
             transition: background-color 0.3s ease;
+            /* Smooth hover effect */
             font-size: 16px;
-
         }
 
+        /* Menu wrapper */
         .menu {
             position: relative;
+            /* For dropdown positioning */
             display: inline-block;
         }
 
+        /* Menu button styling */
         .menu-button {
             border: none;
             background-color: transparent;
+            /* Transparent background */
             cursor: pointer;
+            /* Pointer on hover */
         }
 
+        /* Dropdown content container */
         .dropdown-content {
             display: none;
+            /* Hidden by default */
             position: absolute;
+            /* Position relative to menu */
             background-color: white;
             top: 35px;
+            /* Position below button */
             min-width: 160px;
+            /* Minimum width */
             box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            /* Shadow */
             border-radius: 5px;
+            /* Rounded corners */
             z-index: 1;
-
+            /* Ensure on top */
         }
 
+        /* Show dropdown on hover */
         .menu:hover .dropdown-content {
             display: block;
         }
 
+        /* Dropdown links styling */
         .dropdown-content a {
             color: black;
             padding: 12px 16px;
             text-decoration: none;
             display: block;
-
+            /* Stack vertically */
         }
 
+        /* Dropdown link hover effect */
         .dropdown-content a:hover {
             background-color: red;
+            /* Red background on hover */
         }
     </style>
-
 </head>
 
 <body>
 
+    <!-- Navbar container -->
     <div class="navbar">
+        <!-- Regular links -->
         <a href="#">Home</a>
         <a href="#">About</a>
 
+        <!-- Dropdown menu -->
         <div class="menu">
+            <!-- Button to trigger dropdown -->
             <button class="menu-button">Services</button>
+
+            <!-- Dropdown content -->
             <div class="dropdown-content">
-                <a href="#">web Services</a>
+                <a href="#">Web Services</a>
                 <a href="#">Mobile Services</a>
                 <a href="#">Desktop Services</a>
             </div>
         </div>
+
+        <!-- Another regular link -->
         <a href="#">Contact</a>
     </div>
-    <script>
 
+    <script>
+        // Select menu button
+        let menuButton = document.querySelector(".menu-button");
+
+        // Select dropdown content
+        let dropdownContent = document.querySelector(".dropdown-content");
+
+        /*
+            Toggle dropdown visibility on button click
+            Note: Hover effect is already handled via CSS
+        */
+        menuButton.addEventListener("click", () => {
+            dropdownContent.classList.toggle("show");
+        });
     </script>
 </body>
 

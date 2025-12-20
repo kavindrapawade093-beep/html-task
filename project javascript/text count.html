@@ -1,64 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- Root HTML document -->
 
 <head>
+    <!-- Character encoding -->
     <meta charset="UTF-8">
+
+    <!-- Responsive layout for all devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <!-- Page title -->
+    <title>Character Counter</title>
+
     <style>
+        /* Reset default styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        /* Body background */
         body {
             background-color: #0a192f;
+            /* Dark blue background */
         }
 
+        /* Main container styling */
         .container {
             border: 1px solid white;
+            /* White border */
             width: 400px;
+            /* Fixed width */
             position: absolute;
+            /* Absolute positioning */
             transform: translate(-50%, -50%);
+            /* Center the container */
             top: 50%;
+            /* Vertical center */
             left: 50%;
-
+            /* Horizontal center */
         }
 
+        /* Textarea styling */
         textarea {
             width: 100%;
+            /* Full container width */
             height: 100%;
+            /* Full container height */
             color: white;
+            /* Text color */
             background-color: #09162b;
+            /* Darker background */
             border: none;
+            /* Remove default border */
             outline: none;
+            /* Remove outline */
             padding: 10px;
+            /* Inner spacing */
             resize: none;
-            outline: none;
+            /* Prevent resizing */
         }
 
+        /* Paragraph styling for character count */
         p {
             color: white;
+            /* White text */
             text-align: center;
+            /* Center text */
             margin-top: 20px;
+            /* Space above paragraph */
         }
     </style>
 </head>
 
 <body>
-
+    <!-- Container holding textarea and character count -->
     <div class="container">
+        <!-- Textarea input for typing -->
         <textarea id="my-text" rows="8" placeholder="Type something here..."></textarea>
-        <p id="count-result">Total Character:0</p>
 
+        <!-- Paragraph to display total character count -->
+        <p id="count-result">Total Character:0</p>
     </div>
+
     <script>
+        // Select the textarea element
         let myText = document.getElementById("my-text");
+
+        /*
+            Add input event listener
+            Fires every time user types or deletes a character
+        */
         myText.addEventListener("input", () => {
+            // Count total characters in textarea
             let count = myText.value.length;
-            document.getElementById("count-result").innerHTML = `Total Character:${count}`
-        })
+
+            // Update the paragraph with current character count
+            document.getElementById("count-result").innerHTML = `Total Character:${count}`;
+        });
     </script>
 </body>
 

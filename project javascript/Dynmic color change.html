@@ -1,48 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- Root HTML document -->
 
 <head>
+    <!-- Character encoding -->
     <meta charset="UTF-8">
+
+    <!-- Responsive layout for all screen sizes -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dynmic color change</title>
+
+    <!-- Page title -->
+    <title>Dynamic Color Change</title>
+
     <style>
+        /* Reset default margin, padding and box model */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-
         }
 
+        /* Page background */
         body {
             background-color: #121317;
+            /* Dark background */
         }
 
+        /* Main container centered on screen */
         .container {
             background-color: grey;
+            /* Container background */
             width: 18em;
+            /* Fixed width */
             position: absolute;
+            /* Absolute positioning */
             transform: translate(-50%, -50%);
+            /* Perfect centering */
             left: 50%;
             top: 50%;
             padding: 48px;
+            /* Inner spacing */
             border-radius: 1em;
+            /* Rounded corners */
         }
 
+        /* Color preview box */
         #result-box {
             height: 200px;
             width: 200px;
             background-color: orange;
+            /* Default color */
             border-radius: 1em;
-            box-shadow: 0px 0px 0px 10px #121317, 0 0 0 15px #ffffff;
+            /* Double border effect using box-shadow */
+            box-shadow:
+                0 0 0 10px #121317,
+                0 0 0 15px #ffffff;
             margin: 0 auto;
-            border-radius: 1em;
+            /* Center horizontally */
             margin-bottom: 2em;
-
+            /* Space below */
         }
 
+        /* Text input styling */
         #input-box {
             width: 100%;
             padding: 1em;
+            /* Inner spacing */
             border: none;
             outline: none;
             border-radius: 1em;
@@ -52,22 +75,38 @@
 </head>
 
 <body>
+    <!-- Main wrapper -->
     <div class="container">
-        <Div id="result-box"></Div>
+
+        <!-- Box that changes color dynamically -->
+        <div id="result-box"></div>
+
+        <!-- Input field for color name or value -->
         <input type="text" id="input-box" value="orange">
-
-
     </div>
 
     <script>
+        // Select input field
         let inputBox = document.getElementById("input-box");
+
+        // Select color preview box
         let resultBox = document.getElementById("result-box");
 
+        /*
+            Function to change background color
+            based on input value
+        */
         let changeColor = () => {
-            let input = inputBox.value;
-            resultBox.style.backgroundColor = input;
 
+            // Get value typed in input
+            let input = inputBox.value;
+
+            // Apply input value as background color
+            // (works for color names, hex, rgb, etc.)
+            resultBox.style.backgroundColor = input;
         };
+
+        // Listen for typing in input field
         inputBox.addEventListener("input", changeColor);
     </script>
 </body>

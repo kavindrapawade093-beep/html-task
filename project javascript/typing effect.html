@@ -1,48 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- Root HTML document -->
 
 <head>
+    <!-- Character encoding -->
     <meta charset="UTF-8">
+
+    <!-- Responsive layout -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <!-- Page title -->
+    <title>Typing Effect</title>
+
     <style>
+        /* Reset default styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        /* Body styling */
         body {
             font-family: sans-serif;
+            /* Set font */
             display: flex;
+            /* Use flexbox for centering */
             justify-content: center;
+            /* Center horizontally */
             align-items: center;
+            /* Center vertically */
             height: 100vh;
+            /* Full viewport height */
             margin: 0;
             background-color: aqua;
+            /* Background color */
         }
 
+        /* Container for typing effect */
         .typing-container {
             background-color: white;
+            /* White background */
             padding: 20px;
+            /* Inner padding */
             border-radius: 10px;
+            /* Rounded corners */
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            /* Shadow effect */
         }
 
+        /* Typing text styling */
         .typing-text {
             font-size: 24px;
             font-weight: bold;
             color: #333;
+            /* Dark text color */
         }
 
+        /* Cursor styling */
         .cursor {
             display: inline-block;
             width: 2px;
+            /* Thin vertical line */
             height: 20px;
             background-color: #333;
+            /* Same color as text */
             animation: blink 1s infinite;
+            /* Blinking animation */
         }
 
+        /* Blink animation keyframes */
         @keyframes blink {
             0% {
                 opacity: 1;
@@ -60,29 +87,40 @@
 </head>
 
 <body>
+    <!-- Container for typing text and cursor -->
     <div class="typing-container">
-        <span class="typind-text" id="typingtext"></span>
+        <!-- Typing text -->
+        <span class="typing-text" id="typingtext"></span>
+        <!-- Cursor element -->
         <span class="cursor" id="cursor"></span>
     </div>
 
-
     <script>
+        // Text to be typed
         const text = "welcome to coding artists";
+
+        // Select elements
         const typingText = document.getElementById('typingtext');
         const cursor = document.getElementById('cursor');
 
+        // Index to track current character
         let index = 0;
 
+        /*
+            Function to simulate typing effect
+            Adds one character at a time to the text element
+        */
         function typeWriter() {
             if (index < text.length) {
-                typingText.textContent += text.charAt(index);
-                index++;
-                setTimeout(typeWriter, 100);
-            }
-            else {
-                cursor.style.display = 'none';
+                typingText.textContent += text.charAt(index); // Add next character
+                index++; // Increment index
+                setTimeout(typeWriter, 100); // Call again after 100ms
+            } else {
+                cursor.style.display = 'none'; // Hide cursor after typing is done
             }
         }
+
+        // Start typing effect
         typeWriter();
     </script>
 </body>

@@ -1,68 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- Root HTML document -->
 
 <head>
+    <!-- Character encoding -->
     <meta charset="UTF-8">
+
+    <!-- Responsive layout for all screen sizes -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>cursoe effect 2</title>
+
+    <!-- Page title -->
+    <title>cursor effect 2</title>
+
     <style>
+        /* Reset default browser styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: sans-serif;
-
         }
 
+        /* Body styling */
         body {
             display: flex;
+            /* Use flexbox */
             justify-content: center;
+            /* Center horizontally */
             align-items: center;
+            /* Center vertically */
             min-height: 100vh;
+            /* Full viewport height */
             background-color: red;
+            /* Red background */
         }
 
+        /* Inner solid cursor dot */
         #cursor {
             position: absolute;
+            /* Position relative to viewport */
             width: 20px;
             height: 20px;
             background-color: #fff;
+            /* White color */
             border-radius: 50%;
+            /* Circle shape */
             transform: translate(-50%, -50%);
+            /* Center on mouse */
             pointer-events: none;
+            /* Ignore mouse events */
         }
 
+        /* Outer cursor border circle */
         #cursor-border {
             position: absolute;
             width: 30px;
             height: 30px;
             border: 2px solid #fff;
+            /* White outline */
             border-radius: 50%;
             transform: translate(-50%, -50%);
             pointer-events: none;
+            /* Allow clicks through */
             background-color: transparent;
             transition: all 0.3s ease;
+            /* Smooth movement */
         }
     </style>
 </head>
 
 <body>
-    <div id="cursor"> </div>
-    <div id="cursoe-border"></div>
+    <!-- Solid cursor element -->
+    <div id="cursor"></div>
 
-
+    <!-- Cursor border element -->
+    <!-- ❗ Typo fixed: "cursoe-border" → "cursor-border" -->
+    <div id="cursor-border"></div>
 
     <script>
+        // Select the solid cursor element
         const cursor = document.querySelector('#cursor');
+
+        // Select the cursor border element
         const cursorBorder = document.querySelector('#cursor-border');
 
+        // Listen for mouse movement on the document
         document.addEventListener('mousemove', (e) => {
+
+            // Get mouse X and Y position
             let x = e.clientX;
             let y = e.clientY;
 
+            // Move the solid cursor to mouse position
             cursor.style.left = `${x}px`;
             cursor.style.top = `${y}px`;
 
+            // Move the cursor border to mouse position
             cursorBorder.style.left = `${x}px`;
             cursorBorder.style.top = `${y}px`;
         });

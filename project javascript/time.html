@@ -1,11 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- Root HTML document -->
 
 <head>
+    <!-- Character encoding -->
     <meta charset="UTF-8">
+
+    <!-- Responsive layout -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <!-- Page title -->
+    <title>Digital Clock</title>
+
     <style>
+        /* Reset box-sizing and margin/padding for all elements */
         *,
         *::before,
         *::after {
@@ -14,26 +22,36 @@
             padding: 0;
         }
 
+        /* Body styling with gradient background */
         body {
             height: 100vh;
+            /* Full viewport height */
             background: linear-gradient(135deg, #8052ec, #d161ff);
+            /* Purple gradient */
         }
 
+        /* Clock container styling */
         .clock {
             width: 550px;
             height: 150px;
             position: absolute;
+            /* Position in center */
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
+            /* Center horizontally and vertically */
             display: flex;
             align-items: center;
+            /* Vertically center numbers */
             justify-content: space-between;
+            /* Space between hours, minutes, seconds */
         }
 
+        /* Individual clock box styling */
         .clock div {
             position: relative;
             background-color: #ffffff;
+            /* White background */
             width: 150px;
             height: 100%;
             display: flex;
@@ -42,45 +60,55 @@
             font-size: 80px;
             font-weight: 700;
             color: #000000;
+            /* Black text */
             font-family: sans-serif;
             border-radius: 5px;
-            /* border-shadow: 0, 14px, 30px, rgba(0, 0, 0, 0.3); */
+            /* Rounded corners */
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            /* Subtle shadow */
             letter-spacing: 3px;
-
+            /* Space between characters */
         }
 
+        /* Styling for colon separators */
         .clock span {
             font-size: 60px;
             font-weight: 700;
             color: #000000;
-
         }
     </style>
 </head>
 
 <body>
+    <!-- Clock container -->
     <div class="clock">
+        <!-- Hour display -->
         <div id="hour">00</div>
+        <!-- Separator -->
         <span>:</span>
+        <!-- Minute display -->
         <div id="minute">00</div>
+        <!-- Separator -->
         <span>:</span>
+        <!-- Second display -->
         <div id="seconds">00</div>
-
     </div>
 
-
-
     <script>
+        // Select clock elements
         var hr = document.getElementById('hour');
         var min = document.getElementById('minute');
         var sec = document.getElementById('seconds');
 
+        /*
+            Update the clock every second using setInterval
+            Retrieves current hours, minutes, and seconds from system time
+        */
         var clock = setInterval(() => {
-            var date = new Date();
-            hr.innerHTML = date.getHours();
-            min.innerHTML = date.getMinutes();
-            sec.innerHTML = date.getSeconds();
+            var date = new Date(); // Get current date and time
+            hr.innerHTML = date.getHours(); // Update hours
+            min.innerHTML = date.getMinutes(); // Update minutes
+            sec.innerHTML = date.getSeconds(); // Update seconds
         }, 1000);
     </script>
 </body>

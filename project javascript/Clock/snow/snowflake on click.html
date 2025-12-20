@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- Root HTML document -->
 
 <head>
     <!-- Character encoding -->
     <meta charset="UTF-8">
 
-    <!-- Responsive scaling for mobile devices -->
+    <!-- Responsive layout for all devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Page title -->
-    <title>snowflake on click</title>
+    <title>Snowflake on Click</title>
 
     <style>
         /* Reset default browser styles */
@@ -19,82 +20,72 @@
             box-sizing: border-box;
         }
 
-        /* Page background and layout */
+        /* Body styling */
         body {
             height: 100vh;
-            /* Full screen height */
+            /* Full viewport height */
             background: linear-gradient(#12a7f9, #008aef);
-            /* Sky-like gradient */
+            /* Blue gradient background */
             overflow: hidden;
             /* Prevent scrollbars */
         }
 
-        /* Snowflake styling */
+        /* Snowflake element styling */
         .snowflake {
             position: absolute;
-            /* Required for left/top positioning */
-
+            /* Positioned relative to viewport */
+            background-image: url("image/snowflake-cold-svgrepo-com.svg");
             /* Snowflake image */
-            background-image: url('image/snowflake-cold-svgrepo-com.svg');
             background-size: cover;
-            /* Fill the div with image */
-
+            /* Cover entire element */
             border-radius: 50px;
-            /* Rounded shape */
-
-            /* Falling animation */
+            /* Rounded corners */
             animation: fall 2s linear infinite;
+            /* Fall animation loop */
         }
 
-        /* Animation definition */
+        /* Animation for falling snowflake */
         @keyframes fall {
-
-            /* Start position */
             0% {
                 transform: translate(50%, 50%);
+                /* Start position */
                 opacity: 1;
+                /* Fully visible */
             }
 
-            /* End position */
             100% {
                 transform: translate(50%, 1000%);
+                /* Move far down */
                 opacity: 0;
+                /* Fade out */
             }
         }
     </style>
 </head>
 
 <body>
-
-    <!-- Snowflakes will be created dynamically using JavaScript -->
+    <!-- Snowflake will be generated on click -->
 
     <script>
-        // Listen for mouse click anywhere on the page
+        // Listen for click events on the document
         document.addEventListener("click", (e) => {
-
             // Create a new span element for snowflake
             var snowflake = document.createElement("span");
+            snowflake.classList.add("snowflake"); // Add snowflake class
 
-            // Add snowflake CSS class
-            snowflake.classList.add("snowflake");
-
-            // Set snowflake position at mouse click location
+            // Set snowflake initial position based on click coordinates
             snowflake.style.left = e.offsetX + "px";
             snowflake.style.top = e.offsetY + "px";
 
-            // Generate random size between 20px and 100px
+            // Randomize snowflake size between 20px and 100px
             var size = Math.random() * (100 - 20) + 20;
-
-            // Apply random size
             snowflake.style.width = size + "px";
             snowflake.style.height = size + "px";
 
-            // Add snowflake to the page
+            // Add snowflake to the document body
             document.body.appendChild(snowflake);
-
         });
     </script>
-
 </body>
 
 </html>

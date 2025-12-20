@@ -1,32 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- Root HTML document -->
 
 <head>
+    <!-- Character encoding -->
     <meta charset="UTF-8">
+
+    <!-- Responsive layout -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Page title -->
     <title>My website</title>
+
     <style>
-
-
+        /* No CSS added for this example */
     </style>
 </head>
 
 <body>
-
-
+    <!-- Body content can go here -->
 
     <script>
+        // Store the original page title
         let pageTitle = document.title;
+
+        // Variable to hold the interval ID
         let pageTitleTimeout;
 
-        const startPageTitleFlasing = () => {
+        /*
+            Function to start flashing the page title
+            Alternates between original title and "Live SAle!!" every second
+        */
+        const startPageTitleFlashing = () => {
             pageTitleTimeout = setInterval(function () {
-                document.title = document.title ===
-                    pageTitle ? "Live SAle!!" : pageTitle;
-            }, 1000);
+                // Toggle between original title and flashing text
+                document.title = document.title === pageTitle ? "Live SAle!!" : pageTitle;
+            }, 1000); // Run every 1000ms (1 second)
         };
-        window.addEventListener("load", startPageTitleFlasing)
 
+        // Start flashing when the window has fully loaded
+        window.addEventListener("load", startPageTitleFlashing);
     </script>
 </body>
 

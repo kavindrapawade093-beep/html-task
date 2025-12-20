@@ -1,65 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- Root HTML document -->
 
 <head>
+    <!-- Character encoding -->
     <meta charset="UTF-8">
+
+    <!-- Responsive layout for all devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <!-- Page title -->
+    <title>Key Press Display</title>
+
     <style>
+        /* Reset default browser styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: sans-serif;
-
-
         }
 
+        /* Body styling with split gradient */
         body {
             height: 100vh;
+            /* Full viewport height */
             background: linear-gradient(#2887e3 50%, #1619e1 50%);
+            /* Top half light blue, bottom half dark blue */
         }
 
+        /* Main result container */
         #result {
             background-color: #242831;
+            /* Dark grey background */
             width: 80vw;
+            /* 80% of viewport width */
             max-width: 600px;
+            /* Maximum width */
             position: absolute;
+            /* Position relative to viewport */
             top: 50%;
+            /* Vertical center */
             left: 50%;
+            /* Horizontal center */
             transform: translate(-50%, -50%);
+            /* Center precisely */
             padding: 40px;
+            /* Inner spacing */
             border-radius: 10px;
+            /* Rounded corners */
             text-align: center;
+            /* Center text */
             color: #fff;
+            /* White text */
             font-size: large;
+            /* Base font size */
             box-shadow: 0 10px 50px rgba(255, 25, 75, 0.5);
+            /* Shadow effect */
             font-style: italic;
-
+            /* Italic text */
         }
 
+        /* Style for the first span (key) */
         #result span:nth-child(1) {
             color: #2887e3;
+            /* Blue color */
             font-size: 3em;
+            /* Larger font size */
             display: block;
+            /* Display on separate line */
             font-style: normal;
+            /* Override italic from parent */
         }
 
+        /* Style for the second span (key code) */
         #result span:nth-child(2) {
             color: #2887e3;
+            /* Blue color */
             font-size: 2em;
+            /* Slightly smaller */
             display: block;
+            /* Separate line */
         }
     </style>
 </head>
 
 <body>
-
+    <!-- Display area for key press info -->
     <div id="result">Press any key to get started</div>
+
     <script>
+        /*
+            Listen for any key press on the window
+            Update the #result div with:
+            - The key pressed
+            - The key code
+        */
         window.addEventListener("keydown", (e) => {
-            document.getElementById("result").innerHTML = `the key is <span> ${e.key}</Span><span> Key code: ${e.keyCode}</span>`;
-        })
+            document.getElementById("result").innerHTML =
+                `the key is <span>${e.key}</span><span>Key code: ${e.keyCode}</span>`;
+        });
     </script>
 </body>
 

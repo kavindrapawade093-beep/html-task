@@ -1,77 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- Root HTML document -->
 
 <head>
+    <!-- Character encoding -->
     <meta charset="UTF-8">
+
+    <!-- Responsive design for all screen sizes -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <!-- Page title -->
+    <title>Custom Cursor Effect</title>
+
     <style>
+        /* Reset default browser styles
+           Hide default mouse cursor */
         * {
             padding: 0;
             margin: 0;
             box-sizing: border-box;
             font-family: sans-serif;
             cursor: none;
+            /* Hide system cursor */
         }
 
+        /* Page styling */
         body {
             width: 100%;
             height: 200vh;
+            /* Extra height for scrolling */
             background-color: #fff;
         }
 
+        /* Inner cursor (small dot) */
         .inner-cursor {
             width: 10px;
             height: 10px;
             border-radius: 50%;
+            /* Make it circular */
             background-color: #fff;
             position: fixed;
+            /* Stay relative to viewport */
             left: 10px;
             top: 10px;
             transform: translate(-50%, -50%);
+            /* Center on mouse */
             mix-blend-mode: difference;
+            /* Invert color on background */
             pointer-events: none;
-            transition: width 0.5s height 0.5s;
-
-
+            /* Ignore mouse interactions */
+            transition: width 0.5s, height 0.5s;
+            /* Smooth size animation */
         }
 
+        /* Outer cursor (ring) */
         .outer-cursor {
             width: 25px;
             height: 25px;
             border-radius: 50%;
+            /* Circular ring */
             border: 1px solid #fff;
+            /* White border */
             position: fixed;
             left: 10px;
             top: 10px;
             transform: translate(-50%, -50%);
             mix-blend-mode: difference;
+            /* Color inversion effect */
             pointer-events: none;
-            transition: width 0.5s height 0.5s;
+            transition: width 0.5s, height 0.5s;
+            /* Smooth animation */
         }
     </style>
 </head>
 
 <body>
+    <!-- Small inner cursor -->
     <div class="inner-cursor"></div>
+
+    <!-- Larger outer cursor -->
     <div class="outer-cursor"></div>
 
-
     <script>
+        // Select inner and outer cursor elements
         let innerCursor = document.querySelector('.inner-cursor');
         let outerCursor = document.querySelector('.outer-cursor');
-        document.addEventListener("mousemove", moveCursor)
+
+        // Listen for mouse movement
+        document.addEventListener("mousemove", moveCursor);
+
+        // Function to update cursor positions
         function moveCursor(e) {
-            let x = e.clientX; // X position of mouse
-            let y = e.clientY; // Y position of mouse
-            // Inner cursor ki position update karo
+
+            // Get mouse X and Y coordinates
+            let x = e.clientX;
+            let y = e.clientY;
+
+            // Update inner cursor position
             innerCursor.style.left = `${x}px`;
             innerCursor.style.top = `${y}px`;
-            // Outer cursor ki position bhi update karo
+
+            // Update outer cursor position
             outerCursor.style.left = `${x}px`;
             outerCursor.style.top = `${y}px`;
         }
-
     </script>
 </body>
 

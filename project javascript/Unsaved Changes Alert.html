@@ -1,38 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- Root HTML document -->
 
 <head>
+    <!-- Character encoding -->
     <meta charset="UTF-8">
+
+    <!-- Responsive layout -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Page title -->
     <title>Unsaved Changes Alert</title>
+
     <style>
+        /* Reset default styles and set font */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: sans-serif;
-
         }
 
+        /* Body styling */
         body {
             height: 100vh;
+            /* Full viewport height */
             background-color: #0f35d0;
+            /* Blue background */
             display: flex;
             justify-content: center;
+            /* Center horizontally */
             align-items: center;
+            /* Center vertically */
         }
 
+        /* Form container styling */
         #myform {
             background-color: #c6cfda;
             width: min(90%, 400px);
+            /* Responsive width */
             position: absolute;
-            transform: translate(-50%, -50%);
             left: 50%;
             top: 50%;
+            transform: translate(-50%, -50%);
+            /* Center in viewport */
             padding: 35px;
             border-radius: 1em;
+            /* Rounded corners */
         }
 
+        /* Input and label styling */
         input,
         label {
             display: block;
@@ -43,18 +60,20 @@
             padding: 0.5em;
             border: 1px solid black;
             width: 100%;
+            /* Full width */
         }
 
         label {
             font-weight: bold;
         }
 
+        /* Form heading styling */
         h2 {
-
             text-align: center;
             margin-bottom: 1em;
         }
 
+        /* Submit button styling */
         button {
             padding: 0.5em;
             border: 1px solid black;
@@ -65,6 +84,7 @@
 </head>
 
 <body>
+    <!-- Form with Name and Email inputs -->
     <form action="" id="myform">
         <h2>Unsaved Changes Alert</h2>
         <label for="name">Name</label>
@@ -74,31 +94,38 @@
         <button type="submit">Submit</button>
     </form>
 
-
     <script>
+        // Boolean to track if there are unsaved changes
         let unsavedChanges = false;
 
+        // Function to mark form as changed
         function handleFormChange() {
             unsavedChanges = true;
         }
 
+        // Select the form
         const form = document.getElementById('myform');
 
-        const formElements = form.querySelectorAll("input", "textarea", "select");
+        // Select all input, textarea, and select elements in the form
+        const formElements = form.querySelectorAll("input, textarea, select");
 
+        // Attach 'input' event listener to each form element
         formElements.forEach((element) => {
             element.addEventListener("input", handleFormChange);
-
         });
 
-        window.addEventListener("beforeunload",
-            function (e) {
-                if (unsavedChanges) {
-                    e.preventDefault();
-                    e.returnValue = '';
-                }
-            });
+        /*
+            Warn the user when they try to leave the page if there are unsaved changes
+            This triggers the browser's default "Are you sure you want to leave?" dialog
+        */
+        window.addEventListener("beforeunload", function (e) {
+            if (unsavedChanges) {
+                e.preventDefault();
+                e.returnValue = ''; // Required for some browsers
+            }
+        });
 
+        // Reset unsavedChanges flag when form is submitted
         form.addEventListener("submit", function (e) {
             unsavedChanges = false;
         });

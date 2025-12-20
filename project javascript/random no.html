@@ -1,11 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- Root HTML document -->
 
 <head>
+    <!-- Character encoding -->
     <meta charset="UTF-8">
+
+    <!-- Responsive layout for all devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <!-- Page title -->
+    <title>Random Number Generator</title>
+
     <style>
+        /* Reset default browser styles */
         * {
             padding: 0;
             margin: 0;
@@ -13,68 +21,105 @@
             font-family: sans-serif;
         }
 
+        /* Body background */
         body {
             background-color: blue;
-
+            /* Blue page background */
         }
 
+        /* Main container styling */
         .container {
             width: 400px;
+            /* Fixed width */
             margin: 100px auto;
+            /* Center horizontally with top margin */
             background-color: white;
+            /* White background */
             padding: 20px;
+            /* Inner spacing */
             border-radius: 5px;
+            /* Rounded corners */
             text-align: center;
+            /* Center text */
             transform: translate(-50%, -50%);
+            /* Perfectly center the container */
             position: absolute;
+            /* Position relative to viewport */
             top: 50%;
+            /* Vertical center */
             left: 50%;
-
+            /* Horizontal center */
         }
 
+        /* Button styling */
         button {
             background-color: #4CAF50;
+            /* Green background */
             border: none;
+            /* Remove default border */
             color: white;
+            /* White text */
             padding: 15px 32px;
+            /* Inner spacing */
             text-align: center;
             text-decoration: none;
             display: inline-block;
             font-size: 16px;
             margin: 4px 2px;
+            /* Spacing around button */
             cursor: pointer;
+            /* Pointer cursor on hover */
         }
 
+        /* Button hover effect */
         button:hover {
             background-color: #45a049;
+            /* Darker green on hover */
         }
 
+        /* Result paragraph styling */
         p#result {
             font-size: 24px;
+            /* Larger font for visibility */
             margin-top: 20px;
+            /* Space above result */
         }
     </style>
 </head>
 
 <body>
-
+    <!-- Container for random number generator -->
     <div class="container">
+        <!-- Heading -->
         <h2>Random Number Generator</h2>
-        <P>cliclthe button to genrate and display a random number:</P>
-        <button id="generateButton">generate random number</button>
+
+        <!-- Instruction paragraph -->
+        <p>Click the button to generate and display a random number:</p>
+
+        <!-- Button to trigger random number generation -->
+        <button id="generateButton">Generate Random Number</button>
+
+        <!-- Paragraph to display the result -->
         <p id="result"></p>
     </div>
-    <script>
-        // function
-        function generateRandomNumber() {
-            const min = 1;
-            const max = 100;
 
+    <script>
+        /*
+            Function to generate a random number between min and max
+            and display it in the result paragraph
+        */
+        function generateRandomNumber() {
+            const min = 1; // Minimum number
+            const max = 100; // Maximum number
+
+            // Generate random number between min and max (inclusive)
             const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
 
-            document.getElementById("result").textContent = ` "Random Number:" ${randomNumber}`;
+            // Display the random number in the #result paragraph
+            document.getElementById("result").textContent = `"Random Number:" ${randomNumber}`;
         }
 
+        // Add click event listener to the button
         document.getElementById("generateButton").addEventListener("click", generateRandomNumber);
     </script>
 </body>

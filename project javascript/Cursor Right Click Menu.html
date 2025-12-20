@@ -1,11 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- Root HTML document -->
 
 <head>
+    <!-- Character encoding -->
     <meta charset="UTF-8">
+
+    <!-- Makes layout responsive on all devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Page title shown in browser tab -->
     <title>Cursor Right Click Menu</title>
+
     <style>
+        /* Reset default browser spacing and set common font */
         * {
             margin: 0;
             padding: 0;
@@ -13,44 +21,67 @@
             font-family: sans-serif;
         }
 
+        /* Body styling */
         body {
             height: 100vh;
+            /* Full viewport height */
             display: grid;
+            /* Use CSS grid */
             place-items: center;
+            /* Center content */
             background-color: blue;
+            /* Blue background */
         }
 
+        /* Custom right-click menu container */
         .custom-menu {
             position: absolute;
+            /* Positioned relative to viewport */
             display: none;
+            /* Hidden by default */
         }
 
+        /* Menu list styling */
         .custom-menu ul {
             background-color: #fff;
+            /* White background */
             border: 1px solid #ccc;
+            /* Light border */
             border-radius: 4px;
+            /* Rounded corners */
             margin: 0;
             padding: 0;
             list-style: none;
+            /* Remove bullets */
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            /* Shadow effect */
         }
 
+        /* Menu item styling */
         .custom-menu ul li {
             padding: 10px 20px;
+            /* Spacing inside item */
             cursor: pointer;
+            /* Pointer cursor */
             transition: background-color 0.2s ease;
+            /* Smooth hover effect */
         }
 
+        /* Menu item hover effect */
         .custom-menu ul li:hover {
             background-color: #9c1b1b;
+            /* Dark red on hover */
             color: #fff;
+            /* White text */
         }
     </style>
 </head>
 
 <body>
+    <!-- Custom right-click menu -->
     <div class="custom-menu" id="custom-menu">
         <ul>
+            <!-- Menu options -->
             <li>Refresh</li>
             <li>Edit</li>
             <li>Delete</li>
@@ -58,15 +89,24 @@
     </div>
 
     <script>
+        // Get reference to the custom menu element
         const customMenu = document.getElementById("custom-menu");
 
+        // Listen for right-click (context menu) event
         document.addEventListener("contextmenu", (e) => {
+
+            // Prevent default browser right-click menu
             e.preventDefault();
+
+            // Show custom menu
             customMenu.style.display = "block";
+
+            // Position menu at mouse X and Y coordinates
             customMenu.style.left = `${e.clientX}px`;
             customMenu.style.top = `${e.clientY}px`;
         });
 
+        // Hide custom menu when user left-clicks anywhere
         document.addEventListener("click", () => {
             customMenu.style.display = "none";
         });

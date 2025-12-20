@@ -4,13 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>snowflake on click</title>
+    <title>Snowflake on Click</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-
         }
 
         body {
@@ -20,25 +19,21 @@
         }
 
         .snowflake {
-            /* height: 200px;
-            width: 200px; */
             position: absolute;
-
             background-image: url('image/snowflake-cold-svgrepo-com.svg');
             background-size: cover;
-            border-radius: 50px;
-            animation: fall 2s linear infinite;
-
+            border-radius: 50%;
+            animation: fall 2s linear forwards;
         }
 
         @keyframes fall {
             0% {
-                transform: translate(50%, 50%);
+                transform: translateY(0);
                 opacity: 1;
             }
 
             100% {
-                transform: translate(50%, 1000%);
+                transform: translateY(100vh);
                 opacity: 0;
             }
         }
@@ -46,20 +41,18 @@
 </head>
 
 <body>
-    <!-- <div class="snowflake"> </div> -->
-
-
 
     <script>
         document.addEventListener("click", (e) => {
             var snowflake = document.createElement("span");
             snowflake.classList.add("snowflake");
 
-            snowflake.style.left = e.offsetX + "px";
-            snowflake.style.top = e.offsetY + "px";
+            // Set starting position
+            snowflake.style.left = e.clientX + "px";
+            snowflake.style.top = e.clientY + "px";
 
+            // Random size
             var size = Math.random() * (100 - 20) + 20;
-
             snowflake.style.width = size + "px";
             snowflake.style.height = size + "px";
 
@@ -67,6 +60,7 @@
 
 
         });
+
     </script>
 </body>
 
