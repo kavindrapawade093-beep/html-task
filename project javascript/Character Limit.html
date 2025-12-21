@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Character encoding -->
+    <meta charset="UTF-8">
+
+    <!-- Responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Page title -->
+    <title>Document</title>
+
+    <style>
+        /* Reset default browser styles */
+        *,
+        :before,
+        :after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Page background color */
+        body {
+            background-color: #5d54b3;
+        }
+
+        /* Main container styling */
+        .container {
+            background-color: #ffffff;
+            width: 450px;
+            padding: 50px 30px;
+            position: absolute;
+
+            /* Center container */
+            transform: translate(-50%, -50%);
+            top: 50%;
+            left: 50%;
+
+            border-radius: 10px;
+
+            /* Shadow effect */
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+                0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        /* Apply font to all elements inside container */
+        .container * {
+            font-family: "poppins", sans-serif;
+            font-size: 16px;
+        }
+
+        /* Textarea styling */
+        textarea {
+            display: block;
+            width: 100%;
+            resize: none;
+            /* Disable resizing */
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            color: #202020;
+        }
+
+        /* Character counter text */
+        p {
+            text-align: right;
+            width: 100%;
+            margin-top: 15px;
+            color: #737373;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Main container -->
+    <div class="container">
+
+        <!-- Textarea input field -->
+        <textarea name="" id="my-text" row="5" placeholder="typing something here...">
+        </textarea>
+
+        <!-- Character count display -->
+        <p id="result"></p>
+
+    </div>
+
+    <script>
+        /* Get textarea element */
+        var myText = document.getElementById("my-text");
+
+        /* Get paragraph to display character count */
+        var result = document.getElementById("result");
+
+        /* Maximum character limit */
+        var limit = 60;
+
+        /* Initial character count display */
+        result.textContent = 0 + "/" + limit;
+
+        /* Listen for user input in textarea */
+        myText.addEventListener("input", function () {
+
+            /* Get current text length */
+            var textLength = myText.value.length;
+
+            /* Update character counter text */
+            result.textContent = textLength + "/" + limit;
+
+            /* Check if character limit is exceeded */
+            if (textLength > limit) {
+
+                /* Change textarea border color on overflow */
+                myText.style.borderColor = "red";
+
+                /* Change counter color when limit exceeded */
+                result.style.color = "green";
+
+            } else {
+
+                /* Border color when within limit */
+                myText.style.borderColor = "orange";
+
+                /* Counter color when within limit */
+                result.style.color = "red";
+            }
+        });
+    </script>
+
+</body>
+
+</html>

@@ -2,59 +2,79 @@
 <html lang="en">
 
 <head>
+    <!-- Character encoding -->
     <meta charset="UTF-8">
+
+    <!-- Responsive viewport for all devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Page title -->
     <title>Santa follow Mouse</title>
+
     <style>
+        /* Reset default browser styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-
         }
 
+        /* Page background image */
         body {
             padding: 0;
             margin: 0;
             background: url("https://photos.zillowstatic.com/fp/d88ebdc12d5dc9533982246487f304f0-sc_1920_1280.png");
             background-repeat: no-repeat;
+            /* Prevent image repetition */
             background-attachment: fixed;
+            /* Fix background during scroll */
             background-position: center;
+            /* Center the background image */
             background-size: cover;
-
+            /* Cover entire screen */
         }
 
+        /* Container that follows the mouse */
         #my-div {
             position: absolute;
+            /* Allows movement on page */
             transition: all 0.5s ease-out;
+            /* Smooth follow animation */
             left: 0;
             top: 0;
         }
 
+        /* Santa image styling */
         #my-div img {
             width: 100px;
             height: 100px;
             filter: drop-shadow(0 0 20px rgb(1, 1, 42, 0.2));
+            /* Soft shadow */
         }
     </style>
 </head>
 
 <body>
+
+    <!-- Santa container -->
     <div id="my-div">
-        <img src="vecteezy_santa-claus-rides-in-sleigh-with-christmas-tree_12224866.png" alt="snata">
+
+        <!-- Santa image -->
+        <img src="vecteezy_santa-claus-rides-in-sleigh-with-christmas-tree_12224866.png" alt="santa">
     </div>
 
-
     <script>
-
-
-
-
+        /* Listen for mouse movement on the window */
         window.addEventListener("mousemove", function (e) {
+
+            // Move the div horizontally to mouse X position
             document.getElementById("my-div").style.left = e.clientX + "px";
+
+            // Move the div vertically to mouse Y position
             document.getElementById("my-div").style.top = e.clientY + "px";
         });
     </script>
+
 </body>
 
 </html>
