@@ -5,103 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "Rubik", sans-serif;
-
-        }
-
-        body {
-            height: 100vh;
-            background: linear-gradient(to left, #2987e4 50%, #16191e 50%) fixed;
-        }
-
-        .container {
-            width: 90vmin;
-            background-color: #ffffff;
-            padding: 50px 40px;
-            position: absolute;
-            transform: translate(-50%, -50%);
-            top: 50%;
-            left: 50%;
-            border-radius: 15px;
-            box-shadow: 0px 30px 50px rgba(30, 21, 49, 0.3);
-        }
-
-        .wrapper {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-        }
-
-        .wrapper input {
-            width: 60%;
-            padding: 10px 7px;
-            border-radius: 5px;
-            border: 1px solid #130303;
-        }
-
-        .wrapper button {
-            width: 30%;
-            background-color: #201d2e;
-            border: none;
-            outline: none;
-            cursor: pointer;
-            color: #fff;
-            padding: 10px 0;
-            border-radius: 5px;
-        }
-
-        .wrapper button:hover {
-            background-color: #0f4376;
-        }
-
-        .container p {
-            line-height: 25px;
-            text-align: justify;
-            margin-top: 30px;
-
-        }
-
-        mark {
-            background-color: #ffdd4d;
-        }
-    </style>
-
 </head>
 
 <body>
-    <div class="container">
-        <div class="wrapper">
-            <input type="text" id="text-to-search">
-            <button onclick="search()">search</button>
 
-        </div>
-        <p id="paragraph">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores labore laboriosam magni,
-            fugit, dolorem possimus quidem libero, assumenda porro blanditiis qui et dicta accusamus itaque ea ex hic
-            harum! Odit maxime dignissimos ullam ipsam officia hic recusandae vero nostrum vel maiores deserunt totam
-            itaque dicta ut iste sequi, rerum explicabo voluptatem? Vitae repellendus accusamus recusandae optio animi
-            magnam cumque ipsum exercitationem reiciendis enim! Consequuntur temporibus perspiciatis similique
-            molestias? Fugiat, laudantium!</p>
-    </div>
-
-
-    <script>
-        function search() {
-            let textToSearch = document.getElementById("text-to-search").value;
-
-            let paragraph = document.getElementById("paragraph");
-
-            textToSearch = textToSearch.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-            let pattern = new RegExp(textToSearch, "gi");
-            paragraph.innerHTML = paragraph.textContent.replace(pattern, (match) => `<mark>${match}</mark>`);
-        };
-
-    </script>
 </body>
 
 </html>
