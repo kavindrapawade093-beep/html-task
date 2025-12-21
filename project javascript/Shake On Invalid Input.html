@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Character encoding -->
+    <meta charset="UTF-8">
+
+    <!-- Makes layout responsive on all devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Page title -->
+    <title>Shake On Invalid Input</title>
+
+    <style>
+        /* Reset default browser spacing and set font */
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: poppins, sans-serif;
+        }
+
+        /* Page background color */
+        body {
+            background-color: #01dd8f;
+        }
+
+        /* Form container styling */
+        form {
+            width: min(90%, 25em);
+            /* Responsive width */
+            background-color: #9d9d9d;
+            position: absolute;
+            top: 50%;
+            /* Vertical position */
+            left: 40%;
+            /* Horizontal position */
+            padding: 5em 2em;
+            border-radius: 0.5em;
+        }
+
+        /* Error message text */
+        .error-message {
+            color: red;
+            visibility: hidden;
+            /* Hidden by default */
+        }
+
+        /* Input and button common styles */
+        input,
+        button {
+            display: block;
+            margin: 0.5em auto;
+            width: 100%;
+            padding: 1em;
+            border-radius: 0.5em;
+            border: none;
+            outline: none;
+        }
+
+        /* Button specific styles */
+        button {
+            background-color: #01dd8f;
+            color: #0d0101;
+            cursor: pointer;
+            margin-top: 1em;
+        }
+
+        /* Shake animation class */
+        .shake {
+            animation: shake 0.5s ease-in-out;
+        }
+
+        /* Keyframes for shake effect */
+        @keyframes shake {
+            0% {
+                transform: translateX(0);
+            }
+
+            25% {
+                transform: translateX(-5px);
+            }
+
+            50% {
+                transform: translateX(5px);
+            }
+
+            75% {
+                transform: translateX(-5px);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Form container -->
+    <form action="" id="myForm">
+
+        <!-- Error message shown on invalid input -->
+        <div id="errorMessage" class="error-message">Invalid Input</div>
+
+        <!-- Text input field -->
+        <input type="text" id="inputField" placeholder="input some text.." required>
+
+        <!-- Button triggers validation -->
+        <button type="button" onclick="validateInput()">Submit</button>
+
+    </form>
+
+    <script>
+        /* Function to validate input field */
+        function validateInput() {
+
+            // Get input element
+            let inputField = document.getElementById('inputField');
+
+            // Get trimmed input value
+            let inputValue = inputField.value.trim();
+
+            // Get error message element
+            let errorMessage = document.getElementById('errorMessage');
+
+            // Check if input is empty
+            if (inputValue === "") {
+
+                // Add shake animation class
+                inputField.classList.add('shake');
+
+                // Show error message
+                errorMessage.style.visibility = 'visible';
+
+                // Remove shake and hide error after animation
+                setTimeout(() => {
+                    inputField.classList.remove('shake');
+                    errorMessage.style.visibility = 'hidden';
+                }, 500);
+            }
+        }
+    </script>
+
+</body>
+
+</html>
