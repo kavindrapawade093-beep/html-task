@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Character encoding -->
+    <meta charset="UTF-8">
+
+    <!-- Responsive layout for mobile & desktop -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Page title -->
+    <title>Document</title>
+
+    <style>
+        /* Reset default browser padding, margin & set font */
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        /* Page background color */
+        body {
+            background-color: #ddc50f;
+        }
+
+        /* Main container styling */
+        .wrapper {
+            width: 80vmin;
+            /* Responsive width */
+            padding: 50px 40px;
+            background-color: #000000;
+
+            /* Center the box */
+            position: absolute;
+            transform: translate(-50%, -50%);
+            top: 50%;
+            left: 50%;
+
+            border-radius: 5px;
+
+            /* Shadow effect */
+            box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Emoji styling */
+        span {
+            display: block;
+            text-align: center;
+            font-size: 50px;
+        }
+
+        /* Joke text styling */
+        p {
+            font-size: 16px;
+            color: #fff;
+            font-weight: 400;
+            text-align: center;
+            word-wrap: break-word;
+            line-height: 1.5em;
+            margin: 30px 0;
+
+            /* Hidden by default for fade animation */
+            opacity: 0;
+        }
+
+        /* Fade-in animation class */
+        .fade {
+            opacity: 1;
+            transition: opacity 1.5s ease-in-out;
+        }
+
+        /* Button styling */
+        button {
+            display: block;
+            background-color: #fab22e;
+            border: none;
+            font-size: 18px;
+            color: #000000;
+            font-weight: 600;
+            padding: 12px 25px;
+            margin: 0 auto;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Main content wrapper -->
+    <div class="wrapper">
+
+        <!-- Emoji icon -->
+        <span>&#128514;</span>
+
+        <!-- Joke text container -->
+        <p id="joke"></p>
+
+        <!-- Button to load new joke -->
+        <button id="btn">New joke</button>
+
+    </div>
+
+    <script>
+        /* Select joke paragraph element */
+        const jokeContainer = document.getElementById("joke");
+
+        /* Select button element */
+        const btn = document.getElementById("btn");
+
+        /* Joke API URL (filtered for safe content) */
+        const url = "https://v2.jokeapi.dev/joke/Any?blacklistFlags=nsfw,religious,political,racist,explicit";
+
+        /* Function to fetch and display a joke */
+        let getJoke = () => {
+
+            /* Remove fade effect before loading new joke */
+            jokeContainer.classList.remove("fade");
+
+            /* Fetch joke from API */
+            fetch(url)
+                .then(data => data.json())
+                .then(item => {
+
+                    /* Insert joke text into paragraph */
+                    jokeContainer.textContent = `${item.joke}`;
+
+                    /* Add fade-in effect */
+                    jokeContainer.classList.add("fade");
+                });
+        };
+
+        /* Load new joke when button is clicked */
+        btn.addEventListener("click", getJoke);
+
+        /* Load a joke when page loads */
+        getJoke();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Character encoding -->
+    <meta charset="UTF-8">
+
+    <!-- Responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Page title -->
+    <title>Greetings Of The Day</title>
+
+    <style>
+        /* Default (Light Mode) CSS variables */
+        :root {
+            --bg-color: #ffffff;
+            /* Background color */
+            --text-color: #222222;
+            /* Text color */
+            --button-bg: #f0f0f0;
+            /* Button background */
+            --button-text: #222222;
+            /* Button text color */
+        }
+
+        /* Dark Mode variables */
+        body.dark-mode {
+            --bg-color: #1e1e2f;
+            --text-color: #ffffff;
+            --button-bg: #333333;
+            --button-text: #ffffff;
+        }
+
+        /* Body layout and theme transition */
+        body {
+            margin: 0;
+            padding: 0;
+            background: var(--bg-color);
+            color: var(--text-color);
+            font-family: Arial, sans-serif;
+
+            /* Center content */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+
+            /* Smooth theme switching */
+            transition: background 0.3s, color 0.3s;
+        }
+
+        /* Greeting text */
+        h1 {
+            font-size: 3rem;
+            margin-top: 10px;
+        }
+
+        /* Subtext */
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        /* Theme toggle button */
+        .toggle-button {
+            padding: 10px 20px;
+            background: var(--button-bg);
+            color: var(--button-text);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+
+            /* Smooth hover animation */
+            transition: background 0.3s, color 0.3s;
+        }
+
+        /* Button hover effect */
+        .toggle-btn:hover {
+            background: var(--button-text);
+            color: var(--button-bg);
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Greeting text (updated dynamically) -->
+    <h1 id="greeting">Hello</h1>
+
+    <!-- Static welcome message -->
+    <p>Welcome To Your Day</p>
+
+    <!-- Button to toggle light/dark theme -->
+    <button class="toggle-button" onclick="toggleTheme()">Toggle Theme</button>
+
+    <script>
+        /* Function to update greeting based on current time */
+        function updateGreeting() {
+
+            /* Select greeting element */
+            const greeting = document.getElementById('greeting');
+
+            /* Get current hour (0–23) */
+            const hour = new Date().getHours();
+
+            /* Morning greeting */
+            if (hour < 12) {
+                greeting.textContent = 'Good Morning, kavindra';
+
+                /* Afternoon greeting */
+            } else if (hour < 18) {
+                greeting.textContent = 'Good Afternoon, kavindra';
+
+                /* Evening greeting */
+            } else {
+                greeting.textContent = 'Good Evening, kavindra';
+            }
+        }
+
+        /* Toggle between light and dark mode */
+        function toggleTheme() {
+            document.body.classList.toggle('dark-mode');
+        }
+
+        /* Run greeting update when page loads */
+        updateGreeting();
+    </script>
+
+</body>
+
+</html>
