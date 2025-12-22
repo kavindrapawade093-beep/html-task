@@ -2,13 +2,22 @@
 <html lang="en">
 
 <head>
+    <!-- Character encoding -->
     <meta charset="UTF-8">
+
+    <!-- Responsive viewport -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Page title -->
     <title>Barcode Generator</title>
+
+    <!-- JsBarcode CDN (used to generate barcodes) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jsbarcode/3.12.1/JsBarcode.all.min.js"
         integrity="sha512-fLmJPYDfCIAZ0gpG/iiIzPw113KquhzI1bxG0XhiLYyqm8Ax2lEiq1h1qv2vafH9tLzkjm4HYRWSeKoGFH4xIw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
     <style>
+        /* Reset default spacing and set font */
         * {
             margin: 0;
             padding: 0;
@@ -16,29 +25,32 @@
             font-family: "poppins", sans-serif;
         }
 
+        /* Page background color */
         body {
             background-color: #0092fd;
         }
 
+        /* Main card container */
         .container {
             width: min(500px, 90vw);
+            /* Responsive width */
             background-color: #ffffff;
             position: absolute;
-            transform: translate(-50%, -50%);
             top: 50%;
             left: 50%;
+            transform: translate(-50%, -50%);
+            /* Center the card */
             padding: 2em;
             border-radius: 0.5em;
-
-
         }
 
+        /* Heading style */
         h1 {
             font-size: 2em;
             margin-bottom: 1em;
-
         }
 
+        /* Text input styling */
         input {
             width: 60%;
             padding: 1em;
@@ -47,6 +59,7 @@
             border: 1px solid #ccc;
         }
 
+        /* Button styling */
         button {
             padding: 12px;
             background-color: #0092fd;
@@ -56,6 +69,7 @@
             cursor: pointer;
         }
 
+        /* Button hover effect */
         button:hover {
             background-color: #04c020;
             color: #140a03;
@@ -64,32 +78,49 @@
 </head>
 
 <body>
+
+    <!-- Main container -->
     <div class="container">
+
+        <!-- Page heading -->
         <h1>Barcode Generator</h1>
-        <input type="text" id="input">
+
+        <!-- User input for barcode value -->
+        <input type="text" id="input" placeholder="Enter text or number">
+
+        <!-- Button to generate barcode -->
         <button id="btn-barcode-genrator">Barcode Generator</button>
+
+        <!-- SVG where barcode will be rendered -->
         <svg id="barcode"></svg>
+
     </div>
 
     <script>
+        /* Select input field */
         let input = document.getElementById("input");
+
+        /* Select button */
         let btn = document.getElementById("btn-barcode-genrator");
 
+        /* Generate barcode when button is clicked */
         btn.addEventListener("click", () => {
+
+            /* Call JsBarcode library */
             JsBarcode("#barcode", input.value, {
-                format: "CODE128",
-                displayValue: true,
-                fontSize: 24,
-                lineColor: "#000",
+                format: "CODE128",     /* Barcode format */
+                displayValue: true,    /* Show text below barcode */
+                fontSize: 24,          /* Text size */
+                lineColor: "#000",     /* Barcode color */
             });
         });
 
-        window.onload = (e) => {
+        /* Clear input field when page loads */
+        window.onload = () => {
             input.value = "";
         };
-
-
     </script>
+
 </body>
 
 </html>

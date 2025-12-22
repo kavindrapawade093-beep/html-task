@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Character encoding -->
+    <meta charset="UTF-8">
+
+    <!-- Responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Page title -->
+    <title>Flashlight Effect</title>
+
+    <style>
+        /* Reset default spacing and hide mouse cursor */
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: "poppins", sans-serif;
+            cursor: none;
+            /* Hide default cursor */
+        }
+
+        /* Page background */
+        body {
+            background-color: rgb(248, 243, 243);
+        }
+
+        /* Paragraph styling */
+        p {
+            font-size: 1em;
+            /* Text size */
+            line-height: 1.9em;
+            /* Spacing between lines */
+            text-align: justify;
+            /* Justified text */
+            padding: 0 2em;
+            /* Left and right padding */
+        }
+
+        /* Flashlight container */
+        #flashlight {
+            /* CSS variables for mouse position */
+            --Xpos: 50vw;
+            --Ypos: 50vh;
+        }
+
+        /* Dark overlay with circular transparent area */
+        #flashlight::before {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+
+            /* Radial gradient creates flashlight effect */
+            background: radial-gradient(circle 9em at var(--Xpos) var(--Ypos),
+                    rgba(0, 0, 0, 0) 0%,
+                    rgba(0, 0, 0, 1));
+        }
+
+        /* Increase font size on larger screens */
+        @media screen and (min-width: 800px) {
+            body {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Overlay element for flashlight effect -->
+    <div id="flashlight"></div>
+
+    <!-- Sample content -->
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit consectetur, nesciunt molestiae quisquam officia
+        eius voluptatem cupiditate corporis nostrum magnam impedit. Exercitationem possimus minus tenetur vitae odio
+        vero a, facilis, ratione, dicta dolor officiis mollitia.
+    </p><br>
+
+    <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint sapiente debitis modi quia est asperiores laborum
+        similique minima, iure velit corrupti, error quibusdam veniam voluptas, quas veritatis assumenda et.
+    </p>
+
+    <script>
+        /* Store mouse coordinates */
+        let mouseX = 0;
+        let mouseY = 0;
+
+        /* Select flashlight overlay */
+        let flashlight = document.getElementById("flashlight");
+
+        /* Track mouse movement */
+        document.addEventListener("mousemove", (e) => {
+
+            /* Get mouse position */
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+
+            /* Update CSS variables for gradient position */
+            flashlight.style.setProperty("--Xpos", mouseX + "px");
+            flashlight.style.setProperty("--Ypos", mouseY + "px");
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Character encoding -->
+    <meta charset="UTF-8">
+
+    <!-- Responsive layout for all devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Page title -->
+    <title>Stacked Photo Carousel</title>
+
+    <style>
+        /* Reset default browser spacing */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Page background */
+        body {
+            background-color: #e0f1fa;
+        }
+
+        /* Container that holds each image */
+        .image-container {
+            width: 400px;
+            /* Image width */
+            position: absolute;
+            /* Allows stacking */
+            top: 10em;
+            /* Vertical position */
+            right: 10em;
+            /* Horizontal position */
+        }
+
+        /* Image styling */
+        .image {
+            width: 100%;
+            height: 100%;
+            border-radius: 2em;
+            /* Rounded corners */
+            border: 5px solid #030c10;
+            /* Dark border */
+            cursor: pointer;
+            /* Pointer on hover */
+        }
+
+        /* Rotations to create circular stacked effect */
+        .image-container:nth-child(1) {
+            transform: rotate(0deg);
+        }
+
+        .image-container:nth-child(2) {
+            transform: rotate(72deg);
+        }
+
+        .image-container:nth-child(3) {
+            transform: rotate(144deg);
+        }
+
+        .image-container:nth-child(4) {
+            transform: rotate(216deg);
+        }
+
+        .image-container:nth-child(5) {
+            transform: rotate(288deg);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Gallery wrapper -->
+    <div class="gallary-container">
+        <!-- Empty containers (images added via JS) -->
+        <div class="image-container"></div>
+        <div class="image-container"></div>
+        <div class="image-container"></div>
+        <div class="image-container"></div>
+        <div class="image-container"></div>
+    </div>
+
+    <script>
+        /* Select all image containers */
+        let childElement = document.querySelectorAll('.image-container');
+
+        /* Image URLs array */
+        let imageUrls = [
+            "https://static.vecteezy.com/system/resources/thumbnails/053/733/048/small/modern-car-captured-in-close-upgraphy-with-precision-and-innovation-free-photo.jpg",
+            "https://www.bentleymotors.com/content/dam/bm/websites/bmcom/bentleymotors-com/homepage/26my-azure/GT%20Azure%20Dynamic%20Desktop.jpg/_jcr_content/renditions/original.image_file.1286.643.file/GT%20Azure%20Dynamic%20Desktop.jpg",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlPK_MoPTG57Wp_s_WnFgl6bjL378Xb8M6HQ&s",
+            "https://www.bentleymotors.com/content/dam/bm/websites/bmcom/bentleymotors-com/models/27my/supersports/Homepage%20Slider.jpg/_jcr_content/renditions/original.image_file.1286.643.file/Homepage%20Slider.jpg",
+            "https://stimg.cardekho.com/images/carexteriorimages/930x620/Land-Rover/Range-Rover-Velar/12767/1758105499465/front-left-side-47.jpg?imwidth=420&impolicy=resize"
+        ];
+
+        /* Used to control which image stays on top */
+        let zIndex = 1;
+
+        /* Loop through each image container */
+        childElement.forEach((element, index) => {
+
+            /* Create image element */
+            let img = document.createElement('img');
+
+            /* Set image source */
+            img.setAttribute('src', imageUrls[index]);
+
+            /* Add CSS class */
+            img.setAttribute('class', 'image');
+
+            /* Add image inside container */
+            element.appendChild(img);
+
+            /* Click animation logic */
+            element.addEventListener('click', () => {
+
+                /* Increase z-index to bring clicked image to front */
+                zIndex++;
+                element.style.zIndex = zIndex.toString();
+
+                /* Move image to right */
+                element.style.right = "50em";
+
+                /* Straighten the image */
+                element.style.transform = "rotate(0deg)";
+
+                /* Smooth movement */
+                element.style.transition = "right 0.3s ease";
+
+                /* Return image to original position after 1 second */
+                setTimeout(() => {
+
+                    /* Reduce z-index to avoid infinite stacking */
+                    zIndex -= 3;
+                    element.style.zIndex = zIndex.toString();
+
+                    /* Reset position */
+                    element.style.right = "";
+
+                    /* Reset rotation */
+                    element.style.transform = "";
+
+                    /* Smooth reset */
+                    element.style.transition = "all 0.3s ease";
+
+                    /* Remove transition after animation */
+                    setTimeout(() => {
+                        element.style.transition = "";
+                    }, 300);
+
+                }, 1000);
+            });
+        });
+    </script>
+
+</body>
+
+</html>
