@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Character encoding -->
+    <meta charset="UTF-8">
+
+    <!-- Responsive scaling -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Page title -->
+    <title>Heat Click with OE</title>
+
+    <link rel="stylesheet" href="image.css">
+
+
+</head>
+
+<body>
+
+    <!-- Button to open the module -->
+    <button id="openModuleBtn">15 sports picnic</button>
+
+    <!-- Main module -->
+    <div class="dcm-wrapper" id="dcmModule">
+
+        <!-- Close button -->
+        <button class="close-btn" id="closeModuleBtn">×</button>
+
+        <!-- Header -->
+        <div class="dcm-header">
+            <div class="logo">
+                <span>Heat Click with OE</span>
+            </div>
+        </div>
+
+        <hr class="header-divider">
+
+        <!-- Question -->
+        <h2 class="question">
+            Please click up to 15 spots to describe how you feel about the following picnic layout.
+        </h2>
+
+        <!-- Image container -->
+        <div class="image-wrapper">
+            <img id="heatImage" src="Heat Click With Oe.jpg" alt="Picnic layout">
+        </div>
+
+        <!-- Popup shown on image click -->
+        <div id="heatPopup" class="heat-popup">
+
+            <div class="popup-title">How does this feel?</div>
+
+            <!-- Emoji selection -->
+            <div class="emoji-row">
+                <span data-feel="happy">😊</span>
+                <span data-feel="neutral">😐</span>
+                <span data-feel="sad">☹️</span>
+
+            </div>
+
+
+            <!-- Comment box -->
+            <textarea placeholder="Please explain why"></textarea>
+
+            <!-- Popup actions -->
+            <div class="popup-actions">
+                <button id="submitHeat">Submit</button>
+                <button id="cancelHeat">Cancel</button>
+            </div>
+        </div>
+
+        <!-- Continue button -->
+        <button id="continueBtn">Continue »</button>
+    </div>
+
+
+    <script src="image.js"></script>
+
+</body>
+
+</html>
