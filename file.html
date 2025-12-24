@@ -2,25 +2,20 @@
 <html lang="en">
 
 <head>
-    <!-- Character encoding -->
     <meta charset="UTF-8">
-
-    <!-- Responsive scaling -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Page title -->
-    <title>Heat Click with OE</title>
+    <title>Artist</title>
 
     <style>
-        /* -------------------- GLOBAL RESET -------------------- */
+        /* ---------------- RESET ---------------- */
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: "Arial", sans-serif;
+            font-family: Arial, sans-serif;
         }
 
-        /* -------------------- PAGE BACKGROUND -------------------- */
+        /* ---------------- BODY ---------------- */
         body {
             background-color: #f6f7fb;
             display: flex;
@@ -28,7 +23,7 @@
             padding: 50px 20px;
         }
 
-        /* -------------------- OPEN MODULE BUTTON -------------------- */
+        /* ---------------- OPEN MODULE BUTTON ---------------- */
         #openModuleBtn {
             padding: 14px 40px;
             font-size: 18px;
@@ -37,17 +32,11 @@
             background: #1a237e;
             color: #fff;
             cursor: pointer;
-            transition: 0.3s;
         }
 
-        #openModuleBtn:hover {
-            background: #3949ab;
-        }
-
-        /* -------------------- MAIN MODULE CONTAINER -------------------- */
+        /* ---------------- DCM MODULE ---------------- */
         .dcm-wrapper {
             display: none;
-            /* Hidden initially */
             width: 700px;
             height: 610px;
             background: #fff;
@@ -57,7 +46,7 @@
             position: relative;
         }
 
-        /* -------------------- CLOSE BUTTON -------------------- */
+        /* ---------------- CLOSE BUTTON ---------------- */
         .close-btn {
             position: absolute;
             top: 20px;
@@ -66,61 +55,35 @@
             height: 35px;
             border-radius: 50%;
             border: none;
-            background: #ffffff;
-            color: #000000;
+            background: #fff;
             font-size: 20px;
             cursor: pointer;
         }
 
-        .close-btn:hover {
-            background: #1a237e;
-            color: #fff;
-        }
-
-        /* -------------------- HEADER -------------------- */
-        .dcm-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-
+        /* ---------------- LOGO ---------------- */
         .logo span {
             font-size: 20px;
             font-weight: bold;
             color: #0f0d94;
         }
 
-        /* Divider line */
         .header-divider {
-            margin-bottom: 30px;
-            border: none;
+            margin-top: 5px;
+            margin-bottom: 20px;
             height: 1px;
             background: #ddd;
+            border: none;
         }
 
-        /* -------------------- QUESTION TEXT -------------------- */
+        /* ---------------- QUESTIONS ---------------- */
         .question {
-            text-align: center;
-            font-size: 15px;
-            margin-bottom: 20px;
+            text-align: left;
+            font-size: 14px;
+            margin-bottom: 6px;
             color: #1a237e;
         }
 
-        /* -------------------- IMAGE WRAPPER -------------------- */
-        .image-wrapper {
-            position: relative;
-            /* Needed for absolute dots & popup */
-        }
-
-        .image-wrapper img {
-            width: 600px;
-            height: 400px;
-            border-radius: 10px;
-            cursor: crosshair;
-        }
-
-        /* -------------------- CONTINUE BUTTON -------------------- */
+        /* ---------------- CONTINUE BUTTON ---------------- */
         #continueBtn {
             position: absolute;
             right: 30px;
@@ -128,255 +91,324 @@
             padding: 12px 35px;
             border-radius: 30px;
             border: none;
+            background: #0808a4;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        /* ---------------- CAROUSEL CONTAINER ---------------- */
+        .carousel-container {
+            width: 100%;
+            height: 260px;
+            perspective: 1000px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 40px 40px;
+            position: relative;
+        }
+
+        .carousel {
+            position: relative;
+            width: 220px;
+            height: 220px;
+            transform-style: preserve-3d;
+        }
+
+        /* ---------------- CAROUSEL IMAGES ---------------- */
+        .carousel img {
+            position: absolute;
+            width: 140px;
+            height: 140px;
+            border-radius: 12px;
+            object-fit: cover;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+            transition: transform 0.9s ease, opacity 0.9s ease;
+            cursor: pointer;
+        }
+
+        .carousel img.selected {
+            outline: 4px solid #1a237e;
+        }
+
+        /* ---------------- BADGE ON SELECTED IMAGES ---------------- */
+        .badge {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
             background: #1a237e;
             color: #fff;
-            font-weight: 600;
-            cursor: pointer;
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            pointer-events: none;
         }
 
-        #continueBtn:hover {
-            background: #3949ab;
-        }
-
-        /* -------------------- HEAT POPUP -------------------- */
-        .heat-popup {
-            position: absolute;
-            width: 220px;
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
-            padding: 12px;
+        /* ---------------- CURSOR FOLLOW NUMBER ---------------- */
+        .cursor-count {
+            position: fixed;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: #1a237e;
+            color: #fff;
             display: none;
-            /* Hidden until image click */
-            z-index: 1000;
-        }
-
-        .popup-title {
+            align-items: center;
+            justify-content: center;
             font-size: 14px;
             font-weight: bold;
-            margin-bottom: 8px;
-        }
-
-        /* Emoji row */
-        .emoji-row {
-            display: flex;
-            justify-content: space-between;
-            font-size: 22px;
-            margin-bottom: 8px;
-            cursor: pointer;
-        }
-
-        /* Default emoji faded */
-        .emoji-row span {
-            opacity: 0.5;
-        }
-
-        /* Active emoji */
-        .emoji-row span.active {
-            opacity: 1;
-        }
-
-        /* Comment box */
-        .heat-popup textarea {
-            width: 100%;
-            height: 50px;
-            resize: none;
-            margin-bottom: 8px;
-        }
-
-        /* Popup buttons */
-        .popup-actions {
-            display: flex;
-            justify-content: space-around;
-        }
-
-        .popup-actions button {
-            border: none;
-            padding: 5px 10px;
-            cursor: pointer;
-        }
-
-        /* -------------------- HEAT DOT -------------------- */
-        .heat-dot {
-            position: absolute;
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
             pointer-events: none;
-            /* Prevent interaction */
-            transform: translate(-50%, -50%);
+            z-index: 9999;
+        }
+
+        /* ---------------- CAROUSEL CONTROLS ---------------- */
+        .carousel-controls {
+            display: flex;
+            gap: 380px;
+            justify-content: space-between;
+        }
+
+        .carousel-controls button {
+            padding: 12px 16px;
+            margin-top: 25px;
+            font-size: 14px;
+            border: none;
+            border-radius: 6px;
+            background: #0808a4;
+            color: white;
+            cursor: pointer;
+        }
+
+        #prevBtn2 {
+            padding: 6px 8px;
+            position: absolute;
+            top: 50%;
+            left: 0;
+
+
+
+        }
+
+        #nextBtn2 {
+            padding: 6px 8px;
+            position: absolute;
+            top: 50%;
+            right: 0%;
+
+
         }
     </style>
+
+
+
 </head>
 
 <body>
 
     <!-- Button to open the module -->
-    <button id="openModuleBtn">15 sports picnic</button>
+    <button id="openModuleBtn">Favourite Artist</button>
 
-    <!-- Main module -->
+    <!-- DCM Module -->
     <div class="dcm-wrapper" id="dcmModule">
 
         <!-- Close button -->
         <button class="close-btn" id="closeModuleBtn">×</button>
 
-        <!-- Header -->
-        <div class="dcm-header">
-            <div class="logo">
-                <span>Heat Click with OE</span>
-            </div>
-        </div>
-
+        <div class="logo"><span>3D Carousel</span></div>
         <hr class="header-divider">
 
         <!-- Question -->
-        <h2 class="question">
-            Please click up to 15 spots to describe how you feel about the following picnic layout.
-        </h2>
+        <h2 class="question">Who is your favourite artist?</h2>
+        <p class="question">Use the left and right arrows to scroll through the carousel and click on your 3 favourite
+            artists.</p>
 
-        <!-- Image container -->
-        <div class="image-wrapper">
-            <img id="heatImage" src="Heat Click With Oe.jpg" alt="Picnic layout">
+        <!-- Carousel container -->
+        <div class="carousel-container">
+            <div class="carousel">
+                <img src="image 1.png">
+                <img src="image 2.png">
+                <img src="image 3.png">
+                <img src="image 4.png">
+                <img src="image 5.png">
+                <img src="image 6.png">
+                <img src="image 7.png">
+                <img src="image 8.png">
+            </div>
         </div>
 
-        <!-- Popup shown on image click -->
-        <div id="heatPopup" class="heat-popup">
+        <!-- First set of carousel navigation buttons -->
+        <div class="carousel-controls">
+            <button id="prevBtn">
+                << Previous</button>
+                    <button id="nextBtn">Next >></button>
+        </div>
 
-            <div class="popup-title">How does this feel?</div>
-
-            <!-- Emoji selection -->
-            <div class="emoji-row">
-                <span data-feel="happy">😊</span>
-                <span data-feel="neutral">😐</span>
-                <span data-feel="sad">☹️</span>
-            </div>
-
-            <!-- Comment box -->
-            <textarea placeholder="Please explain why"></textarea>
-
-            <!-- Popup actions -->
-            <div class="popup-actions">
-                <button id="submitHeat">Submit</button>
-                <button id="cancelHeat">Cancel</button>
-            </div>
+        <!-- Second set of carousel navigation buttons -->
+        <div class="carousel-controls">
+            <button id="prevBtn2">
+                << </button>
+                    <button id="nextBtn2"> >> </button>
         </div>
 
         <!-- Continue button -->
-        <button id="continueBtn">Continue »</button>
+        <button id="continueBtn">Continue >></button>
     </div>
 
-    <!-- -------------------- MODULE OPEN / CLOSE SCRIPT -------------------- -->
+    <!-- Cursor count display -->
+    <div class="cursor-count" id="cursorCount"></div>
+
     <script>
+        /* ---------------- DOM ELEMENTS ---------------- */
         const openBtn = document.getElementById("openModuleBtn");
         const closeBtn = document.getElementById("closeModuleBtn");
         const continueBtn = document.getElementById("continueBtn");
         const module = document.getElementById("dcmModule");
 
-        // Open module
-        openBtn.addEventListener("click", () => {
+        const carousel = document.querySelector(".carousel");
+        const images = carousel.querySelectorAll("img");
+        const cursorCount = document.getElementById("cursorCount");
+
+        let selectedImages = [];
+        const MAX_SELECTION = 3;
+
+        /* -------- OPEN MODULE -------- */
+        openBtn.onclick = () => {
             module.style.display = "block";
             openBtn.style.display = "none";
-        });
+            resetSelection();
+        };
 
-        // Close module (used by close & continue buttons)
-        closeBtn.addEventListener("click", closeModule);
-        continueBtn.addEventListener("click", closeModule);
-
+        /* -------- CLOSE MODULE -------- */
         function closeModule() {
             module.style.display = "none";
             openBtn.style.display = "inline-block";
+            cursorCount.style.display = "none";
         }
-    </script>
 
-    <!-- -------------------- HEAT CLICK FUNCTIONALITY -------------------- -->
-    <script>
-        const image = document.getElementById("heatImage");
-        const popup = document.getElementById("heatPopup");
-        const cancelBtn = document.getElementById("cancelHeat");
-        const submitBtn = document.getElementById("submitHeat");
+        closeBtn.onclick = closeModule;
+        continueBtn.onclick = closeModule;
 
-        let selectedFeeling = null; // Stores emoji feeling
-        let clickX = 0;
-        let clickY = 0;
+        /* -------- RESET SELECTION -------- */
+        function resetSelection() {
+            selectedImages = [];
+            images.forEach(img => {
+                img.classList.remove("selected");
+                img.querySelector(".badge")?.remove();
+            });
+            cursorCount.style.display = "none";
+        }
 
-        // Show popup at clicked image position
-        image.addEventListener("click", (e) => {
-            const rect = image.getBoundingClientRect();
+        /* -------- CURSOR FOLLOW EFFECT -------- */
+        images.forEach(img => {
+            img.addEventListener("mouseenter", () => {
+                if (!img.classList.contains("selected") && selectedImages.length < MAX_SELECTION) {
+                    cursorCount.style.display = "flex";
+                    cursorCount.textContent = selectedImages.length + 1;
+                }
+            });
 
-            clickX = e.clientX - rect.left;
-            clickY = e.clientY - rect.top;
+            img.addEventListener("mouseleave", () => {
+                cursorCount.style.display = "none";
+            });
 
-            const offset = 180; // distance below the click
-            popup.style.left = clickX + "px";
-            popup.style.top = (clickY + offset) + "px"; // move popup below click
-            popup.style.display = "block";
-        });
+            img.addEventListener("mousemove", e => {
+                cursorCount.style.left = e.clientX + 12 + "px";
+                cursorCount.style.top = e.clientY + 12 + "px";
+            });
 
+            /* -------- IMAGE SELECTION -------- */
+            img.addEventListener("click", () => {
+                if (img.classList.contains("selected")) {
+                    img.classList.remove("selected");
+                    img.querySelector(".badge").remove();
+                    selectedImages = selectedImages.filter(i => i !== img);
+                    selectedImages.forEach((el, idx) => {
+                        el.querySelector(".badge").textContent = idx + 1;
+                    });
+                    return;
+                }
 
-        // Emoji selection logic
-        document.querySelectorAll(".emoji-row span").forEach(emoji => {
-            emoji.addEventListener("click", () => {
-                document.querySelectorAll(".emoji-row span")
-                    .forEach(e => e.classList.remove("active"));
+                if (selectedImages.length >= MAX_SELECTION) {
+                    alert("You can select only 3 artists.");
+                    return;
+                }
 
-                emoji.classList.add("active");
-                selectedFeeling = emoji.dataset.feel;
+                selectedImages.push(img);
+                img.classList.add("selected");
+
+                const badge = document.createElement("div");
+                badge.className = "badge";
+                badge.textContent = selectedImages.length;
+                img.appendChild(badge);
             });
         });
 
-        // Cancel popup
-        cancelBtn.addEventListener("click", () => {
-            popup.style.display = "none";
-            popup.querySelector("textarea").value = "";
+        /* -------- 3D OVAL CAROUSEL -------- */
+        let rotation = 0;
+        const radiusX = 250;
+        const radiusY = 100;
+
+        images.forEach((img, i) => {
+            img.dataset.angle = (360 / images.length) * i;
         });
 
-        // Submit heat point
-        submitBtn.addEventListener("click", () => {
-            const comment = popup.querySelector("textarea").value.trim();
+        function updateCarousel() {
+            images.forEach(img => {
+                const angle = parseFloat(img.dataset.angle) + rotation;
+                const rad = angle * Math.PI / 180;
 
-            // Validation
-            if (!selectedFeeling) {
-                alert("Please select how you feel (emoji).");
-                return;
-            }
+                const x = Math.cos(rad) * radiusX;
+                const y = Math.sin(rad) * radiusY;
+                const z = Math.sin(rad) * radiusX;
 
-            if (comment === "") {
-                alert("Please explain why.");
-                return;
-            }
+                const depth = (z + radiusX) / (2 * radiusX);
 
-            // Choose dot color
-            let color = "green";
-            if (selectedFeeling === "neutral") color = "yellow";
-            if (selectedFeeling === "sad") color = "red";
-
-            // Create dot
-            const dot = document.createElement("div");
-            dot.className = "heat-dot";
-            dot.style.left = clickX + "px";
-            dot.style.top = clickY + "px";
-            dot.style.backgroundColor = color;
-
-            // Add dot to image
-            document.querySelector(".image-wrapper").appendChild(dot);
-
-            // Log data
-            console.log({
-                x: clickX,
-                y: clickY,
-                feeling: selectedFeeling,
-                comment: comment
+                img.style.transform = `translateX(${x}px) translateY(${y}px) translateZ(${z}px) scale(${0.5 + depth * 0.7})`;
+                img.style.opacity = (0.15 + depth * 0.85).toFixed(2);
+                img.style.zIndex = Math.floor(depth * 100);
             });
+        }
 
-            // Reset popup
-            popup.style.display = "none";
-            popup.querySelector("textarea").value = "";
-            selectedFeeling = null;
+        /* -------- CAROUSEL NAVIGATION -------- */
+        document.getElementById("nextBtn").onclick = () => {
+            rotation -= 360 / images.length;
+            updateCarousel();
+        };
+        document.getElementById("prevBtn").onclick = () => {
+            rotation += 360 / images.length;
+            updateCarousel();
+        };
 
-            document.querySelectorAll(".emoji-row span")
-                .forEach(e => e.classList.remove("active"));
-        });
+
+
+        // Second set of buttons
+        document.getElementById("nextBtn2").onclick = () => {
+            rotation -= 360 / images.length;
+            updateCarousel();
+        };
+        document.getElementById("prevBtn2").onclick = () => {
+            rotation += 360 / images.length;
+            updateCarousel();
+        };
+
+
+
+
+
+        // Initial render
+        updateCarousel();
     </script>
+
+
+
+
+
+
 
 </body>
 

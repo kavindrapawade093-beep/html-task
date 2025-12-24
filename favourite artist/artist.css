@@ -1,0 +1,190 @@
+/* ---------------- RESET ---------------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* ---------------- BODY ---------------- */
+body {
+  background-color: #f6f7fb;
+  display: flex;
+  justify-content: center;
+  padding: 50px 20px;
+}
+
+/* ---------------- OPEN MODULE BUTTON ---------------- */
+#openModuleBtn {
+  padding: 14px 40px;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  background: #1a237e;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* ---------------- DCM MODULE ---------------- */
+.dcm-wrapper {
+  display: none;
+  width: 700px;
+  height: 610px;
+  background: #fff;
+  padding: 30px 40px 80px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+/* ---------------- CLOSE BUTTON ---------------- */
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: none;
+  background: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* ---------------- LOGO ---------------- */
+.logo span {
+  font-size: 20px;
+  font-weight: bold;
+  color: #0f0d94;
+}
+
+.header-divider {
+  margin-top: 5px;
+  margin-bottom: 20px;
+  height: 1px;
+  background: #ddd;
+  border: none;
+}
+
+/* ---------------- QUESTIONS ---------------- */
+.question {
+  text-align: left;
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: #1a237e;
+}
+
+/* ---------------- CONTINUE BUTTON ---------------- */
+#continueBtn {
+  position: absolute;
+  right: 30px;
+  bottom: 25px;
+  padding: 12px 35px;
+  border-radius: 30px;
+  border: none;
+  background: #0808a4;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* ---------------- CAROUSEL CONTAINER ---------------- */
+.carousel-container {
+  width: 100%;
+  height: 260px;
+  perspective: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 40px;
+  position: relative;
+}
+
+.carousel {
+  position: relative;
+  width: 220px;
+  height: 220px;
+  transform-style: preserve-3d;
+}
+
+/* ---------------- CAROUSEL IMAGES ---------------- */
+.carousel img {
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  transition: transform 0.9s ease, opacity 0.9s ease;
+  cursor: pointer;
+}
+
+.carousel img.selected {
+  outline: 4px solid #1a237e;
+}
+
+/* ---------------- BADGE ON SELECTED IMAGES ---------------- */
+.badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #1a237e;
+  color: #fff;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  pointer-events: none;
+}
+
+/* ---------------- CURSOR FOLLOW NUMBER ---------------- */
+.cursor-count {
+  position: fixed;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #1a237e;
+  color: #fff;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: bold;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* ---------------- CAROUSEL CONTROLS ---------------- */
+.carousel-controls {
+  display: flex;
+  gap: 380px;
+  justify-content: space-between;
+}
+
+.carousel-controls button {
+  padding: 12px 16px;
+  margin-top: 25px;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  background: #0808a4;
+  color: white;
+  cursor: pointer;
+}
+
+#prevBtn2 {
+  padding: 6px 8px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+}
+
+#nextBtn2 {
+  padding: 6px 8px;
+  position: absolute;
+  top: 50%;
+  right: 0%;
+}

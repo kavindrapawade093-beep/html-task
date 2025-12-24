@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favourite Artist</title>
+    <link rel="stylesheet" href="artist.css">
+</head>
+
+<body>
+    <!-- Button to open the module -->
+    <button id="openModuleBtn">Favourite Artist</button>
+
+    <!-- DCM Module -->
+    <div class="dcm-wrapper" id="dcmModule">
+
+        <!-- Close button -->
+        <button class="close-btn" id="closeModuleBtn">×</button>
+
+        <div class="logo"><span>3D Carousel</span></div>
+        <hr class="header-divider">
+
+        <!-- Question -->
+        <h2 class="question">Who is your favourite artist?</h2>
+        <p class="question">Use the left and right arrows to scroll through the carousel and click on your 3 favourite
+            artists.</p>
+
+        <!-- Carousel container -->
+        <div class="carousel-container">
+            <div class="carousel">
+                <img src="artist/image 1.png" alt="">
+                <img src="artist/image 2.png" alt="">
+                <img src="artist/image 3.png" alt="">
+                <img src="artist/image 4.png" alt="">
+                <img src="artist/image 5.png" alt="">
+                <img src="artist/image 6.png" alt="">
+                <img src="artist/image 7.png" alt="">
+                <img src="artist/image 8.png" alt="">
+            </div>
+        </div>
+
+        <!-- First set of carousel navigation buttons -->
+        <div class="carousel-controls">
+            <button id="prevBtn">
+                << Previous</button>
+                    <button id="nextBtn">Next >></button>
+        </div>
+
+        <!-- Second set of carousel navigation buttons -->
+        <div class="carousel-controls">
+            <button id="prevBtn2">
+                << </button>
+                    <button id="nextBtn2"> >> </button>
+        </div>
+
+        <!-- Continue button -->
+        <button id="continueBtn">Continue >></button>
+    </div>
+
+    <!-- Cursor count display -->
+    <div class="cursor-count" id="cursorCount"></div>
+
+
+    <script src="artist.js">
+
+    </script>
+</body>
+
+</html>
