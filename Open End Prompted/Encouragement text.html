@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Character encoding -->
+    <meta charset="UTF-8">
+
+    <!-- Responsive layout for mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Page title -->
+    <title>Open End Prompted</title>
+    <link rel="stylesheet" href="Encouragement text.css">
+
+
+</head>
+
+<body>
+
+    <!-- Button that opens the module -->
+    <button id="openModuleBtn">Open End Prompted</button>
+
+    <!-- Main module container -->
+    <div class="dcm-wrapper" id="dcmModule">
+
+        <!-- Close button (X) -->
+        <button class="close-btn" id="closeModuleBtn">×</button>
+
+        <!-- Header title -->
+        <div class="logo">
+            <span>Open End Prompted</span>
+        </div>
+
+        <!-- Divider line -->
+        <hr class="header-divider">
+
+        <!-- Question -->
+        <h2 class="question">How was your most recent experience with us?</h2>
+        <p class="question">(Encouragement text and progress bar based on response length)</p>
+
+        <!-- Dynamic encouragement message -->
+        <div id="feedbackText">Provide as much detail as possible.</div>
+
+        <!-- User input area -->
+        <textarea id="feedbackInput" placeholder="Type your feedback here..."></textarea>
+
+        <!-- Progress bar -->
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+
+        <!-- Continue button -->
+        <button id="continueBtn">Continue >></button>
+    </div>
+
+
+    <script src="Encouragement text.js"></script>
+</body>
+
+</html>

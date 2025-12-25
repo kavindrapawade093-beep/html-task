@@ -1,0 +1,141 @@
+/* ---------------- GLOBAL RESET ---------------- */
+* {
+  box-sizing: border-box;
+  /* Includes padding & border in width/height */
+  margin: 0;
+  /* Removes default margin */
+  padding: 0;
+  /* Removes default padding */
+  font-family: Arial, sans-serif;
+}
+
+/* ---------------- BODY STYLES ---------------- */
+body {
+  background-color: #f6f7fb;
+  /* Light background */
+  display: flex;
+  /* Center content horizontally */
+  justify-content: center;
+  padding: 50px 20px;
+}
+
+/* ---------------- OPEN MODULE BUTTON ---------------- */
+#openModuleBtn {
+  padding: 14px 40px;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  background: #1a237e;
+  /* Dark blue */
+  color: #fff;
+  cursor: pointer;
+}
+
+/* ---------------- MODULE CONTAINER ---------------- */
+.dcm-wrapper {
+  display: none;
+  /* Hidden initially */
+  width: 700px;
+  height: 610px;
+  background: #fff;
+  padding: 30px 40px 80px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  position: relative;
+  /* Needed for absolute positioned buttons */
+}
+
+/* ---------------- CLOSE BUTTON ---------------- */
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: none;
+  background: #fff;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* Close button hover effect */
+.close-btn:hover {
+  background: #160a98;
+  color: #fff;
+}
+
+/* ---------------- HEADER LOGO TEXT ---------------- */
+.logo span {
+  font-size: 20px;
+  font-weight: bold;
+  color: #0f0d94;
+}
+
+/* Divider line under header */
+.header-divider {
+  margin: 10px 0 20px;
+  height: 1px;
+  background: #ddd;
+  border: none;
+}
+
+/* ---------------- QUESTION TEXT ---------------- */
+.question {
+  font-size: 15px;
+  color: #1a237e;
+  margin-bottom: 5px;
+}
+
+/* ---------------- FEEDBACK MESSAGE ---------------- */
+#feedbackText {
+  margin-top: 20px;
+  font-weight: bold;
+  color: #999;
+  /* Neutral color initially */
+}
+
+/* ---------------- TEXTAREA ---------------- */
+textarea {
+  width: 100%;
+  height: 120px;
+  margin-top: 10px;
+  padding: 12px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  resize: none;
+  /* Prevent resizing */
+}
+
+/* ---------------- PROGRESS BAR CONTAINER ---------------- */
+.progress-container {
+  width: 100%;
+  height: 6px;
+  background: #eee;
+  margin-top: 8px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+/* Progress bar fill */
+.progress-bar {
+  width: 0%;
+  /* Starts empty */
+  height: 100%;
+  transition: width 0.4s ease;
+  /* Smooth animation */
+}
+
+/* ---------------- CONTINUE BUTTON ---------------- */
+#continueBtn {
+  position: absolute;
+  right: 30px;
+  bottom: 25px;
+  padding: 12px 35px;
+  border-radius: 30px;
+  border: none;
+  background: #0808a4;
+  color: #fff;
+  cursor: pointer;
+}
