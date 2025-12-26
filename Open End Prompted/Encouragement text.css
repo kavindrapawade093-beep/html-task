@@ -36,7 +36,7 @@ body {
   display: none;
   /* Hidden initially */
   width: 700px;
-  height: 610px;
+  height: 550px;
   background: #fff;
   padding: 30px 40px 80px;
   border-radius: 15px;
@@ -104,7 +104,7 @@ textarea {
   font-size: 14px;
   border-radius: 6px;
   border: 1px solid #ccc;
-  resize: none;
+  /* resize: none; */
   /* Prevent resizing */
 }
 
@@ -138,4 +138,7 @@ textarea {
   background: #0808a4;
   color: #fff;
   cursor: pointer;
+}
+#continueBtn:hover {
+  background: #05055f;
 }

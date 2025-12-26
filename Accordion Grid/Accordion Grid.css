@@ -1,0 +1,133 @@
+/* -------------------- GLOBAL RESET -------------------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* -------------------- PAGE LAYOUT -------------------- */
+body {
+  background: #f6f7fb;
+  display: flex;
+  justify-content: center;
+  padding: 50px;
+}
+
+/* -------------------- OPEN MODULE BUTTON -------------------- */
+#openModuleBtn {
+  padding: 14px 40px;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  background: #1a237e;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* -------------------- MODULE CONTAINER -------------------- */
+.dcm-wrapper {
+  display: none; /* Hidden by default */
+  width: 700px;
+  background: #fff;
+  padding: 30px 40px 80px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  position: relative;
+}
+
+/* -------------------- CLOSE BUTTON -------------------- */
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: none;
+  background: #fff;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  background-color: #1a237e;
+  color: #fff;
+}
+
+/* -------------------- HEADER -------------------- */
+.logo span {
+  font-size: 22px;
+  font-weight: bold;
+  color: #0f0d94;
+}
+
+.header-divider {
+  margin: 15px 0 25px;
+  height: 1px;
+  background: #ddd;
+  border: none;
+}
+
+.question {
+  color: #0a147f;
+  margin-bottom: 10px;
+}
+
+/* -------------------- FEATURE HEADER -------------------- */
+.feature {
+  background: #004d63;
+  color: #fff;
+  padding: 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+/* Completed feature (after rating selected) */
+.feature.completed {
+  background: #151d18;
+}
+
+/* -------------------- RATINGS -------------------- */
+.ratings {
+  display: none; /* Accordion behavior */
+  margin-top: 10px;
+}
+
+.rating {
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 6px;
+  margin-top: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.rating:hover {
+  background: #e6f2f5;
+}
+
+/* Selected rating */
+.rating.active {
+  background: #23cf53;
+  color: #fff;
+  border-color: #004d63;
+}
+
+/* -------------------- CONTINUE BUTTON -------------------- */
+#continueBtn {
+  position: absolute;
+  right: 30px;
+  bottom: 20px;
+  padding: 12px 35px;
+  border-radius: 30px;
+  border: none;
+  background: #0808a4;
+  color: #fff;
+  cursor: pointer;
+}
+
+#continueBtn:hover {
+  background: #160a98;
+}
