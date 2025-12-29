@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Monadic Concept Test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="Monadic Concept Test.css">
+</head>
+
+<body>
+
+    <button id="openModuleBtn">Start Survey</button>
+
+    <!-- PAGE 1 -->
+    <div class="dcm-wrapper" id="page1">
+        <div class="logo">Monadic Concept Test</div>
+
+        <div class="error-msg" id="errorMsg">
+            There were problems with some of the data you entered in the survey. You will find the questions with errors
+            below; please follow the instructions attached to each question.
+        </div>
+
+        <hr>
+
+        <div class="question">Are you ...</div>
+        <div class="sub-text">Click on a button to select.</div>
+        <div class="field-error" id="genderError">Please select an answer.</div>
+
+        <div class="gender-box">
+            <div class="gender" data-gender="male">
+                <img src="https://release.decipherinc.com/survey/selfserve/53d/demo/monadic/malewhite_w800.png"
+                    alt="Male">
+                <div class="gender-label">Male</div>
+            </div>
+
+            <div class="gender" data-gender="female">
+                <img src="https://release.decipherinc.com/survey/selfserve/53d/demo/monadic/femalewhite_w800.png"
+                    alt="Female">
+                <div class="gender-label">Female</div>
+            </div>
+        </div>
+
+
+        <hr>
+
+        <div class="question">Which of the following categories best describes your age?</div>
+        <div class="sub-text">Select one from the list</div>
+        <div class="field-error" id="ageError">Please select an answer.</div>
+
+        <div class="age-list">
+            <div class="age-btn">18–24</div>
+            <div class="age-btn">25–34</div>
+            <div class="age-btn">35–44</div>
+            <div class="age-btn">45–54</div>
+            <div class="age-btn">55+</div>
+        </div>
+
+        <div class="footer-btns">
+            <button class="continue-btn" id="continueBtnPage1">Continue &gt;&gt;</button>
+        </div>
+    </div>
+
+    <!-- PAGE 2 -->
+    <div class="dcm-wrapper" id="page2">
+        <div class="header">
+            <div class="logo">Monadic Concept Test</div>
+            <div class="title">Snacks</div>
+        </div>
+
+        <div class="error-msg" id="snackErrorMsg">
+            There were problems with some of the data you entered in the survey. You will find the questions with errors
+            below; please follow the instructions attached to each question.
+        </div>
+        <div class="field-error" id="snackError">Please select at least 1 answer (you selected 0).</div>
+
+        <hr>
+
+        <div class="question">Have you eaten any of the following snacks in the past month?</div>
+        <div class="sub-text">Select all buttons that apply</div>
+
+        <div class="snack-grid">
+            <button class="snack-btn">Popcorn</button>
+            <button class="snack-btn">Chocolate Bars</button>
+            <button class="snack-btn">Chips</button>
+            <button class="snack-btn">Nuts / Seeds</button>
+            <button class="snack-btn">Crackers</button>
+            <button class="snack-btn">Cereal Bars</button>
+            <button class="snack-btn">Fresh / fruits</button>
+            <button class="snack-btn none">None of the above</button>
+        </div>
+
+        <div class="footer-btns">
+            <button class="back-btn" id="backBtnPage2">&lt; Back</button>
+            <button class="continue-btn" id="continueBtnPage2">Continue &gt;&gt;</button>
+        </div>
+    </div>
+
+    <!-- PAGE 3 -->
+    <div class="dcm-wrapper" id="page3">
+        <div class="header">
+            <div class="logo">Monadic Concept Test</div>
+            <div class="title" id="page3Title">Concept</div>
+        </div>
+
+        <hr>
+
+        <div class="question" id="page3Question">
+            Please look at this concept. We will be asking you a series of questions to find out your opinion of this
+            concept.
+        </div>
+
+        <div id="page3ImageContainer"></div>
+
+        <div class="footer-btns">
+            <button class="back-btn" id="backBtnPage3">&lt; Back</button>
+            <button class="continue-btn" id="continueBtnPage3">Continue &gt;&gt;</button>
+        </div>
+    </div>
+
+
+    <!-- PAGE 4: Rating Page -->
+    <div class="dcm-wrapper" id="page4">
+        <div class="header">
+            <div class="logo">Monadic Concept Test</div>
+            <div class="title" id="page4Title"></div>
+        </div>
+        <div class="error-msg" id="page4ErrorMsg">
+            There were problems with some of the data you entered in the survey.
+            You will find the questions with errors below; please follow the instructions
+            attached to each question.
+            <br><br>
+            Please select an answer.
+        </div>
+        <hr>
+
+        <div class="question" id="page4Question">
+            Please rate the concept for <span id="productName">Product</span> in terms of the following attributes.
+        </div>
+
+
+        <!-- Image Modal INSIDE Page 4 -->
+        <div id="imgModal">
+
+            <span id="closeModal">&times;</span>
+
+            <img id="modalImage" src="" alt="">
+
+        </div>
+
+        <div
+            style=" margin:10px 150px; text-align: center; font-size:10px; border: 1px solid #ccc; padding: 5px; border-radius: 10px; background-color: yellow;">
+            <a href="#" id="viewProductAgain">Click here to view the product again</a>
+        </div>
+
+
+
+        <div class="rating-grid">
+            <div class="rating-item">
+                <div>Relevance to your lifestyle</div>
+                <div class="rating-options" data-attribute="relevance">
+                    <button>1</button><button>2</button><button>3</button><button>4</button><button>5</button>
+                    <button>6</button><button>7</button><button>8</button><button>9</button><button>10</button>
+                </div>
+            </div>
+
+            <div class="rating-item">
+                <div>Uniqueness of the product</div>
+                <div class="rating-options" data-attribute="uniqueness">
+                    <button>1</button><button>2</button><button>3</button><button>4</button><button>5</button>
+                    <button>6</button><button>7</button><button>8</button><button>9</button><button>10</button>
+                </div>
+            </div>
+
+            <div class="rating-item">
+                <div>Distinctive Packaging</div>
+                <div class="rating-options" data-attribute="packaging">
+                    <button>1</button><button>2</button><button>3</button><button>4</button><button>5</button>
+                    <button>6</button><button>7</button><button>8</button><button>9</button><button>10</button>
+                </div>
+            </div>
+
+            <div class="rating-item">
+                <div>Perception of quality of the product</div>
+                <div class="rating-options" data-attribute="quality">
+                    <button>1</button><button>2</button><button>3</button><button>4</button><button>5</button>
+                    <button>6</button><button>7</button><button>8</button><button>9</button><button>10</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-btns">
+            <button class="back-btn" id="backBtnPage4">&lt; Back</button>
+            <button class="continue-btn" id="continueBtnPage4">Continue &gt;&gt;</button>
+
+        </div>
+    </div>
+
+
+
+
+    <!-- PAGE 5 -->
+
+    <div class="dcm-wrapper" id="page5">
+
+        <div class="header">
+            <div class="logo">Monadic Concept Test</div>
+            <div class="title"> </div>
+        </div>
+
+        <hr>
+
+        <!-- Image Modal (Page 5) -->
+        <div id="imgModalPage5">
+            <span id="closeModalPage5">&times;</span>
+
+            <img id="modalImagePage5" alt="" src="" style="max-width:98%; border-radius:8px;">
+        </div>
+
+
+        <div class="question">
+            Please rate the concept for
+            <b id="page5ProductName"></b>
+            in terms of the following associations.
+        </div>
+
+        <a href="#" class="view-btn">Click here to view the product again.</a>
+
+        <div class="scale-title">Select a star value.</div>
+
+        <div class="item">
+            <div class="item-label">A light snack for between meals</div>
+            <div class="stars">
+                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            </div>
+        </div>
+
+        <div class="item">
+            <div class="item-label">Highly nutritious</div>
+            <div class="stars">
+                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            </div>
+        </div>
+
+        <div class="item">
+            <div class="item-label">Won’t spoil my appetite</div>
+            <div class="stars">
+                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            </div>
+        </div>
+
+        <div class="item">
+            <div class="item-label">Different to other snacks</div>
+            <div class="stars">
+                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            </div>
+        </div>
+
+        <div class="footer-btns">
+            <button class="back-btn" id="backBtnPage5">&lt; Back</button>
+            <button class="continue-btn" id="continueBtnPage5">Continue &gt;&gt;</button>
+        </div>
+
+    </div>
+
+    <!-- PAGE 6 -->
+    <div class="dcm-wrapper" id="page6">
+
+        <div class="header">
+            <div class="logo">Monadic Concept Test</div>
+            <div class="title"></div>
+        </div>
+
+        <hr>
+
+        <!-- Image Modal (Page 6) -->
+        <div id="imgModalPage6">
+            <span id="closeModalPage6">&times;</span>
+
+            <img id="modalImagePage6" alt="" src="" style="max-width:98%; border-radius:8px;">
+        </div>
+
+
+        <div class="question">
+            How likely would you be to buy
+            <b id="page6ProductName">Product</b>
+            in the future?
+        </div>
+
+        <button class="product-btn" id="page6ViewProduct">
+            Click here to view the product again.
+        </button>
+
+        <div class="slider-text">Drag the slider to a point on the scale.</div>
+
+        <div class="slider-wrapper">
+            <input type="range" min="1" max="5" value="0" id="page6Slider">
+            <div class="scale">
+                <span>Not at all<br>likely</span>
+                <span>Not very<br>likely</span>
+                <span>Somewhat<br>likely</span>
+                <span>Very<br>likely</span>
+                <span>Extremely<br>likely</span>
+            </div>
+        </div>
+
+        <div class="footer-btns">
+            <button class="back-btn" id="backBtnPage6">&lt; Back</button>
+            <button class="continue-btn" id="continueBtnPage6" disabled>
+                Continue &gt;&gt;
+            </button>
+        </div>
+
+    </div>
+
+    <!-- PAGE 7 -->
+    <div class="dcm-wrapper" id="page7">
+
+        <div class="header">
+            <div class="logo">Monadic Concept Test </div>
+            <div class="title"> </div>
+        </div>
+
+        <hr>
+
+        <div id="imgModalPage7">
+            <span id="closeModalPage7">&times;</span>
+
+            <img id="modalImagePage7" alt="" src="" style="max-width:98%; border-radius:8px;">
+        </div>
+
+
+        <div class="question">
+            What is your overall opinion of
+            <b id="page7ProductName">Canadian Blueberry Snack Bars</b>?
+        </div>
+
+        <button class="product-btn" id="page7ViewProduct">
+            Click here to view the product again.
+        </button>
+
+        <div class="sub-text">Click on a button to select.</div>
+
+        <div class="rating">
+            <label class="option"><input type="radio" name="overall"> Extremely poor</label>
+            <label class="option"><input type="radio" name="overall"> Very poor</label>
+            <label class="option"><input type="radio" name="overall"> Quite poor</label>
+            <label class="option"><input type="radio" name="overall"> Neither good nor poor</label>
+            <br>
+            <label class="option"><input type="radio" name="overall"> Quite good</label>
+            <label class="option"><input type="radio" name="overall"> Very good</label>
+            <label class="option"><input type="radio" name="overall"> Excellent</label>
+        </div>
+
+        <div class="footer-btns">
+            <button class="back-btn" id="backBtnPage7">&lt; Back</button>
+            <button class="continue-btn" id="continueBtnPage7">Continue &gt;&gt;</button>
+        </div>
+
+    </div>
+
+
+    <!-- PAGE 8 -->
+    <div class="dcm-wrapper" id="page8">
+
+        <div class="header">
+            <div class="logo">Monadic Concept Test</div>
+            <div class="title"> </div>
+        </div>
+
+        <hr>
+
+        <div class="question">
+            How would you rate the concept for
+            <b id="page8ProductName"></b>
+            based on the following statements.
+        </div>
+
+        <button class="product-btn" id="page8ViewProduct">
+            Click here to view the product again.
+        </button>
+
+        <div class="sub-text">Please select a button for each card.</div>
+
+        <!-- STATEMENT SLIDER -->
+        <div style="display:flex; align-items:center; justify-content:center; gap:16px; margin:25px 0;">
+            <span style="font-size:26px; cursor:pointer;" id="stmtPrev">&#8249;</span>
+
+            <div style="
+            border:1px solid #007c91;
+            padding:14px 18px;
+            border-radius:6px;
+            min-width:260px;
+            text-align:center;
+            font-size:14px;
+        " id="statementBox">
+                I would consider switching
+            </div>
+
+            <span style="font-size:26px; cursor:pointer;" id="stmtNext">&#8250;</span>
+        </div>
+
+        <!-- LIKERT OPTIONS -->
+        <div class="rating" id="page8Options">
+            <label class="option"><input type="radio" name="stmtRating"> Strongly disagree</label>
+            <label class="option"><input type="radio" name="stmtRating"> Somewhat disagree</label>
+            <label class="option"><input type="radio" name="stmtRating"> Neither agree nor disagree</label>
+            <label class="option"><input type="radio" name="stmtRating"> Somewhat agree</label>
+            <label class="option"><input type="radio" name="stmtRating"> Strongly agree</label>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="footer-btns">
+            <button class="back-btn" id="backBtnPage8">&lt; Back</button>
+            <button class="continue-btn" id="continueBtnPage8">Continue &gt;&gt;</button>
+        </div>
+
+        <!-- MODAL -->
+        <div id="imgModalPage8" style="
+        display:none;
+        position:absolute;
+        top:50%;
+        left:50%;
+        transform:translate(-50%,-50%);
+        width:80%;
+        max-width:500px;
+        background:rgba(0,0,0,0.85);
+        padding:20px;
+        border-radius:12px;
+        z-index:50;
+    ">
+            <span id="closeModalPage8" style="
+            position:absolute;
+            top:10px;
+            right:14px;
+            font-size:26px;
+            color:#fff;
+            cursor:pointer;
+        ">&times;</span>
+
+            <img id="modalImagePage8" style="max-width:98%; border-radius:8px;">
+        </div>
+
+    </div>
+
+
+    <!-- PAGE 9 -->
+    <div class="dcm-wrapper" id="page9">
+
+        <div class="header">
+            <div class="logo">Monadic Concept Test</div>
+            <div class="title"> </div>
+        </div>
+
+        <hr>
+
+        <div class="question">
+            Please use the different color markers to select any part of the image to show how you feel about the
+            concept.
+        </div>
+
+        <div class="sub-text">
+            Using your mouse, map each region using the specified color.
+        </div>
+
+        <!-- MARKER BUTTONS -->
+        <div style="display:flex; gap:12px; margin-bottom:16px;">
+            <button class="marker-btn active" data-type="appeal" style="background:#e8f5e9; border:2px solid #2e7d32;">
+                🟩 Appealing
+            </button>
+
+            <button class="marker-btn" data-type="not" style="background:#fdecea; border:2px solid #c62828;">
+                🟥 Not Appealing
+            </button>
+        </div>
+
+        <!-- IMAGE CANVAS -->
+        <div id="heatmapWrapper" style="
+        position:relative;
+        border:1px solid #ccc;
+        border-radius:8px;
+        overflow:hidden;
+        cursor:crosshair;
+    ">
+            <img id="page9Image" alt="" src="" style="width:100%; display:block;">
+        </div>
+
+        <div class="footer-btns">
+            <button class="back-btn" id="backBtnPage9">&lt; Back</button>
+            <button class="continue-btn" id="continueBtnPage9">Continue &gt;&gt;</button>
+        </div>
+
+    </div>
+
+
+    <!-- PAGE 10 -->
+    <div class="dcm-wrapper" id="page10">
+
+        <div class="header">
+            <div class="logo">Monadic Concept Test</div>
+            <div class="title"> </div>
+        </div>
+
+        <hr>
+
+        <!-- Image Modal (Page 10) -->
+        <div id="imgModalPage10" style="
+        display:none;
+        position:absolute;
+        top:50%;
+        left:50%;
+        transform:translate(-50%, -50%);
+        width:80%;
+        max-width:500px;
+        background:rgba(0,0,0,0.85);
+        padding:20px;
+        border-radius:12px;
+        z-index:50;
+    ">
+            <span id="closeModalPage10" style="
+            position:absolute;
+            top:10px;
+            right:14px;
+            font-size:26px;
+            color:#fff;
+            cursor:pointer;
+        ">&times;</span>
+
+            <img id="modalImagePage10" src="" style="max-width:98%; border-radius:8px;">
+        </div>
+
+        <div class="question">
+            What is it you dislike most about the concept?
+        </div>
+
+        <button class="product-btn" id="page10ViewProduct">
+            Click here to view the product again.
+        </button>
+
+        <div class="sub-text">Be specific</div>
+
+        <textarea id="page10Text" rows="4" style="
+        width:100%;
+        padding:12px;
+        border-radius:10px;
+        border:1px solid #ccc;
+        font-size:14px;
+        resize:none;
+        margin-bottom:30px;
+    "></textarea>
+
+        <div class="footer-btns">
+            <button class="back-btn" id="backBtnPage10">&lt; Back</button>
+            <button class="continue-btn" id="finishBtnPage10">Finish</button>
+        </div>
+
+    </div>
+
+
+    <script src="Monadic Concept Test.js"></script>
+
+
+
+
+
+</body>
+
+</html>

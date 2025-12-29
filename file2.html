@@ -1,0 +1,14 @@
+<!-- PAGE 7 -->
+
+const concepts = document.querySelectorAll("#page7 .concept"); const ranks = document.querySelectorAll("#page7
+.rank"); const page7ErrorMsg = document.getElementById("page7ErrorMsg"); // Drag & Drop events concepts.forEach(concept
+=> { concept.draggable = true; concept.addEventListener("dragstart", (e) => { e.dataTransfer.setData("text/plain",
+concept.dataset.title); }); }); ranks.forEach(rank => { rank.addEventListener("dragover", e => e.preventDefault());
+rank.addEventListener("drop", e => { const title = e.dataTransfer.getData("text/plain"); const concept =
+Array.from(concepts).find(c => c.dataset.title === title); rank.innerHTML = "";
+rank.appendChild(concept.cloneNode(true)); rank.dataset.selected = title; }); }); // Back button
+document.getElementById("backBtnPage7").onclick = () => { page7.style.display = "none"; page6.style.display = "block";
+}; // Continue button document.getElementById("continueBtnPage7").onclick = () => { let allRanked = true;
+ranks.forEach(r => { if (!r.dataset.selected) allRanked = false; }); if (!allRanked) { page7ErrorMsg.style.display =
+"block"; return; } page7ErrorMsg.style.display = "none"; // Collect ranking data const ranking = Array.from(ranks).map(r
+=> r.dataset.selected); console.log("User ranking:", ranking); alert("Thank you! Survey complete."); };
