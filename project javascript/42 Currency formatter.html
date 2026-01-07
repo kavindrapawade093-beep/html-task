@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Character encoding -->
+    <meta charset="UTF-8">
+
+    <!-- Responsive design for mobile & desktop -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Page title -->
+    <title>Currency formatter</title>
+
+    <style>
+        /* Reset default browser spacing & set font */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: monospace;
+        }
+
+        /* Full page background styling */
+        body {
+            height: 100vh;
+            background: linear-gradient(135deg, #a283fc, #6637ed), #fafcfe;
+            background-size: 100% 32%;
+            background-repeat: no-repeat;
+        }
+
+        /* Center wrapper both horizontally & vertically */
+        .wrapper {
+            width: 100vmin;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            top: 50%;
+            left: 50%;
+        }
+
+        /* Input + button container */
+        .container {
+            width: 100%;
+            background-color: #ffffff;
+            box-shadow: 15px 15px 40px rgba(1, 9, 31, 0.05);
+            padding: 20px 10px;
+            border-radius: 5px;
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            grid-gap: 20px;
+        }
+
+        /* Input field styling */
+        input {
+            height: 30px;
+            outline: none;
+            border: none;
+            font-size: 14px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        /* Button styling */
+        button {
+            background-color: #6637ed;
+            border: none;
+            color: #fff;
+            outline: none;
+            height: 30px;
+            padding: 0 10px;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+
+        /* Output card styling */
+        p {
+            background-color: #ffffff;
+            box-shadow: 12px 12px 30px rgba(1, 9, 31, 0.05);
+            padding: 20px 10px;
+            text-align: center;
+            margin-top: 10px;
+            color: #37373a;
+            border-radius: 5px;
+        }
+
+        /* Currency label styling */
+        p span {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Main wrapper -->
+    <div class="wrapper">
+
+        <!-- Input and button section -->
+        <div class="container">
+            <!-- Amount input -->
+            <input type="text" id="amount" placeholder="Enter the Amount here">
+
+            <!-- Format button -->
+            <button id="btn">Format</button>
+        </div>
+
+        <!-- Output for Indian Rupees -->
+        <p id="output1">
+            <span>Indian Rupees:</span>
+        </p>
+
+        <!-- Output for US Dollars -->
+        <p id="output2">
+            <span>US Dollars:</span>
+        </p>
+
+        <!-- Output for Japanese Yen -->
+        <p id="output3">
+            <span>Japanese Yen:</span>
+        </p>
+
+    </div>
+
+    <script>
+        /* Get input and button elements */
+        const amount = document.getElementById("amount");
+        const btn = document.getElementById("btn");
+
+        /* Get output elements */
+        const output1 = document.getElementById("output1");
+        const output2 = document.getElementById("output2");
+        const output3 = document.getElementById("output3");
+
+        /* Run when Format button is clicked */
+        btn.addEventListener("click", () => {
+
+            /* Convert input value to number */
+            const value = Number(amount.value);
+
+            /* Format Indian Rupees */
+            const inr = new Intl.NumberFormat("en-IN", {
+                style: "currency",
+                currency: "INR"
+            }).format(value);
+
+            /* Convert & format US Dollars */
+            const usd = new Intl.NumberFormat("en-US", {
+                style: "currency",
+                currency: "USD"
+            }).format(value / 75);
+
+            /* Convert & format Japanese Yen */
+            const yen = new Intl.NumberFormat("ja-JP", {
+                style: "currency",
+                currency: "JPY"
+            }).format(value / 0.12);
+
+            /* Display formatted values */
+            output1.innerHTML = `<span>Indian Rupees:</span> ${inr}`;
+            output2.innerHTML = `<span>US Dollars:</span> ${usd}`;
+            output3.innerHTML = `<span>Japanese Yen:</span> ${yen}`;
+        });
+    </script>
+
+</body>
+
+</html>
