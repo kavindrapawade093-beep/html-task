@@ -1,11 +1,197 @@
- <!DOCTYPE html>
- <html lang="en">
- <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Document</title>
- </head>
- <body>
-   
- </body>
- </html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: antiquewhite;
+        }
+
+        .survey {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .survey-content {
+            width: 550px;
+            height: 550px;
+            background: white;
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .titletext {
+            padding-bottom: 10px;
+            color: #4f52f6;
+        }
+
+        .sub-text {
+            margin-top: 10px;
+            font-size: 14px;
+            color: rgb(35, 35, 206);
+        }
+
+
+        .hotspot-area {
+            position: relative;
+            margin-top: 10px;
+        }
+
+        .hotspot-area img,
+        .hotspot-area canvas {
+            width: 50%;
+            border: 1px solid #ccc;
+            cursor: crosshair;
+            margin-left: 140px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .none-interest {
+            background-color: rgb(246, 235, 235);
+            font-size: 12px;
+            justify-content: space-around;
+            padding: 8px;
+            margin-top: 10px;
+            color: #4f52f6;
+        }
+
+        #noneCheck {
+            transform: scale(1.5);
+            margin-left: 10px;
+            cursor: pointer;
+            position: absolute;
+            left: 57%;
+            width: 100px;
+            height: 15px;
+        }
+
+        #continueHotspot {
+            margin-top: 20px;
+            margin-left: 400px;
+            padding: 5px;
+            border-radius: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="survey">Open Hotspot Module</button>
+
+    <div id="hotspotModule" class="survey hidden">
+        <div class="survey-content">
+            <div class="header">
+                <div class="titletext">Hot Spot</div>
+
+            </div>
+            <hr>
+
+            <div class="sub-text">
+                Click on the areas that interest you about this cereal brand.
+            </div>
+
+            <div class="hotspot-area">
+                <img id="cerealImg" src="https://release.decipherinc.com/survey/selfserve/53d/demo/fiber_one.jpg "
+                    alt="Cereal Image">
+                <canvas id="hotspotCanvas"></canvas>
+            </div>
+
+
+            <div class="none-interest">
+
+                <lable for="noneCheck"> None of the areas interest me </label>
+
+
+                    <input type="checkbox" id="noneCheck">
+
+            </div>
+
+            <div id="checkboxList" style="margin-top:10px; font-size:13px;"></div>
+
+
+            <button id="continueHotspot">Continue »</button>
+        </div>
+    </div>
+
+
+    <script>
+        let hotspotClicks = [];
+
+        const openBtn = document.getElementById("survey");
+        const module = document.getElementById("hotspotModule");
+        const img = document.getElementById("cerealImg");
+        const canvas = document.getElementById("hotspotCanvas");
+        const none = document.getElementById("noneCheck");
+        const continueBtn = document.getElementById("continueHotspot");
+
+        const ctx = canvas.getContext("2d");
+
+        openBtn.onclick = () => {
+            hotspotClicks = [];
+            none.checked = false;
+            canvas.width = img.clientWidth;
+            canvas.height = img.clientHeight;
+            module.classList.remove("hidden");
+        };
+
+        img.onclick = (e) => {
+            if (none.checked) return;
+
+            const rect = img.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            hotspotClicks.push({ x, y });
+            ctx.fillStyle = "red";
+            ctx.beginPath();
+            ctx.arc(x, y, 6, 0, Math.PI * 2);
+            ctx.fill();
+        };
+
+        none.onclick = () => {
+            if (none.checked) {
+                hotspotClicks = [];
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+            }
+        };
+
+        continueBtn.onclick = () => {
+            console.log("Hotspot Data:", hotspotClicks);
+            console.log("None Selected:", none.checked);
+
+            module.classList.add("hidden");
+        };
+    </script>
+
+
+
+
+
+</body>
+
+</html>

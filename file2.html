@@ -1,14 +1,70 @@
-<!-- PAGE 7 -->
+<!DOCTYPE html>
+<html>
 
-const concepts = document.querySelectorAll("#page7 .concept"); const ranks = document.querySelectorAll("#page7
-.rank"); const page7ErrorMsg = document.getElementById("page7ErrorMsg"); // Drag & Drop events concepts.forEach(concept
-=> { concept.draggable = true; concept.addEventListener("dragstart", (e) => { e.dataTransfer.setData("text/plain",
-concept.dataset.title); }); }); ranks.forEach(rank => { rank.addEventListener("dragover", e => e.preventDefault());
-rank.addEventListener("drop", e => { const title = e.dataTransfer.getData("text/plain"); const concept =
-Array.from(concepts).find(c => c.dataset.title === title); rank.innerHTML = "";
-rank.appendChild(concept.cloneNode(true)); rank.dataset.selected = title; }); }); // Back button
-document.getElementById("backBtnPage7").onclick = () => { page7.style.display = "none"; page6.style.display = "block";
-}; // Continue button document.getElementById("continueBtnPage7").onclick = () => { let allRanked = true;
-ranks.forEach(r => { if (!r.dataset.selected) allRanked = false; }); if (!allRanked) { page7ErrorMsg.style.display =
-"block"; return; } page7ErrorMsg.style.display = "none"; // Collect ranking data const ranking = Array.from(ranks).map(r
-=> r.dataset.selected); console.log("User ranking:", ranking); alert("Thank you! Survey complete."); };
+<head>
+
+   <style>
+      .container {
+         display: grid;
+         grid-template-areas:
+            "header header"
+            "menu content"
+            "footer footer";
+         grid-template-columns: 1fr 3fr;
+         gap: 3px;
+         background-color: dodgerblue;
+         padding: 5px;
+      }
+
+      .container div {
+         background-color: white;
+         padding: 10px;
+      }
+
+      .container div.header {
+         grid-area: header;
+         text-align: center;
+      }
+
+      .container div.menu {
+         grid-area: menu;
+      }
+
+      .container div.content {
+         grid-area: content;
+      }
+
+      .container div.footer {
+         grid-area: footer;
+         text-align: center;
+      }
+   </style>
+</head>
+
+<body>
+
+   <h1>CSS Grid Layout</h1>
+
+   <p>The Grid Layout Module offers a grid-based layout system, with rows and columns.</p>
+   <p>The Grid Layout Module makes it easy to design complex and responsive web pages without using floats and
+      positioning:</p>
+
+   <div class="container">
+      <div class="header">
+         <h2>My Header</h2>
+      </div>
+      <div class="menu"><a href="#">Link 1</a><br><a href="#">Link 2</a><br><a href="#">Link 3</a></div>
+      <div class="content">
+         <h3>Lorem Ipsum</h3>
+         <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Ridiculus sit nisl laoreet facilisis aliquet. Potenti
+            dignissim litora eget montes rhoncus sapien neque urna. Cursus libero sapien integer magnis ligula lobortis
+            quam ut.</p>
+      </div>
+      <div class="footer">
+         <h4>Footer</h4>
+      </div>
+   </div>
+
+</body>
+
+</html>
