@@ -1,0 +1,119 @@
+body {
+  padding-top: 80px; /* adjust based on header height */
+}
+
+.main-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
+.promo-card {
+  background: #fff;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+}
+
+.promo-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+:root {
+  --brand-primary: #0d6efd;
+  --brand-black: #000;
+  --brand-light: #fff;
+}
+
+.hero-section {
+  background: var(--brand-black)
+    url("https://www.analectstechnologies.com/assets/img/front/images-header-bg.svg")
+    no-repeat bottom right;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.hero-content-wrap {
+  position: relative;
+  z-index: 2;
+}
+
+.promo-section {
+  position: relative;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 32px;
+  color: #0d1a3b;
+}
+
+.subtitle {
+  color: #6e7a8a;
+  font-size: 16px;
+}
+
+.promo-card {
+  background: #fff;
+  border-radius: 24px;
+  padding: 40px;
+  text-align: center;
+  box-shadow: 0px 10px 40px rgba(17, 38, 146, 0.05);
+  transition: 0.25s ease;
+  min-height: 260px;
+}
+
+.promo-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 18px 50px rgba(17, 38, 146, 0.08);
+}
+
+.promo-icon i {
+  font-size: 40px;
+  color: #1c4b9b;
+  margin-bottom: 20px;
+}
+
+.promo-title {
+  font-size: 20px;
+
+  margin-bottom: 10px;
+  color: #0d1a3b;
+}
+
+.promo-text {
+  color: #6e7a8a;
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+/* Background dotted shapes */
+.promo-bg-shape {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background-image: url("https://www.analectstechnologies.com/assets/front/images/shape/dot-big-square.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.35;
+  z-index: -1;
+}
+
+.promo-bg-shape.left {
+  left: 0;
+  top: 200px;
+}
+
+.promo-bg-shape.right {
+  right: 0;
+  bottom: 120px;
+}
