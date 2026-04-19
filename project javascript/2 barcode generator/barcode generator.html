@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barcode Generator</title>
+    <link rel="stylesheet" href="barcode generator.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsbarcode/3.12.1/JsBarcode.all.min.js"
+        integrity="sha512-fLmJPYDfCIAZ0gpG/iiIzPw113KquhzI1bxG0XhiLYyqm8Ax2lEiq1h1qv2vafH9tLzkjm4HYRWSeKoGFH4xIw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+
+    <!-- Main container -->
+    <div class="container">
+
+        <!-- Page heading -->
+        <h1>Barcode Generator</h1>
+
+        <!-- User input for barcode value -->
+        <input type="text" id="input" placeholder="Enter text or number">
+
+        <!-- Button to generate barcode -->
+        <button id="btn-barcode-genrator">Barcode Generator</button>
+
+        <!-- SVG where barcode will be rendered -->
+        <svg id="barcode"></svg>
+
+    </div>
+
+    <script src="barcode generator.js"></script>
+
+</body>
+
+</html>

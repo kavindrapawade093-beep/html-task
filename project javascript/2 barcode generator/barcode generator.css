@@ -1,0 +1,57 @@
+/* Reset default spacing and set font */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "poppins", sans-serif;
+}
+
+/* Page background color */
+body {
+  background-color: #0092fd;
+}
+
+/* Main card container */
+.container {
+  width: min(500px, 90vw);
+  /* Responsive width */
+  background-color: #ffffff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* Center the card */
+  padding: 2em;
+  border-radius: 0.5em;
+}
+
+/* Heading style */
+h1 {
+  font-size: 2em;
+  margin-bottom: 1em;
+}
+
+/* Text input styling */
+input {
+  width: 60%;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-radius: 0.5em;
+  border: 1px solid #ccc;
+}
+
+/* Button styling */
+button {
+  padding: 12px;
+  background-color: #0092fd;
+  color: #ffffff;
+  border: none;
+  border-radius: 0.5em;
+  cursor: pointer;
+}
+
+/* Button hover effect */
+button:hover {
+  background-color: #04c020;
+  color: #140a03;
+}
