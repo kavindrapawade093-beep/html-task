@@ -1,0 +1,37 @@
+/* Reset default browser styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+/* Body styling */
+body {
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  /* Full viewport height */
+  background-color: red;
+  /* Red background */
+}
+
+/* Div that follows the cursor */
+#my-div {
+  width: 3em;
+  /* Circle width */
+  height: 3em;
+  /* Circle height */
+  background-color: white;
+  /* White color */
+  position: absolute;
+  /* Positioned by JS */
+  transform: translate(-50%, -50%);
+  /* Center on cursor */
+  border-radius: 50%;
+  /* Make it circular */
+  box-shadow: 0 0 20px rgba(16, 0, 54, 0.15);
+  /* Soft shadow */
+  transition: 0.5s ease-out;
+  /* Smooth movement */
+}

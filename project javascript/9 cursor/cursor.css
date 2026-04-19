@@ -1,0 +1,62 @@
+/* Reset default browser styles
+   Hide default mouse cursor */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  cursor: none;
+  /* Hide system cursor */
+}
+
+/* Page styling */
+body {
+  width: 100%;
+  height: 200vh;
+  /* Extra height for scrolling */
+  background-color: #fff;
+}
+
+/* Inner cursor (small dot) */
+.inner-cursor {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  /* Make it circular */
+  background-color: #fff;
+  position: fixed;
+  /* Stay relative to viewport */
+  left: 10px;
+  top: 10px;
+  transform: translate(-50%, -50%);
+  /* Center on mouse */
+  mix-blend-mode: difference;
+  /* Invert color on background */
+  pointer-events: none;
+  /* Ignore mouse interactions */
+  transition:
+    width 0.5s,
+    height 0.5s;
+  /* Smooth size animation */
+}
+
+/* Outer cursor (ring) */
+.outer-cursor {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  /* Circular ring */
+  border: 1px solid #fff;
+  /* White border */
+  position: fixed;
+  left: 10px;
+  top: 10px;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: difference;
+  /* Color inversion effect */
+  pointer-events: none;
+  transition:
+    width 0.5s,
+    height 0.5s;
+  /* Smooth animation */
+}

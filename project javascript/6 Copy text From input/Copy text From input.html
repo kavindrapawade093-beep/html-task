@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copy text From input</title>
+    <link rel="stylesheet" href="Copy text From input.css">
+</head>
+
+<body>
+    <!-- First input-copy container -->
+    <div class="container">
+        <!-- Text input with default value -->
+        <input type="text" id="text-1" placeholder="Some text to be copied">
+
+        <!-- Button that copies text from input with id 'text-1' -->
+        <button onclick="copy('text-1')">copy Text</button>
+    </div>
+
+    <!-- Second input-copy container -->
+    <div class="container">
+        <!-- Another text input with different default value -->
+        <input type="text" id="text-2" placeholder="Here is anoter text">
+
+        <!-- Button that copies text from input with id 'text-2' -->
+        <button onclick="copy('text-2')">copy text</button>
+    </div>
+
+    <script src="Copy text From input.js"></script>
+</body>
+
+</html>

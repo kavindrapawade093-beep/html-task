@@ -1,0 +1,41 @@
+/* Reset default browser styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body full-screen dark background */
+body {
+  margin: 0;
+  height: 100vh;
+  background-color: #121212;
+  overflow: hidden;
+  /* Prevent scrollbars */
+  cursor: pointer;
+  /* Show pointer on hover */
+}
+
+/* Confetti particle style */
+.confetti {
+  position: absolute;
+  border-radius: 50%;
+  /* Make particles circular */
+  pointer-events: none;
+  /* Clicks pass through particles */
+}
+
+/* Confetti burst animation */
+@keyframes brust {
+  /* Start position */
+  0% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+
+  /* End position using CSS variables */
+  100% {
+    transform: translate(var(--x), var(--y));
+    opacity: 0;
+  }
+}

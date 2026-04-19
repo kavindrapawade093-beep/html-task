@@ -1,0 +1,26 @@
+/* Reset default margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Full screen background and center content */
+body {
+  height: 100vh;
+  background: linear-gradient(to bottom, #2987e4 50%, #16191e 50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Container box styling */
+.container {
+  text-align: center;
+  color: #e90e0e;
+  background: #e2e4e8;
+  padding: 10px 20px 40px 20px;
+  font-size: 24px;
+  align-items: center;
+  justify-content: center;
+}

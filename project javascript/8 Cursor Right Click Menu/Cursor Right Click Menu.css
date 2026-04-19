@@ -1,0 +1,43 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+/* Body */
+body {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  background-color: blue;
+}
+
+/* Menu container */
+.custom-menu {
+  position: absolute;
+  display: none;
+}
+
+/* Menu box */
+.custom-menu ul {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  list-style: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Menu items */
+.custom-menu ul li {
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+/* Hover effect */
+.custom-menu ul li:hover {
+  background-color: #9c1b1b;
+  color: #fff;
+}

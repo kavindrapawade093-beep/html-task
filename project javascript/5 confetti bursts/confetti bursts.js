@@ -1,0 +1,74 @@
+
+/* Function to return a random color */
+function getRandomColor() {
+    const colors = [
+        '#FF0000', // Red
+        '#00FF00', // Green
+        '#0000FF', // Blue
+        '#FFFF00', // Yellow
+        '#FF00FF', // Magenta
+        '#00FFFF', // Cyan
+        '#FFC0CB', // Pink
+        '#808080', // Gray
+        '#000000', // Black
+        '#FFFFFF', // White
+        '#FFA500', // Orange
+    ];
+
+    // Pick a random color from the array
+    return colors[Math.floor(Math.random() * colors.length)];
+}
+
+/* Function to create confetti at click position */
+function createConfetti(x, y) {
+    const confettiCount = 100;  // Number of particles
+    const radius = 200;         // Spread distance
+
+    // Loop to create each confetti particle
+    for (let i = 0; i < confettiCount; i++) {
+
+        // Angle for circular burst
+        const angle = (2 * Math.PI * i) / confettiCount;
+
+        // Calculate X and Y movement directions
+        const xDirection = Math.cos(angle) * radius;
+        const yDirection = Math.sin(angle) * radius;
+
+        // Create a div for confetti
+        const confetti = document.createElement("div");
+        confetti.classList.add("confetti");
+
+        // Random size between 4px and 10px
+        confetti.style.width = `${Math.random() * 6 + 4}px`;
+        confetti.style.height = confetti.style.width;
+
+        // Assign random color
+        confetti.style.backgroundColor = getRandomColor();
+
+        // Position confetti at click point
+        confetti.style.left = `${x}px`;
+        confetti.style.top = `${y}px`;
+
+        // Set animation movement values
+        confetti.style.setProperty('--x', `${xDirection}px`);
+        confetti.style.setProperty('--y', `${yDirection}px`);
+
+        // Apply burst animation with random duration
+        confetti.style.animation =
+            `brust ${Math.random() * 1.5 + 0.15}s ease-out forwards`;
+
+        // Add confetti to page
+        document.body.appendChild(confetti);
+
+        // Remove confetti after animation
+        setTimeout(() => {
+            confetti.remove();
+        }, 2000);
+    }
+}
+
+/* Listen for mouse clicks on the page */
+document.addEventListener("click", (e) => {
+    // Create confetti at mouse position
+    createConfetti(e.pageX, e.pageY);
+});

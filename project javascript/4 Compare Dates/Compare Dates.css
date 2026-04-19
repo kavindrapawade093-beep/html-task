@@ -1,0 +1,67 @@
+/* Reset default margin & padding and apply box model */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+/* Body styling */
+body {
+  height: 100vh;
+  /* Full viewport height */
+  background-color: #577eff;
+  /* Blue background */
+  display: flex;
+  /* Flexbox layout */
+  flex-direction: column;
+  justify-content: center;
+  /* Center vertically */
+  align-items: center;
+  /* Center horizontally */
+}
+
+/* Main container styling */
+.container {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  margin: 30px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Wrapper for date inputs */
+.dates {
+  display: flex;
+  gap: 20px;
+  /* Space between date inputs */
+}
+
+/* Date input styling */
+.dates input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Button styling */
+#check {
+  background-color: #577eff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 20px;
+}
+
+/* Result text styling */
+#result {
+  margin-top: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}
