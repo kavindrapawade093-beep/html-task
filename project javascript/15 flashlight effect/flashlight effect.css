@@ -1,0 +1,56 @@
+/* Reset default spacing and hide mouse cursor */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "poppins", sans-serif;
+  cursor: none;
+  /* Hide default cursor */
+}
+
+/* Page background */
+body {
+  background-color: rgb(248, 243, 243);
+}
+
+/* Paragraph styling */
+p {
+  font-size: 1em;
+  /* Text size */
+  line-height: 1.9em;
+  /* Spacing between lines */
+  text-align: justify;
+  /* Justified text */
+  padding: 0 2em;
+  /* Left and right padding */
+}
+
+/* Flashlight container */
+#flashlight {
+  /* CSS variables for mouse position */
+  --Xpos: 50vw;
+  --Ypos: 50vh;
+}
+
+/* Dark overlay with circular transparent area */
+#flashlight::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+
+  /* Radial gradient creates flashlight effect */
+  background: radial-gradient(
+    circle 9em at var(--Xpos) var(--Ypos),
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 1)
+  );
+}
+
+/* Increase font size on larger screens */
+@media screen and (min-width: 800px) {
+  body {
+    font-size: 24px;
+  }
+}

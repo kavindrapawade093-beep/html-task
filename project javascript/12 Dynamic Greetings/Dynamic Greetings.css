@@ -1,0 +1,48 @@
+/* Reset default browser styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* Includes padding & border in width/height */
+}
+
+body {
+  background-color: #ae9eff;
+  /* Full page background color */
+}
+
+.container {
+  background-color: blue;
+  /* Box background */
+  width: 18em;
+  /* Box width */
+  position: absolute;
+  /* For center alignment */
+  transform: translate(-50%, -50%);
+  /* Center shift */
+  left: 50%;
+  top: 50%;
+  padding: 48px;
+  /* Inner spacing */
+  border-radius: 1em;
+  /* Rounded corners */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  /* Outer shadow */
+  text-align: center;
+  /* Text alignment */
+}
+
+.container h1 {
+  color: #fff;
+  /* Text color */
+  font-family: sans-serif;
+  /* Font style */
+  text-transform: uppercase;
+  /* All letters capital */
+  font-weight: 400;
+  /* Normal weight */
+  letter-spacing: 0.1em;
+  /* Increase gap between letters */
+  word-spacing: 0.4em;
+  /* Increase space between words */
+}

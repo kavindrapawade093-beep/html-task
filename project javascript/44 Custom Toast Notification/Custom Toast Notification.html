@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"> <!-- Website character encoding -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Toast Notification</title>
+
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="Custom Toast Notification.css">
+</head>
+
+<body>
+
+    <!-- Toast container -->
+    <div id="taost-container"></div>
+
+    <!-- Buttons to trigger toast -->
+    <button onclick="showToast('success! Your action was successful')">
+        Show success toast
+    </button>
+
+    <button onclick="showToast('error! Something went wrong', 'error')">
+        Show error toast
+    </button>
+
+    <!-- Link JS -->
+    <script src="Custom Toast Notification.js"></script>
+</body>
+
+</html>
